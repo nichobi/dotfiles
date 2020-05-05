@@ -3,10 +3,19 @@ set shiftwidth=2
 set expandtab
 let g:netrw_liststyle = 3
 
+" Install vim-plug if missing
+let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
+if !filereadable(autoload_plug_path)
+  silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs 
+      \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
+  autocmd VimEnter * PlugInstall --sync "| source $MYVIMRC
+endif
+unlet autoload_plug_path
+
 " Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
+" - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'derekwyatt/vim-scala'
