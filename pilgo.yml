@@ -12,12 +12,15 @@ options:
     targets:
     - alias
     - bashrc
+    - inputrc
     - profile
     options:
       alias:
         link: .alias
       bashrc:
         link: .bashrc
+      inputrc:
+        link: .inputrc
       profil:
         link: .profile
       profile:
