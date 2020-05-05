@@ -4,6 +4,7 @@ targets:
 - qutebrowser
 - shell
 - sway
+- tmux
 - waybar
 - yay
 options:
@@ -23,3 +24,15 @@ options:
         link: .profile
     flatten: true
     useHome: true
+  tmux:
+    targets:
+    - tmux.conf
+    options:
+      "":
+        targets:
+        - tmux.conf
+      tmux.conf:
+        link: .tmux.conf
+    flatten: true
+    useHome: true
+
