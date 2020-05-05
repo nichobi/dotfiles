@@ -1,0 +1,25 @@
+targets:
+- alacritty
+- nvim
+- qutebrowser
+- shell
+- sway
+- waybar
+- yay
+options:
+  shell:
+    targets:
+    - alias
+    - bashrc
+    - profile
+    options:
+      alias:
+        link: .alias
+      bashrc:
+        link: .bashrc
+      profil:
+        link: .profile
+      profile:
+        link: .profile
+    flatten: true
+    useHome: true
