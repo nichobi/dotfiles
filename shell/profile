@@ -55,3 +55,9 @@ LC_ALL=
 
 # Enable beets completion
 eval "$(beet completion)"
+
+# If running from tty1 start sway
+if [ "$(tty)" = "/dev/tty1" ]; then
+       exec sway
+fi
+
