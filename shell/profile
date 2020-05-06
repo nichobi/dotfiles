@@ -56,6 +56,10 @@ LC_ALL=
 # Enable beets completion
 eval "$(beet completion)"
 
+# Set QT platform for Wayland to fix slowdown issue
+# github.com/qutebrowser/qutebrowser/issues/4857
+QT_QPA_PLATFORM=wayland
+
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
        exec sway
