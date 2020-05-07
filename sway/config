@@ -265,4 +265,6 @@ font pango:SourceCodePro Medium 20
 
 for_window [title="Qute Editor"] floating enable
 
+exec autotiling
+
 include /etc/sway/config.d/*
