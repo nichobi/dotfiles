@@ -28,6 +28,10 @@ exec swayidle -w \
 	  timeout 1800 'systemctl suspend-then-hibernate' \
 	before-sleep '~/.config/sway/lock.sh --fade-in 0'
 
+# Inhibit idle for all fullscreen windows
+for_window [class="^.*"] inhibit_idle fullscreen
+for_window [app_id="^.*"] inhibit_idle fullscreen
+
 # Make qutebrowser editor window float
 for_window [title="Qute Editor"] floating enable
 
