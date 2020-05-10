@@ -1,8 +1,3 @@
-# Default config for sway 
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -21,34 +16,10 @@ set $menu dmenu_path | dmenu -fn 'Source Code Pro-22' | xargs swaymsg exec --
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Wallpaper
 output * bg ~/.config/sway/moon.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# Laptop display
 output eDP-1 resolution 2560x1600 scale 1
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-#exec swayidle -w \
-#         timeout 300 'swaylock -fe --indicator-idle-visible -c 000000' \
-#         timeout 600 'swaymsg "output * dpms off"' \
-#              resume 'swaymsg "output * dpms on"' \
-#         before-sleep 'swaylock -fe --indicator-idle-visible -c 000000'
 
 exec swayidle -w \
 	timeout 120 '~/.config/sway/lock.sh --grace 30 --fade-in 20' \
@@ -57,17 +28,13 @@ exec swayidle -w \
 	  timeout 1800 'systemctl suspend-then-hibernate' \
 	before-sleep '~/.config/sway/lock.sh --fade-in 0'
 
+# Make qutebrowser editor window float
+for_window [title="Qute Editor"] floating enable
+
+# Run the autotiling plugin
+exec autotiling
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -80,8 +47,7 @@ seat seat0 xcursor_theme Adwaita 32
 
 input type:keyboard {
     xkb_layout us,se
-    xkb_options ctrl:nocaps,grp:lctrl_lwin_toggle 
-                           #grp:alt_shift_toggle
+    xkb_options ctrl:nocaps,grp:lctrl_lwin_toggle
     repeat_delay 500
     repeat_rate 15
 }
@@ -262,9 +228,5 @@ bar {
 }
 
 font pango:SourceCodePro Medium 20
-
-for_window [title="Qute Editor"] floating enable
-
-exec autotiling
 
 include /etc/sway/config.d/*
