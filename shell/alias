@@ -6,4 +6,5 @@ alias fotd="fortune -n 301 -s 75% fortunes 25% wisdom"
 alias generatefotd='fortune -n 301 -s 75% fortunes 25% wisdom > ~/.fotd/myfotd; cat ~/.fotd/myfotd'
 alias myfotd='cat ~/.fotd/myfotd'
 alias oops='sudo "$BASH" -c "$(history -p !!)"'
+alias hibernate='systemctl hibernate'
 
