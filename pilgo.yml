@@ -38,4 +38,3 @@ options:
         link: .tmux.conf
     flatten: true
     useHome: true
-
