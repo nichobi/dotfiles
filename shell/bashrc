@@ -100,8 +100,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+if [ -f ~/.alias ]; then
+    . ~/.alias
 fi
 
 if [ -f ~/.ps1 ]; then
