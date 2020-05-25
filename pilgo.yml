@@ -1,5 +1,6 @@
 targets:
 - alacritty
+- gitconfig
 - gnupg
 - nvim
 - qutebrowser
@@ -9,6 +10,9 @@ targets:
 - waybar
 - yay
 options:
+  gitconfig:
+    link: .gitconfig
+    useHome: true
   gnupg:
     link: .gnupg
     useHome: true
