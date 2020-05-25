@@ -1,5 +1,6 @@
 targets:
 - alacritty
+- gnupg
 - nvim
 - qutebrowser
 - shell
@@ -8,6 +9,9 @@ targets:
 - waybar
 - yay
 options:
+  gnupg:
+    link: .gnupg
+    useHome: true
   shell:
     targets:
     - alias
