@@ -35,9 +35,6 @@ options:
     targets:
     - tmux.conf
     options:
-      "":
-        targets:
-        - tmux.conf
       tmux.conf:
         link: .tmux.conf
     flatten: true
