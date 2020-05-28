@@ -12,14 +12,14 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu -fn 'Source Code Pro-22' | xargs swaymsg exec --
+set $menu dmenu_path | dmenu -fn 'Source Code Pro-12' | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Wallpaper
 output * bg ~/.config/sway/moon.jpg fill
 # Laptop display
-output eDP-1 resolution 2560x1600 scale 1
+output eDP-1 resolution 2560x1600 scale 1.5
 
 exec swayidle -w \
 	timeout 120 '~/.config/sway/lock.sh --grace 30 --fade-in 20' \
@@ -47,7 +47,7 @@ input "1267:12600:MSFT0001:00_04F3:3138_Touchpad" {
   natural_scroll enabled
 }
 
-seat seat0 xcursor_theme Adwaita 32
+#seat seat0 xcursor_theme Adwaita 32
 
 input type:keyboard {
     xkb_layout us,se
@@ -231,6 +231,6 @@ bar {
     #}
 }
 
-font pango:SourceCodePro Medium 20
+font pango:SourceCodePro Medium 14
 
 include /etc/sway/config.d/*

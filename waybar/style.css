@@ -1,9 +1,9 @@
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 8;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -53,7 +53,7 @@ window#waybar.chromium {
 
 #workspaces button.focused {
     background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 0px solid #ffffff;
 }
 
 #workspaces button.urgent {
