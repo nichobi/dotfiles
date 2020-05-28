@@ -37,28 +37,28 @@ fi
 export SBT_OPTS="-Xmx4G"
 
 # Set locale
-LANG=en_GB.UTF-8
-LANGUAGE=en_GB
-LC_CTYPE="en_GB.UTF-8"
-LC_NUMERIC="en_GB.UTF-8"
-LC_TIME="en_GB.UTF-8"
-LC_COLLATE="en_GB.UTF-8"
-LC_MONETARY=sv_SE.UTF-8
-LC_MESSAGES="en_GB.UTF-8"
-LC_PAPER=sv_SE.UTF-8
-LC_NAME=sv_SE.UTF-8
-LC_ADDRESS=sv_SE.UTF-8
-LC_TELEPHONE=sv_SE.UTF-8
-LC_MEASUREMENT=sv_SE.UTF-8
-LC_IDENTIFICATION=sv_SE.UTF-8
-LC_ALL=
+export LANG=en_GB.UTF-8
+export LANGUAGE=en_GB
+export LC_CTYPE="en_GB.UTF-8"
+export LC_NUMERIC="en_GB.UTF-8"
+export LC_TIME="en_GB.UTF-8"
+export LC_COLLATE="en_GB.UTF-8"
+export LC_MONETARY=sv_SE.UTF-8
+export LC_MESSAGES="en_GB.UTF-8"
+export LC_PAPER=sv_SE.UTF-8
+export LC_NAME=sv_SE.UTF-8
+export LC_ADDRESS=sv_SE.UTF-8
+export LC_TELEPHONE=sv_SE.UTF-8
+export LC_MEASUREMENT=sv_SE.UTF-8
+export LC_IDENTIFICATION=sv_SE.UTF-8
+export LC_ALL=
 
 # Enable beets completion
 eval "$(beet completion)"
 
 # Set QT platform for Wayland to fix slowdown issue
 # github.com/qutebrowser/qutebrowser/issues/4857
-QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM=wayland
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
