@@ -161,5 +161,6 @@
     "custom/kblayout": {
         "format": "{}  ",
         "exec": "$HOME/.config/waybar/modules/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
+        "on-click": "$HOME/.config/waybar/modules/kblayouttoggle.sh"
     }
 }
