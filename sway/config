@@ -12,7 +12,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu -fn 'Source Code Pro-12' | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu -fn 'Source Code Pro-12' | xargs swaymsg exec --
+set $menu j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty'
 
 ### Output configuration
 #
