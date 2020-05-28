@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "clock", "custom/kblayout", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "custom/kblayout", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -113,7 +113,12 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-linked": "{ifname} (No IP)",
+        "tooltip-format-disconnected": "Disconnected"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -154,7 +159,7 @@
         }
     },
     "custom/kblayout": {
-        "format": "  {}",
-        "exec": "$HOME/.config/waybar/modules/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
+        "format": "{}  ",
+        "exec": "$HOME/.config/waybar/modules/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
     }
 }

@@ -1,33 +1,32 @@
 * {
     border: none;
-    border-radius: 8;
+    border-radius: 80;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     min-height: 0;
+    margin: 0 2px;
 }
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
+/*
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
 window#waybar.empty {
     background-color: transparent;
 }
 window#waybar.solo {
     background-color: #FFFFFF;
 }
-*/
-
 window#waybar.termite {
     background-color: #3F3F3F;
 }
@@ -36,23 +35,27 @@ window#waybar.chromium {
     background-color: #000000;
     border: none;
 }
+*/
+#workspaces {
+    padding: 2px;
+}
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 2px 2px 0px 2px;
     background-color: transparent;
     color: #ffffff;
-    border-bottom: 3px solid transparent;
+    /*border-bottom: 3px solid transparent;*/
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     box-shadow: inherit;
-    border-bottom: 3px solid #ffffff;
+    /*border-bottom: 3px solid #ffffff;*/
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background: rgba(255, 255, 255, 0.5);
     border-bottom: 0px solid #ffffff;
 }
 
@@ -61,8 +64,7 @@ window#waybar.chromium {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #eb4d4b;
 }
 
 #clock,
@@ -78,11 +80,10 @@ window#waybar.chromium {
 #mode,
 #idle_inhibitor,
 #mpd {
-    padding: 0 10px;
-    margin: 0 4px;
-    color: #ffffff;
+    padding: 0 8px;
 }
 
+/*
 #clock {
     background-color: #64727D;
 }
@@ -200,3 +201,4 @@ label:focus {
 #mpd.paused {
     background-color: #51a37a;
 }
+*/
