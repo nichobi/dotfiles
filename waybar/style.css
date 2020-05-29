@@ -1,6 +1,5 @@
 * {
     border: none;
-    border-radius: 80;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -41,6 +40,7 @@ window#waybar.chromium {
 }
 
 #workspaces button {
+    border-radius: 80;
     padding: 2px 2px 0px 2px;
     background-color: transparent;
     color: #ffffff;
