@@ -113,12 +113,14 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "networkmanager_dmenu",
         "tooltip": true,
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format-linked": "{ifname} (No IP)",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+        //"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        //"tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        //"tooltip-format-linked": "{ifname} (No IP)",
+        //"tooltip-format-disconnected": "Disconnected"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
