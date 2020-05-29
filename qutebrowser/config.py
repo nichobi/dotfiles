@@ -22,6 +22,9 @@ c.editor.command = ["alacritty", "-t", "Qute Editor", "-d", "80", "24", "-e",
 # Load the default page after closing the last tab
 c.tabs.last_close = "default-page"
 
+# Hide the tab bar if only one tab is available
+c.tabs.show = "multiple"
+
 # qute-pass bindings
 config.bind('<z><l>',    'spawn --userscript qute-pass')
 config.bind('<z><u><l>', 'spawn --userscript qute-pass --username-only')
