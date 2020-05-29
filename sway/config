@@ -33,6 +33,9 @@ exec swayidle -w \
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
 
+# Set window border to a single pixel, no window title
+default_border pixel 1
+
 # Make qutebrowser editor window float
 for_window [title="Qute Editor"] floating enable
 
