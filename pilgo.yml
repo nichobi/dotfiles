@@ -2,6 +2,7 @@ targets:
 - alacritty
 - gitconfig
 - gnupg
+- networkmanager-dmenu
 - nvim
 - qutebrowser
 - shell
