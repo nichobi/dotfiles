@@ -200,7 +200,7 @@ bindsym XF86AudioRaiseVolume  exec pamixer --allow-boost --set-limit 200 -ui 5 \
 bindsym XF86AudioLowerVolume  exec pamixer --allow-boost --set-limit 200 -ud 5 \
                                    && pamixer --get-volume > $SWAYSOCK.200wob
 bindsym XF86AudioMute         exec pamixer -t \
-                                   && (pamixer --get-mute && echo 0 > $SWAYSOCK.wob) \
+                                   && (pamixer --get-mute && echo 0 > $SWAYSOCK.200wob) \
                                    || pamixer --get-volume > $SWAYSOCK.200wob
 bindsym XF86AudioMicMute      exec pamixer --default-source -t
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
