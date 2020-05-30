@@ -19,6 +19,7 @@ set $menu j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term=
 #
 # Wallpaper
 output * bg ~/.config/sway/moon.jpg fill
+
 # Laptop display
 output eDP-1 resolution 2560x1600 scale 1.5
 
@@ -30,8 +31,8 @@ exec swayidle -w \
 	before-sleep '~/.config/sway/lock.sh --fade-in 0'
 
 # Inhibit idle for all fullscreen windows
-for_window [class="^.*"] inhibit_idle fullscreen
-for_window [app_id="^.*"] inhibit_idle fullscreen
+for_window [class  = "^.*"] inhibit_idle fullscreen
+for_window [app_id = "^.*"] inhibit_idle fullscreen
 
 # Set window border to a single pixel, no window title
 default_border pixel 1
@@ -90,7 +91,9 @@ input type:keyboard {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m \
+      'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+      -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -192,12 +195,16 @@ exec mkfifo $SWAYSOCK.255wob && tail -f $SWAYSOCK.255wob | wob -a top -m 255
 # Special keys
 # https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
 
-bindsym XF86AudioRaiseVolume exec pamixer --allow-boost --set-limit 200 -ui 5 && pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioLowerVolume exec pamixer --allow-boost --set-limit 200 -ud 5 && pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioMute exec pamixer -t && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioMicMute exec pamixer --default-source -t
+bindsym XF86AudioRaiseVolume  exec pamixer --allow-boost --set-limit 200 -ui 5 \
+                                   && pamixer --get-volume > $SWAYSOCK.200wob
+bindsym XF86AudioLowerVolume  exec pamixer --allow-boost --set-limit 200 -ud 5 \
+                                   && pamixer --get-volume > $SWAYSOCK.200wob
+bindsym XF86AudioMute         exec pamixer -t \
+                                   && (pamixer --get-mute && echo 0 > $SWAYSOCK.wob) \
+                                   || pamixer --get-volume > $SWAYSOCK.200wob
+bindsym XF86AudioMicMute      exec pamixer --default-source -t
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
+bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
 
 
 #
@@ -208,16 +215,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left  resize shrink width  10px
+    bindsym $down  resize grow   height 10px
+    bindsym $up    resize shrink height 10px
+    bindsym $right resize grow   width  10px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left   resize shrink width  10px
+    bindsym Down   resize grow   height 10px
+    bindsym Up     resize shrink height 10px
+    bindsym Right  resize grow   width  10px
 
     # Return to default mode
     bindsym Return mode "default"
