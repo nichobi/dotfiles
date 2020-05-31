@@ -232,9 +232,10 @@ mode "resize" {
     bindsym Right  resize grow   width  10px
 
     # Return to default mode
-    bindsym Return mode "default"
-    bindsym q      mode "default"
-    bindsym Escape mode "default"
+    bindsym Return           mode "default"
+    bindsym q                mode "default"
+    bindsym Ctrl+bracketleft mode "default"
+    bindsym Escape           mode "default"
 }
 bindsym $mod+r mode "resize"
 
