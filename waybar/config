@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
-    //"modules-center": ["sway/window"],
+    "modules-center": ["custom/cmus"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "custom/kblayout", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
@@ -164,5 +164,15 @@
         "format": "{}  ",
         "exec": "$HOME/.config/waybar/modules/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
         "on-click": "$HOME/.config/waybar/modules/kblayouttoggle.sh"
+    },
+    "custom/cmus": {
+        "format": "♪ {}",
+        //"max-length": 15,
+        "interval": 10,
+        "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
+        "exec-if": "pgrep cmus",
+        "on-click": "cmus-remote -u",                        //toggle pause
+        "escape": true                                       //handle markup entities
     }
+
 }
