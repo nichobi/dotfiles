@@ -14,3 +14,6 @@ for_window [title="Qute Editor"] floating enable
 # Run the autotiling plugin
 exec autotiling
 
+# Flash windows when selected
+exec flashfocus
+

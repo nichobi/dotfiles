@@ -1,5 +1,6 @@
 targets:
 - alacritty
+- flashfocus
 - gitconfig
 - gnupg
 - networkmanager-dmenu
