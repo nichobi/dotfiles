@@ -15,57 +15,6 @@ set $term alacritty --working-directory $(~/.config/sway/currentdir.sh)
 #set $menu dmenu_path | dmenu -fn 'Source Code Pro-12' | xargs swaymsg exec --
 set $menu j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty'
 
-### Output configuration
-#
-# Wallpaper
-output * bg ~/.config/sway/moon.jpg fill
-
-# Laptop display
-output eDP-1 resolution 2560x1600 scale 1.5
-
-exec swayidle -w \
-	timeout 120 '~/.config/sway/lock.sh --grace 30 --fade-in 20' \
-	  timeout 150 'swaymsg "output * dpms off"' \
-	    resume 'swaymsg "output * dpms on"' \
-	  timeout 1800 'systemctl suspend-then-hibernate' \
-	before-sleep '~/.config/sway/lock.sh --fade-in 0'
-
-# Inhibit idle for all fullscreen windows
-for_window [class  = "^.*"] inhibit_idle fullscreen
-for_window [app_id = "^.*"] inhibit_idle fullscreen
-
-# Set window border to a single pixel, no window title
-default_border pixel 1
-
-# Make qutebrowser editor window float
-for_window [title="Qute Editor"] floating enable
-
-# Run the autotiling plugin
-exec autotiling
-
-### Input configuration
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-input "1267:12600:MSFT0001:00_04F3:3138_Touchpad" {
-  accel_profile flat
-  drag enabled
-  dwt disabled
-  middle_emulation enabled
-  natural_scroll enabled
-  pointer_accel 0.3
-  scroll_method two_finger
-  tap enabled
-}
-
-#seat seat0 xcursor_theme Adwaita 32
-
-input type:keyboard {
-    xkb_layout us,se
-    xkb_options ctrl:nocaps,grp:lctrl_lwin_toggle
-    repeat_delay 500
-    repeat_rate 15
-}
 
 ### Key bindings
 #
@@ -174,6 +123,7 @@ input type:keyboard {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
 #
 # Scratchpad:
 #
@@ -186,31 +136,6 @@ input type:keyboard {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-
-# Set up wob links
-exec mkfifo $SWAYSOCK.200wob && tail -f $SWAYSOCK.200wob | wob -a top -m 200
-exec mkfifo $SWAYSOCK.255wob && tail -f $SWAYSOCK.255wob | wob -a top -m 255
-
-#
-# Special keys
-# https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
-
-bindsym XF86AudioRaiseVolume  exec pamixer --allow-boost --set-limit 200 -ui 5 \
-                                   && pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioLowerVolume  exec pamixer --allow-boost --set-limit 200 -ud 5 \
-                                   && pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioMute         exec pamixer -t \
-                                   && (pamixer --get-mute && echo 0 > $SWAYSOCK.200wob) \
-                                   || pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioMicMute      exec pamixer --default-source -t
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
-bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
-
-
-# Bind printscreen to take screenshots
-bindsym Print     exec grimshot copy screen
-bindsym Alt+Print exec grimshot copy area
-
 
 #
 # Resizing containers:
@@ -239,25 +164,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-    #position top
-
-    ## When the status_command prints a new line to stdout, swaybar updates.
-    ## The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    #colors {
-    #    statusline #ffffff
-    #    background #323232
-    #    inactive_workspace #32323200 #32323200 #5c5c5c
-    #}
-}
-
-font pango:SourceCodePro Medium 14
-
 include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
+
