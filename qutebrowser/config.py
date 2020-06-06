@@ -19,6 +19,9 @@ c.downloads.remove_finished = 300000
 c.editor.command = ["alacritty", "-t", "Qute Editor", "-d", "80", "24", "-e",
                     "nvim", "{}", "+call cursor({line}, {column})"]
 
+# Bind Ctrl-e in command mode to edit the current command
+config.bind('<Ctrl+e>', 'edit-command', mode='command')
+
 # Load the default page after closing the last tab
 c.tabs.last_close = "default-page"
 
