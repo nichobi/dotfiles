@@ -12,8 +12,8 @@ set $term alacritty --working-directory $(~/.config/sway/currentdir.sh)
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu -fn 'Source Code Pro-12' | xargs swaymsg exec --
-set $menu j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty'
+set $menu    j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty'
+set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg exec --
 
 
 ### Key bindings
@@ -28,6 +28,7 @@ set $menu j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term=
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $altmenu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
