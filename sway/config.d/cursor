@@ -1,3 +1,6 @@
 # Hide cursor after 3 seconds of inactivity
 seat * hide_cursor 3000
 
+# Don't focus windows hovered over by cursor
+focus_follows_mouse no
+
