@@ -1,0 +1,3 @@
+# Hide cursor after 3 seconds of inactivity
+seat * hide_cursor 3000
+
