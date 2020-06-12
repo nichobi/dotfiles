@@ -1,4 +1,4 @@
-config.load_autoconfig()
+#config.load_autoconfig()
 
 # View pdf files in-browser
 c.content.pdfjs = True
@@ -9,7 +9,10 @@ c.auto_save.session = True
 # Require a confirmation before quitting the application if downloads are active.
 c.confirm_quit = ["downloads"]
 
-# Put the   download bar at the bottom of the screen
+# Set default_page to blank page
+c.url.default_page = "about:blank"
+
+# Put the download bar at the bottom of the screen
 c.downloads.position = "bottom"
 
 # Remove finished downloads from the download bar after 5 minutes
@@ -22,14 +25,33 @@ c.editor.command = ["alacritty", "-t", "Qute Editor", "-d", "80", "24", "-e",
 # Bind Ctrl-e in command mode to edit the current command
 config.bind('<Ctrl+e>', 'edit-command', mode='command')
 
+# Rebind close tab to 'dd'
+config.unbind('d')
+config.bind('dd', 'tab-close')
+
+# Binds for qute-pass
+config.bind('zl',  'spawn --userscript qute-pass')
+config.bind('zol', 'spawn --userscript qute-pass --otp-only')
+config.bind('zpl', 'spawn --userscript qute-pass --password-only')
+config.bind('zul', 'spawn --userscript qute-pass --username-only')
+
 # Load the default page after closing the last tab
 c.tabs.last_close = "default-page"
 
 # Hide the tab bar if only one tab is available
 c.tabs.show = "multiple"
 
-# qute-pass bindings
-config.bind('<z><l>',    'spawn --userscript qute-pass')
-config.bind('<z><u><l>', 'spawn --userscript qute-pass --username-only')
-config.bind('<z><p><l>', 'spawn --userscript qute-pass --password-only')
-config.bind('<z><o><l>', 'spawn --userscript qute-pass --otp-only')
+# Set a maximum tab width so small numbers of tabs aren't so huge
+c.tabs.max_width = 250
+
+# Enable hidpi mode
+c.qt.highdpi = True
+c.fonts.default_size = '12pt'
+
+# Set up search engines
+c.url.searchengines = {
+  "DEFAULT": "https://www.google.com/search?q={}",
+  "ddg":     "https://duckduckgo.com?q={}",
+  "aw":      "https://wiki.archlinux.org/?search={}"
+}
+
