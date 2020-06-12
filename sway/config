@@ -12,7 +12,7 @@ set $term alacritty --working-directory $(~/.config/sway/currentdir.sh)
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu    j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty'
+set $menu    j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty' --no-generic
 set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg exec --
 
 
