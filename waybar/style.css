@@ -40,7 +40,7 @@ window#waybar.chromium {
 }
 
 #workspaces button {
-    border-radius: 80;
+    border-radius: 80px;
     padding: 2px 2px 0px 2px;
     background-color: transparent;
     color: #ffffff;
