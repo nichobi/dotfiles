@@ -35,6 +35,9 @@ config.bind('zol', 'spawn --userscript qute-pass --otp-only')
 config.bind('zpl', 'spawn --userscript qute-pass --password-only')
 config.bind('zul', 'spawn --userscript qute-pass --username-only')
 
+# Bind key for opening images
+config.bind(';I', 'hint images run open {hint-url}')
+
 # Load the default page after closing the last tab
 c.tabs.last_close = "default-page"
 
