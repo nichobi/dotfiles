@@ -49,7 +49,10 @@ c.tabs.max_width = 250
 
 # Enable hidpi mode
 c.qt.highdpi = True
-c.fonts.default_size = '12pt'
+
+# Font settings
+c.fonts.default_family = 'Source Code Pro'
+c.fonts.default_size = '11pt'
 
 # Set up search engines
 c.url.searchengines = {
