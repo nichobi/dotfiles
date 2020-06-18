@@ -16,6 +16,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && brightnessctl get > 
 bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
 
 # Bind PrtSc to take screenshots
-bindsym Print     exec grimshot copy screen
-bindsym Alt+Print exec grimshot copy area
+bindsym Print      exec grimshot copy screen
+bindsym Alt+Print  exec grimshot copy area
+bindsym Ctrl+Print exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/screenshotcurrentwindow.sh
 
