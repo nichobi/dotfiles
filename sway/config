@@ -10,11 +10,11 @@ set $right l
 # Save config directory to variable for future reference
 set $swaydir ${XDG_CONFIG_DIR:-$HOME/.config}/sway
 # Your preferred terminal emulator
-set $term alacritty --working-directory $(~/.config/sway/currentdir.sh)
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu    j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term='alacritty' --no-generic
+set $menu    j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term=$term --no-generic --display-binary
 set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg exec --
 
 
@@ -23,7 +23,7 @@ set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg e
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term --working-directory $($swaydir/currentdir.sh)
 
     # Kill focused window
     bindsym $mod+Shift+q kill
