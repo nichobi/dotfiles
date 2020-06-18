@@ -1,3 +1,5 @@
 [user]
 	email = nicholas@isacsson.se
 	name = Nicholas Boyd Isacsson
+[pull]
+	rebase = true
