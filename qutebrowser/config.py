@@ -18,6 +18,9 @@ c.downloads.position = "bottom"
 # Remove finished downloads from the download bar after 5 minutes
 c.downloads.remove_finished = 300000
 
+# Bind for opening download immediately
+config.bind('<Ctrl-o>', 'prompt-open-download', mode='prompt')
+
 # Use neovim in alacritty as an editor
 c.editor.command = ["alacritty", "-t", "Qute Editor", "-d", "80", "24", "-e",
                     "nvim", "{}", "+call cursor({line}, {column})"]
