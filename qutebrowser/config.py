@@ -59,6 +59,7 @@ c.url.searchengines = {
   "DEFAULT": "https://www.google.com/search?q={}",
   "ddg":     "https://duckduckgo.com?q={}",
   "aw":      "https://wiki.archlinux.org/?search={}",
-  "dfw":      "https://dwarffortresswiki.org?search={}"
+  "aur":     "https://aur.archlinux.org/packages/?K={}",
+  "dfw":     "https://dwarffortresswiki.org?search={}"
 }
 
