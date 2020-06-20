@@ -32,6 +32,10 @@ config.bind('<Ctrl+e>', 'edit-command', mode='command')
 config.unbind('d')
 config.bind('dd', 'tab-close')
 
+# Bindings to keep only the current tab and those to its left or right, respectively
+config.bind('ch', 'tab-only --prev')
+config.bind('cl', 'tab-only --next')
+
 # Binds for qute-pass
 config.bind('zl',  'spawn --userscript qute-pass')
 config.bind('zol', 'spawn --userscript qute-pass --otp-only')
