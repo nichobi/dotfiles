@@ -41,6 +41,10 @@ config.bind('zul', 'spawn --userscript qute-pass --username-only')
 # Bind key for opening images
 config.bind(';I', 'hint images run open {hint-url}')
 
+# Add full keyboard layout to hint chars
+## This is a bad idea but works nicely as typing practice
+c.hints.chars = '1234567890-=' + 'qwertyuiop[]' + "asdfghjkl;'\\" + '<zxcvbnm,./'
+
 # Load the default page after closing the last tab
 c.tabs.last_close = "default-page"
 
