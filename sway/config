@@ -23,7 +23,7 @@ set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg e
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term --working-directory $($swaydir/currentdir.sh)
+    bindsym $mod+Return exec $term --working-directory \"$($swaydir/currentdir.sh)\"
 
     # Kill focused window
     bindsym $mod+Shift+q kill
