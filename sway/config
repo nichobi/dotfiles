@@ -46,6 +46,9 @@ set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg e
     bindsym $mod+Shift+e exec swaynag -t warning -m \
       'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
       -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Choose an emoji and copy it to clipboard
+    bindsym $mod+m exec jome -nd | $swaydir/pastestdin.sh
 #
 # Moving around:
 #
