@@ -54,6 +54,9 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+" Only show signcolumn when in use
+set signcolumn=auto
+
 " Hard Time by default
 "let g:hardtime_default_on = 1
 
