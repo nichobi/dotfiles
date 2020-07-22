@@ -1,6 +1,7 @@
 targets:
 - alacritty
 - flashfocus
+- ghci
 - gitconfig
 - gnupg
 - networkmanager-dmenu
@@ -13,6 +14,9 @@ targets:
 - xkb
 - yay
 options:
+  ghci:
+    link: .ghci
+    useHome: true
   gitconfig:
     link: .gitconfig
     useHome: true
