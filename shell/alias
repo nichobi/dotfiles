@@ -8,4 +8,5 @@ alias myfotd='cat ~/.fotd/myfotd'
 alias oops='sudo "$BASH" -c "$(history -p !!)"'
 alias hibernate='systemctl hibernate'
 alias updatemusicfolder="ssh server 'beet alt update lossy' && rsync -thr --no-i-r --progress server:/mnt/data/MusicLossy/ ~/Music/ --delete"
+alias clearall="clear && printf '\e[3J'"
 
