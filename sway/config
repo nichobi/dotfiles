@@ -9,13 +9,27 @@ set $up k
 set $right l
 # Save config directory to variable for future reference
 set $swaydir ${XDG_CONFIG_DIR:-$HOME/.config}/sway
+# Split window before launching a command
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu    j4-dmenu-desktop --dmenu='bemenu -i --fn "Source Code Pro 12"' --term=$term --no-generic --display-binary
-set $altmenu bemenu-run -i --fn 'Source Code Pro 12' --no-exec | xargs swaymsg exec --
+
+# Run .desktop files
+set $menu bash -c "\
+            fd .desktop$ {/usr,~/.local}/share/applications \
+          | xargs -d '\n' basename -s .desktop -a \
+          | sort | uniq \
+          | runin 'alacritty --title Launcher' fzf \
+          | xargs -r swaymsg -t command exec gtk-launch"
+
+# Run any executable
+set $altmenu bash -c "\
+            compgen -c \
+          | uniq \
+          | runin 'alacritty --title Launcher' fzf \
+          | xargs -r swaymsg -t command exec"
 
 
 ### Key bindings

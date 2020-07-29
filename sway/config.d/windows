@@ -11,6 +11,7 @@ hide_edge_borders both
 # Make qutebrowser editor window float
 for_window [title="Qute Editor"] floating enable
 for_window [app_id="jome"] floating enable
+for_window [title="Launcher"] floating enable
 
 # Run the autotiling plugin
 exec autotiling
