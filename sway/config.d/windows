@@ -13,6 +13,9 @@ for_window [title="Qute Editor"] floating enable
 for_window [app_id="jome"] floating enable
 for_window [title="Launcher"] floating enable
 
+# Move Discord to scratchpad
+for_window [class="discord"] move to scratchpad, resize set 1000 750
+
 # Flash windows when selected
 exec flashfocus
 
