@@ -1,7 +1,7 @@
 #!/bin/sh
 
 swaylock -f -K --clock -c 000000 \
-	 -i ~/.config/sway/moon.jpg \
+	 -i ~/.config/sway/images/moon.jpg \
 	 --indicator-idle-visible \
 	 --indicator-radius 100 \
 	 --indicator-thickness 7 \
