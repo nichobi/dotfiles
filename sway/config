@@ -144,8 +144,9 @@ set $altmenu bash -c "\
     # Toggle sticking a floating window so it shows up on all workspaces
     bindsym $mod+p sticky toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # Move focus to and from the parent container
+    bindsym $mod+a       focus parent
+    bindsym $mod+Shift+a focus child
 
 #
 # Scratchpad:
