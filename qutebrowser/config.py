@@ -1,4 +1,4 @@
-#config.load_autoconfig()
+config.load_autoconfig()
 
 # View pdf files in-browser
 c.content.pdfjs = True
