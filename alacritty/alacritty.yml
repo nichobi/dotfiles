@@ -559,7 +559,6 @@ font:
   # Print all received window events.
   #print_events: false
 
-  # elementary
 colors:
   # Default colors
   primary:
@@ -569,23 +568,22 @@ colors:
   # Normal colors
   normal:
     black:   '0x000000'
-    red:     '0xe1321a'
-    #green:   '0x6ab017'
-    green:   '0x44d319'
-    yellow:  '0xffc005'
-    blue:    '0x004f9e'
-    magenta: '0xec0048'
-    cyan:    '0x2aa7e7'
-    white:   '0xf2f2f2'
+    red:     '0xd53100'
+    green:   '0x2fd400'
+    yellow:  '0xffc000'
+    blue:    '0x0042b6'
+    magenta: '0xdf005b'
+    cyan:    '0x00a4f0'
+    white:   '0xc0c0c0'
 
   # Bright colors
   bright:
-    black:   '0x5d5d5d'
-    red:     '0xff361e'
-    green:   '0x7bc91f'
-    yellow:  '0xffd00a'
+    black:   '0x3b3b3b'
+    red:     '0xff331c'
+    green:   '0x3cff00'
+    yellow:  '0xfff00a'
     blue:    '0x0071ff'
-    magenta: '0xff1d62'
-    cyan:    '0x4bb8fd'
-    white:   '0xa020f0'
+    magenta: '0xff0098'
+    cyan:    '0x00d3ff'
+    white:   '0xffffff'
 
