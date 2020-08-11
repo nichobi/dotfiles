@@ -70,10 +70,12 @@ c.fonts.default_size   = '11pt'
 
 # Set up search engines
 c.url.searchengines = {
-  "DEFAULT": "https://www.google.com/search?q={}",
+  "DEFAULT": "https://searx.isacsson.se?q={}",
+  "!g": "https://www.google.com/search?q={}",
   "!dd":     "https://duckduckgo.com?q={}",
   "!aw":     "https://wiki.archlinux.org/?search={}",
   "!au":     "https://aur.archlinux.org/packages/?K={}",
-  "!df":     "https://dwarffortresswiki.org?search={}"
+  "!df":     "https://dwarffortresswiki.org?search={}",
+  "!hoo":    "https://hoogle.haskell.org/?hoogle={}"
 }
 
