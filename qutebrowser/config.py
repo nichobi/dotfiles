@@ -47,7 +47,7 @@ config.bind(';I', 'hint images run open {hint-url}')
 
 # Add full keyboard layout to hint chars
 ## This is a bad idea but works nicely as typing practice
-c.hints.chars = '1234567890-=' + 'qwertyuiop[]' + 'asdfghjkl;\'\\' + '<zxcvbnm,./'
+c.hints.chars =  'asdfghjkl;\'\\' + 'qwertyuiop[]' + '<zxcvbnm,./' + '1234567890-='
 
 # Don't lead hint mode when page loads
 c.hints.leave_on_load = False
