@@ -1,0 +1,16 @@
+# The default US keyboard layout, but with åäö added as AltGr and their regular keys
+partial alphanumeric_keys
+xkb_symbols "us_se"  {
+
+    include "us(basic)"
+    include "eurosign(e)"
+    name[Group1] = "English US/SE";
+
+    key <AD11> { [ bracketleft,  braceleft,  aring,       Aring      ] };
+    key <AC10> { [ semicolon,    colon,      odiaeresis,  Odiaeresis ] };
+    key <AC11> { [ apostrophe,   quotedbl,   adiaeresis,  Adiaeresis ] };
+
+    include "level3(ralt_switch)"
+
+};
+

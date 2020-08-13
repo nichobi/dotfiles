@@ -14,7 +14,8 @@ input "1267:12600:MSFT0001:00_04F3:3138_Touchpad" {
 }
 
 input type:keyboard {
-    xkb_layout us,se
+    # us_se is my custom keyboard layout, located in dotfiles/xkb/symbols/us_se
+    xkb_layout us_se,se
     xkb_options ctrl:nocaps,grp:lctrl_lwin_toggle
     repeat_delay 500
     repeat_rate 15

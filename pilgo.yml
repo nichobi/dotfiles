@@ -10,6 +10,7 @@ targets:
 - sway
 - tmux
 - waybar
+- xkb
 - yay
 options:
   gitconfig:
@@ -44,4 +45,7 @@ options:
       tmux.conf:
         link: .tmux.conf
     flatten: true
+    useHome: true
+  xkb:
+    link: .xkb
     useHome: true
