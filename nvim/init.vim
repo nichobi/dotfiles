@@ -29,6 +29,9 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 
 call plug#end()
 
+" Enable mouse support
+set mouse=a
+
 " Highlight trailing whitespace in red while in normal mode
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
