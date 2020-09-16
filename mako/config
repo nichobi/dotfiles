@@ -1,0 +1,14 @@
+anchor=top-center
+default-timeout=5000
+padding=5
+font=Source Code Pro 11
+background-color=#202020E0
+text-color=#FFFFFF
+border-color=#AAAAAAA0
+border-size=2
+border-radius=2
+group-by=app-name,category
+
+[urgency=high]
+background-color=#AA0000E0
+

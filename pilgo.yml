@@ -4,6 +4,7 @@ targets:
 - ghci
 - gitconfig
 - gnupg
+- mako
 - networkmanager-dmenu
 - nvim
 - qutebrowser
