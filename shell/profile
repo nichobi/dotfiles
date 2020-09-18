@@ -56,21 +56,25 @@ export LC_ALL=
 # Enable beets completion
 eval "$(beet completion)"
 
-# Set QT platform for Wayland to fix slowdown issue
-# github.com/qutebrowser/qutebrowser/issues/4857
-export QT_QPA_PLATFORM=wayland
-
-#export MOZ_ENABLE_WAYLAND=1
-#export QT_QPA_PLATFORM=wayland-egl
-#export CLUTTER_BACKEND=wayland
-#export ECORE_EVAS_ENGINE=wayland-egl
-#export ELM_ENGINE=wayland_egl
-#export SDL_VIDEODRIVER=wayland
-#export _JAVA_AWT_WM_NONREPARENTING=1
-#export NO_AT_BRIDGE=1
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
+    # Set QT platform for Wayland to fix slowdown issue
+    # github.com/qutebrowser/qutebrowser/issues/4857
+    export QT_QPA_PLATFORM=wayland
+
+    export XDG_CURRENT_DESKTOP=sway
+    export XDG_SESSION_TYPE=wayland
+
+    #export MOZ_ENABLE_WAYLAND=1
+    #export QT_QPA_PLATFORM=wayland-egl
+    #export CLUTTER_BACKEND=wayland
+    #export ECORE_EVAS_ENGINE=wayland-egl
+    #export ELM_ENGINE=wayland_egl
+    #export SDL_VIDEODRIVER=wayland
+    #export _JAVA_AWT_WM_NONREPARENTING=1
+    #export NO_AT_BRIDGE=1
+
     exec systemd-cat --identifier=sway sway
 fi
 
