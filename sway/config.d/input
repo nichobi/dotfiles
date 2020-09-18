@@ -8,7 +8,7 @@ input "1267:12600:MSFT0001:00_04F3:3138_Touchpad" {
   dwt disabled
   middle_emulation enabled
   natural_scroll enabled
-  pointer_accel 0.2
+  pointer_accel 1
   scroll_method two_finger
   tap enabled
 }
