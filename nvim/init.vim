@@ -6,7 +6,7 @@ let g:netrw_liststyle = 3
 " Install vim-plug if missing
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
 if !filereadable(autoload_plug_path)
-  silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs 
+  silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs
       \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
   autocmd VimEnter * PlugInstall --sync "| source $MYVIMRC
 endif
@@ -39,6 +39,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+command Clean %s/\s\+$//
 
 " Highlight lines longer than 100 chars in darkgrey
 highlight LongLine ctermbg=darkgrey guibg=darkgrey
