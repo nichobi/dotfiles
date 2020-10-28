@@ -23,7 +23,6 @@ set $menu bash -c "\
           | xargs -d '\n' basename -s .desktop -a \
           | sort | uniq \
           | runin 'alacritty --title Launcher' fzf \
-          | $scripts/splitlongest.sh \
           | xargs -r swaymsg -t command exec gtk-launch"
 
 # Run any executable
@@ -31,17 +30,14 @@ set $altmenu bash -c "\
             compgen -c \
           | uniq \
           | runin 'alacritty --title Launcher' fzf \
-          | $scripts/splitlongest.sh \
           | xargs -r swaymsg -t command exec"
-
 
 ### Key bindings
 #
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec bash -c "$scripts/splitlongest.sh \
-        | swaymsg -t command exec -- $term --working-directory $($scripts/activewindowpwd.sh)"
+    bindsym $mod+Return exec $term --working-directory $($scripts/activewindowpwd.sh)
 
     # Kill focused window
     bindsym $mod+Shift+q kill
