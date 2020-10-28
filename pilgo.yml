@@ -14,6 +14,7 @@ targets:
 - waybar
 - xkb
 - yay
+- zathura
 options:
   ghci:
     link: .ghci
