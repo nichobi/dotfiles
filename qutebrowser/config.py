@@ -70,7 +70,8 @@ c.fonts.default_size   = '11pt'
 
 # Set up search engines
 c.url.searchengines = {
-  "DEFAULT": "https://searx.isacsson.se?q={}",
+  "DEFAULT": "https://startpage.com/sp/search?query={}",
+  "!sx": "https://searx.isacsson.se?q={}",
   "!g": "https://www.google.com/search?q={}",
   "!dd":     "https://duckduckgo.com?q={}",
   "!aw":     "https://wiki.archlinux.org/?search={}",
