@@ -64,6 +64,9 @@ c.tabs.max_width = 250
 # Enable hidpi mode
 c.qt.highdpi = True
 
+# Prefer dark color schemes
+c.colors.webpage.prefers_color_scheme_dark = True;
+
 # Font settings
 c.fonts.default_family = 'Source Code Pro'
 c.fonts.default_size   = '11pt'
