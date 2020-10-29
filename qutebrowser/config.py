@@ -1,4 +1,5 @@
 config.load_autoconfig()
+config.source('theme.py')
 
 # Don't view pdf files in-browser
 c.content.pdfjs = False
