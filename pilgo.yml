@@ -38,8 +38,6 @@ options:
         link: .bashrc
       inputrc:
         link: .inputrc
-      profil:
-        link: .profile
       profile:
         link: .profile
     flatten: true
