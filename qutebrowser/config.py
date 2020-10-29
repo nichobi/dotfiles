@@ -22,8 +22,8 @@ c.downloads.remove_finished = 300000
 config.bind('<Ctrl-o>', 'prompt-open-download', mode='prompt')
 
 # Use neovim in alacritty as an editor
-c.editor.command = ["alacritty", "-t", "Qute Editor", "-d", "80", "24", "-e",
-                    "nvim", "{}", "+call cursor({line}, {column})"]
+c.editor.command = ["alacritty", "-t", "Qutebrowser Editor", "-d", "80", "24",
+                    "-e", "nvim", "{}", "+call cursor({line}, {column})"]
 
 # Bind Ctrl-e in command mode to edit the current command
 config.bind('<Ctrl+e>', 'edit-command', mode='command')

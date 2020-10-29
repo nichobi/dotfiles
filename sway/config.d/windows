@@ -4,12 +4,12 @@ for_window [app_id = "^.*"] inhibit_idle fullscreen
 
 # Set window border to a single pixel, no window title
 default_border pixel 2
-#
+
 # Hide borders along the edges of the display
 hide_edge_borders both
 
-# Make qutebrowser editor window float
-for_window [title="Qute Editor"] floating enable
+# Make specified windows float
+for_window [title="Qutebrowser Editor"] floating enable
 for_window [app_id="jome"] floating enable
 for_window [title="Launcher"] floating enable
 
