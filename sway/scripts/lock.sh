@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 swaylock -f -K --clock -c 000000 \
 	 -i ~/.config/sway/images/moon.jpg \
