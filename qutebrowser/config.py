@@ -1,7 +1,7 @@
 config.load_autoconfig()
 
-# View pdf files in-browser
-c.content.pdfjs = True
+# Don't view pdf files in-browser
+c.content.pdfjs = False
 
 #Always restore open sites when qutebrowser is reopened.
 c.auto_save.session = True
@@ -55,7 +55,7 @@ c.hints.leave_on_load = False
 # Load the default page after closing the last tab
 c.tabs.last_close = "default-page"
 
-# Hide the tab bar if only one tab is available
+# Hide the tab bar if only one tab is open
 c.tabs.show = "multiple"
 
 # Set a maximum tab width so small numbers of tabs aren't so huge
