@@ -8,6 +8,9 @@ default_border pixel 2
 # Hide borders along the edges of the display
 hide_edge_borders both
 
+# Focus activated windows if they're visible
+focus_on_window_activation smart
+
 # Make specified windows float
 for_window [title="Qutebrowser Editor"] floating enable
 for_window [app_id="jome"] floating enable
