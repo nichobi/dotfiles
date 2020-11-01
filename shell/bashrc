@@ -120,7 +120,7 @@ if ! shopt -oq posix; then
 fi
 
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
-    tmux attach-session -t ssh || tmux new-session -s ssh
+    tmux -u attach-session -t ssh || tmux -u new-session -s ssh
 fi
 
 if [ -f ~/.fotd/myfotd ]; then
