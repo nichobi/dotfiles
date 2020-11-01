@@ -1,0 +1,5 @@
+:set prompt "\x03BB> "
+:set prompt-cont " | "
+:set +m
+:set +t
+
