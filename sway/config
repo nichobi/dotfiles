@@ -38,9 +38,9 @@ set $altmenu bash -c "\
 #
     # Start a terminal
     bindsym $mod+Return exec \
-        $term --working-directory $($scripts/activewindowpwd.sh)
+        $term --working-directory "$($scripts/activewindowpwd.sh)"
     bindsym $mod+Shift+Return exec $scripts/floating.sh \
-        $term --working-directory $($scripts/activewindowpwd.sh)
+        $term --working-directory "$($scripts/activewindowpwd.sh)"
 
     # Kill focused window
     bindsym $mod+Shift+q kill
