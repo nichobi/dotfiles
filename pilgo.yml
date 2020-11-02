@@ -5,7 +5,6 @@ targets:
 - gitconfig
 - gnupg
 - mako
-- networkmanager-dmenu
 - nvim
 - paru
 - qutebrowser
