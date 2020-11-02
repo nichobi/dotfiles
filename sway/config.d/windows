@@ -19,10 +19,9 @@ for_window [title="Launcher"] floating enable
 # Move Discord to scratchpad
 for_window [class="discord"] move to scratchpad, resize set 1000 750, scratchpad show
 
-# When a new window appears, run splitlongest.sh on the previous window.
+# When a new tiling window appears, run splitlongest.sh on the previous window.
 # This will give us 'autotiling' behaviour
-for_window [app_id = "^.*"] focus prev, exec $scripts/splitlongest.sh, focus prev
-for_window [class  = "^.*"] focus prev, exec $scripts/splitlongest.sh, focus prev
+for_window [tiling] focus prev, exec $scripts/splitlongest.sh, focus prev
 
 # Flash windows when selected
 exec flashfocus
