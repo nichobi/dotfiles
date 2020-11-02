@@ -13,7 +13,6 @@ targets:
 - tmux
 - waybar
 - xkb
-- yay
 - zathura
 - zsh
 options:
