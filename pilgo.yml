@@ -16,6 +16,7 @@ targets:
 - xkb
 - yay
 - zathura
+- zsh
 options:
   ghci:
     link: .ghci
@@ -32,6 +33,8 @@ options:
     - bashrc
     - inputrc
     - profile
+    - zprofile
+    - zshrc
     options:
       alias:
         link: .alias
@@ -41,6 +44,10 @@ options:
         link: .inputrc
       profile:
         link: .profile
+      zprofile:
+        link: .zprofile
+      zshrc:
+        link: .zshrc
     flatten: true
     useHome: true
   tmux:
