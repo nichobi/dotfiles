@@ -23,6 +23,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plug 'machakann/vim-sandwich'
 
 " Plug 'vim-latex/vim-latex'
 " Plug 'takac/vim-hardtime'
