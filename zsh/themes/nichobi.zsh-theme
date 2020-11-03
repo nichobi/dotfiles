@@ -9,4 +9,4 @@ trunced_dir() {
   fi
 }
 #PROMPT='$fg[green]%n@%m$reset_color:$fg[blue]$(trunced_dir)$reset_color$ '
-PROMPT='%F{green}%n@%m%f:%F{blue}$(trunced_dir)%f$ '
+PROMPT='%B%F{green}%n@%m%f%b:%B%F{blue}$(trunced_dir)%f%b$ '
