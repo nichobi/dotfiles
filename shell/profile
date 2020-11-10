@@ -54,7 +54,7 @@ export LC_IDENTIFICATION=sv_SE.UTF-8
 export LC_ALL=
 
 # Enable beets completion
-eval "$(beet completion)"
+command -v >/dev/null && eval "$(beet completion)"
 
 # Set colours for TTY
 if [ "$TERM" = "linux" ]; then
