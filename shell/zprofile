@@ -6,7 +6,7 @@ export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
 export JAVA_HOME="/usr/lib/jvm/java-13-openjdk/"
 
-if [[ -n $SSH_CONNECTION ]] ; then
+if [[ -n $SSH_CONNECTION ]] && [[ -z $TMUX ]]; then
   tmux -u attach -t ssh || tmux -u new -s ssh
 fi
 
