@@ -40,7 +40,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
+" Remove trailing whitespace
 command Clean %s/\s\+$//
 
 " Highlight lines longer than 100 chars in darkgrey
@@ -52,6 +52,9 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 " Use proper scaladoc comment indentation
 let g:scala_scaladoc_indent = 1
 
+" Autocheck all scala files on write
+autocmd BufWritePre *.scala silent call CocAction('format')
+
 " Set relative line numbers
 set number relativenumber
 augroup numbertoggle
@@ -59,6 +62,11 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+" Disable numbers for terminal buffers
+autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal norelativenumber
+autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal nonumber
+autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal signcolumn=no
 
 " Only show signcolumn when in use
 set signcolumn=auto
@@ -69,9 +77,7 @@ set signcolumn=auto
 command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_
 		\ | diffthis | wincmd p | diffthis
 
-" Autocheck all scala files on write
-autocmd BufWritePre *.scala silent call CocAction('format')
-
 if filereadable(expand("~/.config/coc/extensions/node_modules/coc-metals/coc-mappings.vim"))
   source ~/.config/coc/extensions/node_modules/coc-metals/coc-mappings.vim"
 endif
+
