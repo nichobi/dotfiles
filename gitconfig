@@ -3,3 +3,6 @@
 	name = Nicholas Boyd Isacsson
 [pull]
 	rebase = true
+[rebase]
+  autoStash = true
+
