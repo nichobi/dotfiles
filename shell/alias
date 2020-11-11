@@ -11,4 +11,7 @@ alias updatemusicfolder="ssh mir 'beet alt update lossy' && rsync -thr --no-i-r 
 alias clearall="clear && printf '\e[3J'"
 alias p=paru
 alias g=git
+alias l=exa
+alias ls=exa
+alias la=exa -a
 
