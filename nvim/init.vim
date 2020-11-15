@@ -30,6 +30,9 @@ Plug 'machakann/vim-sandwich'
 
 call plug#end()
 
+" coc extensions
+let g:coc_global_extensions = ['coc-metals']
+
 " Enable mouse support
 set mouse=a
 
