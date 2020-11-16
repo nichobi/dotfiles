@@ -4,6 +4,7 @@ targets:
 - ghci
 - gitconfig
 - gnupg
+- haskeline
 - mako
 - nvim
 - paru
@@ -24,6 +25,9 @@ options:
     useHome: true
   gnupg:
     link: .gnupg
+    useHome: true
+  haskeline:
+    link: .haskeline
     useHome: true
   shell:
     targets:
