@@ -1,0 +1,24 @@
+# Maintainer: Nicholas Boyd Isacsson
+
+pkgname=nichobi-ideapad
+pkgver=1
+pkgrel=1
+pkgdesc="meta: ideapad packages"
+arch=('any')
+depends=(
+  'nichobi-base'
+  'nichobi-sway'
+
+  'tlp'         # Power manager
+  'ipman'       # Ideapad battery threshold manager
+  'iwd'         # Wifi daemon
+  'bluez-utils' # Bluetooth manager
+
+  # Drivers
+  'amd-ucode'
+  'amdvlk'
+  'lib32-amdvlk'
+  'lib32-vulkan-radeon'
+  'vulkan-radeon'
+)
+

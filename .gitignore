@@ -1,0 +1,3 @@
+metapackages/*/*
+!metapackages/*/PKGBUILD
+

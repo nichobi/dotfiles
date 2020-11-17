@@ -1,0 +1,34 @@
+# Maintainer: Nicholas Boyd Isacsson
+
+pkgname=nichobi-base
+pkgver=1
+pkgrel=1
+pkgdesc="nichobi base packages"
+arch=('any')
+depends=(
+  'meta-group-base-devel' # base-devel as a metapackage
+
+  # Base setup
+  'atool'                 # Archive manager
+  'exa'                   # ls replacement
+  'fd'                    # File searcher
+  'fzf'                   # Fuzzy finder
+  'neovim'                # Editor
+  'neovim-symlinks'       # Symlink nvim to vi,vim
+  'pass-git'              # Password manager
+  'pilgo'                 # Dotfile manager
+  'sshfs'                 # Mount ssh servers as FUSE filesystems
+  'tmux'                  # Terminal multiplexer
+  'wget'                  # Internet file retriever
+  'zsh'                   # Shell
+  'oh-my-zsh-git'         # zsh config manager
+
+  # Package management
+  'informant'             # Arch News checker
+  'longoverdue'           # Service update checker
+  'pacman-backup-hook'    # Hook to keep list of explicit packages
+  'pacman-contrib'        # Pacman scripts and tools
+  'paru'                  # AUR helper
+  'reflector'             # Pacman mirror manager
+)
+
