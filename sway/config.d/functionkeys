@@ -4,16 +4,18 @@ exec mkfifo $SWAYSOCK.255wob && tail -f $SWAYSOCK.255wob | wob -a top -m 255
 
 # Special keys
 # https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
-bindsym XF86AudioRaiseVolume  exec pamixer --allow-boost --set-limit 200 -ui 5 \
-                                   && pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioLowerVolume  exec pamixer --allow-boost --set-limit 200 -ud 5 \
-                                   && pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioMute         exec pamixer -t \
-                                   && (pamixer --get-mute && echo 0 > $SWAYSOCK.200wob) \
-                                   || pamixer --get-volume > $SWAYSOCK.200wob
-bindsym XF86AudioMicMute      exec pamixer --default-source -t
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
-bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
+bindsym --locked XF86AudioRaiseVolume exec \
+    pamixer --allow-boost --set-limit 200 -ui 5 && pamixer --get-volume > $SWAYSOCK.200wob
+bindsym --locked XF86AudioLowerVolume exec \
+    pamixer --allow-boost --set-limit 200 -ud 5 && pamixer --get-volume > $SWAYSOCK.200wob
+bindsym --locked XF86AudioMute exec \
+    pamixer -t && (pamixer --get-mute && echo 0 > $SWAYSOCK.200wob) || pamixer --get-volume > $SWAYSOCK.200wob
+bindsym --locked XF86AudioMicMute      exec \
+    pamixer --default-source -t
+bindsym --locked XF86MonBrightnessDown exec \
+    brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
+bindsym --locked XF86MonBrightnessUp exec \
+    brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
 
 # Bind PrtSc to take screenshots
 bindsym Print      exec grimshot copy screen
