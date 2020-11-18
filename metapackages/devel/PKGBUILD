@@ -1,0 +1,26 @@
+# Maintainer: Nicholas Boyd Isacsson
+
+pkgname=nichobi-devel
+pkgver=1
+pkgrel=1
+pkgdesc="nichobi development packages"
+arch=('any')
+depends=(
+  'nichobi-base'
+
+  'neovim'                  # Editor
+  'npm'                     # Backend for coc.nvim
+
+  # Scala
+  'scala'                   # Scala compiler
+  'scala-docs'              # Documentation
+  'scala-sources'           # Scala standard library source code
+  'scala-dotty'             # Research compiler that will become Scala 3
+  'ammonite'                # Script-focused Scala REPL
+  'jdk11-openjdk'           # Requirement for metals
+
+  # Haskell
+  'ghc'                     # Glasgow Haskell Compiler
+  'haskell-language-server'
+)
+
