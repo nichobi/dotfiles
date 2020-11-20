@@ -1,5 +1,4 @@
 # nichobi metapackages
-##Metapackages for nichobi's setup
 Metapackages collecting some of my most used packages. To see the full lists of packages each metapackage depends on, see the relevant `PKGBUILD` file.
 
 ## Repository
