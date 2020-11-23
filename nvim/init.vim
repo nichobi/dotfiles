@@ -1,7 +1,3 @@
-set tabstop=2
-set shiftwidth=2
-set expandtab
-let g:netrw_liststyle = 3
 
 " Install vim-plug if missing
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
@@ -22,19 +18,28 @@ Plug 'derekwyatt/vim-scala'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'machakann/vim-sandwich'
 
+" Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 " Plug 'vim-latex/vim-latex'
-" Plug 'takac/vim-hardtime'
 
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-metals']
+let g:coc_global_extensions = [
+  \ 'coc-metals',
+\]
 
 " Enable mouse support
 set mouse=a
+
+" Set tab to always use two spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Use wide format for file tree (:Explore)
+let g:netrw_liststyle = 3
 
 " Highlight trailing whitespace in red while in normal mode
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -73,9 +78,6 @@ autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal signcolumn=no
 
 " Only show signcolumn when in use
 set signcolumn=auto
-
-" Hard Time by default
-"let g:hardtime_default_on = 1
 
 command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_
 		\ | diffthis | wincmd p | diffthis
