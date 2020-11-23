@@ -1,3 +1,5 @@
+" Which lsp_client to use, 'coc' or 'nvim'
+let lsp_client = 'coc'
 
 " Install vim-plug if missing
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
@@ -15,13 +17,19 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'derekwyatt/vim-scala'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'machakann/vim-sandwich'
 
 " Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 " Plug 'vim-latex/vim-latex'
+
+if lsp_client == 'nvim'
+  Plug 'neovim/nvim-lsp'
+  Plug 'scalameta/nvim-metals'
+elseif lsp_client == 'coc'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 call plug#end()
 
@@ -82,7 +90,10 @@ set signcolumn=auto
 command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_
 		\ | diffthis | wincmd p | diffthis
 
-if filereadable(expand("~/.config/coc/extensions/node_modules/coc-metals/coc-mappings.vim"))
-  source ~/.config/coc/extensions/node_modules/coc-metals/coc-mappings.vim"
+" Load example coc.nvim bindings from coc-metals
+let coc_metals_example =
+  \ expand("~/.config/coc/extensions/node_modules/coc-metals/coc-mappings.vim")
+if lsp_client == 'coc' && filereadable(coc_metals_example)
+  :execute 'source' coc_metals_example
 endif
 
