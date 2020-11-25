@@ -46,6 +46,22 @@ config.bind('zul', 'spawn --userscript qute-pass --username-only')
 # Bind key for opening images
 config.bind(';I', 'hint images run open {hint-url}')
 
+# Bind for opening link in private window
+config.bind(';p', 'hint all run open -p {hint-url}')
+
+# Binds for opening archived version of current page
+config.bind('aa', 'open https://web.archive.org/web/*/{url}')
+config.bind('aA', 'open -t https://web.archive.org/web/*/{url}')
+config.bind('ag', 'open https://www.google.com/search?q=cache:{url}')
+config.bind('aG', 'open -t https://www.google.com/search?q=cache:{url}')
+
+# Open in mpv
+config.bind('m', 'spawn mpv {url}')
+config.bind(';m', 'hint all spawn mpv {hint-url}')
+
+# Disable autoplay
+c.content.autoplay = False
+
 # Add full keyboard layout to hint chars
 ## This is a bad idea but works nicely as typing practice
 c.hints.chars =  'asdfghjkl;\'\\' + 'qwertyuiop[]' + '<zxcvbnm,./' + '1234567890-='
