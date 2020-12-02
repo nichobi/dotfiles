@@ -55,14 +55,12 @@ config.bind('aA', 'open -t https://web.archive.org/web/*/{url}')
 config.bind('ag', 'open https://www.google.com/search?q=cache:{url}')
 config.bind('aG', 'open -t https://www.google.com/search?q=cache:{url}')
 
-# Open in mpv
+# Open links in other applications
 config.unbind('m')
-config.bind('mm', 'spawn mpv {url}')
-config.bind(';mm', 'hint all spawn mpv {hint-url}')
-
-# Open in firefox
-config.bind('mf', 'spawn firefox {url}')
-config.bind(';mf', 'hint all spawn firefox {hint-url}')
+config.bind('mm', 'spawn -d mpv {url}')
+config.bind('mf', 'spawn -d firefox {url}')
+config.bind(';mm', 'hint all spawn -d mpv {hint-url}')
+config.bind(';mf', 'hint all spawn -d firefox {hint-url}')
 
 # Disable autoplay
 c.content.autoplay = False
