@@ -75,7 +75,7 @@ c.hints.chars =  'asdfghjkl;\'\\' + 'qwertyuiop[]' + '<zxcvbnm,./' + '1234567890
 c.hints.leave_on_load = False
 
 # Load the default page after closing the last tab
-c.tabs.last_close = "default-page"
+c.tabs.last_close = "close"
 
 # Hide the tab bar if only one tab is open
 c.tabs.show = "multiple"
