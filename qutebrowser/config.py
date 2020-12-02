@@ -86,6 +86,9 @@ c.tabs.max_width = 250
 # Enable hidpi mode
 c.qt.highdpi = True
 
+# Enable smooth scrolling
+c.scrolling.smooth = True
+
 # Prefer dark color schemes
 c.colors.webpage.prefers_color_scheme_dark = True;
 
