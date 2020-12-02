@@ -56,8 +56,13 @@ config.bind('ag', 'open https://www.google.com/search?q=cache:{url}')
 config.bind('aG', 'open -t https://www.google.com/search?q=cache:{url}')
 
 # Open in mpv
-config.bind('m', 'spawn mpv {url}')
-config.bind(';m', 'hint all spawn mpv {hint-url}')
+config.unbind('m')
+config.bind('mm', 'spawn mpv {url}')
+config.bind(';mm', 'hint all spawn mpv {hint-url}')
+
+# Open in firefox
+config.bind('mf', 'spawn firefox {url}')
+config.bind(';mf', 'hint all spawn firefox {hint-url}')
 
 # Disable autoplay
 c.content.autoplay = False
