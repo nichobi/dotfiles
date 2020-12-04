@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=1
+pkgver=2
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -21,7 +21,7 @@ depends=(
   'mako'                  # Notification demon
   'pamixer'               # Pulseaudio mixer
   'pinentry-dmenu'        # Pinentry program
-  'runin'                 # Run command in terminal and pipe stdin & stdout for it
+  'runin-git'             # Run command in terminal and pipe stdin & stdout for it
   'wl-clipboard'          # Clipboard manager
   'wob'                   # Volume/backlight overlay bar
   'ydotool'               # Input automation tool
