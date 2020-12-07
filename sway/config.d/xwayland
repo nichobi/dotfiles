@@ -1,0 +1,3 @@
+xwayland force scale 2
+exec xsettingsd
+

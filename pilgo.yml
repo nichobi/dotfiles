@@ -14,6 +14,7 @@ targets:
 - tmux
 - waybar
 - xkb
+- xsettingsd
 - zathura
 - zsh
 options:
