@@ -17,4 +17,6 @@ alias g=git
 alias l=exa
 alias ls=exa
 alias la=exa -a
+alias webcamenable='sudo modprobe uvcvideo'
+alias webcamdisable='sudo modprobe -r uvcvideo'
 
