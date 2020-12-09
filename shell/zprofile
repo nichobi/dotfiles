@@ -1,10 +1,10 @@
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/$(archlinux-java get)"
 PATH="$PATH:/opt/bin:$JAVA_HOME/bin"
 PATH="$PATH:$HOME/.cabal/bin"
 export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
-export JAVA_HOME="/usr/lib/jvm/java-13-openjdk/"
 
 if [[ -n $SSH_CONNECTION ]] && [[ -z $TMUX ]]; then
   tmux -u attach -t ssh || tmux -u new -s ssh

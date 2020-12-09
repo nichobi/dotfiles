@@ -20,7 +20,7 @@ fi
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
-export JAVA_HOME="/usr/lib/jvm/java-13-openjdk/"
+export JAVA_HOME="/usr/lib/jvm/$(archlinux-java get)"
 PATH="$PATH:/opt/bin:$JAVA_HOME/bin"
 PATH="$PATH:$HOME/.cabal/bin"
 
