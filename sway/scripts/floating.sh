@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# https://github.com/Synthetica9/sway-floating
 
 $@ &
 pid=$!
