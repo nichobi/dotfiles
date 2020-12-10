@@ -1,6 +1,8 @@
 " Which lsp_client to use, 'coc' or 'nvim'
 let lsp_client = 'coc'
 
+colorscheme dim
+
 " Install vim-plug if missing
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
 if !filereadable(autoload_plug_path)
