@@ -16,6 +16,8 @@ for_window [title="Qutebrowser Editor"] floating enable
 for_window [app_id="jome"] floating enable
 for_window [title="Launcher"] floating enable
 
+for_window [app_id="pavucontrol"] floating enable, resize set 500 300, move position 1210 0
+
 # Move Discord to scratchpad
 for_window [class="discord"] move to scratchpad, resize set 1000 750, scratchpad show
 
