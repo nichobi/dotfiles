@@ -33,9 +33,9 @@ config.bind('<Ctrl+e>', 'edit-command', mode='command')
 config.unbind('d')
 config.bind('dd', 'tab-close')
 
-# Bindings to keep only the current tab and those to its left or right, respectively
-config.bind('ch', 'tab-only --prev')
-config.bind('cl', 'tab-only --next')
+# Bindings to close all tabs to the left or right of the current tab
+config.bind('ch', 'tab-only --next') # Close tabs to the left
+config.bind('cl', 'tab-only --prev') # Close tabs to the right
 
 # Binds for qute-pass
 config.bind('zl',  'spawn --userscript qute-pass')
