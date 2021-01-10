@@ -10,6 +10,8 @@ call LoadInit("plugins.vim")
 call LoadInit("visual.vim")
 " Language server integration
 call LoadInit("visual.vim")
+" Key bindings
+call LoadInit("map.vim")
 " Commands
 call LoadInit("commands.vim")
 
