@@ -28,3 +28,6 @@ autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal signcolumn=no
 " Only show signcolumn when in use
 set signcolumn=auto
 
+" Show live feedback for substitutions, with split preview of other occurences
+set inccommand=split
+
