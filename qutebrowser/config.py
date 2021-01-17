@@ -96,6 +96,11 @@ c.colors.webpage.prefers_color_scheme_dark = True;
 c.fonts.default_family = 'Source Code Pro'
 c.fonts.default_size   = '11pt'
 
+# Anti-fingerprinting
+c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'
+c.content.headers.accept_language = 'en-US,en;q=0.5'
+c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+
 # Set up search engines
 c.url.searchengines = {
   "DEFAULT": "https://duckduckgo.com?q={}",
