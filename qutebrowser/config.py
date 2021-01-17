@@ -57,14 +57,16 @@ config.bind('aG', 'open -t https://www.google.com/search?q=cache:{url}')
 
 # Open links in other applications
 config.unbind('m')
-config.bind('mm', 'spawn -d mpv {url}')
+config.bind('mm', 'spawn -d mpv --force-window=immediate {url}')
 config.bind('mf', 'spawn -d firefox {url}')
-config.bind(';mm', 'hint all spawn -d mpv {hint-url}')
+config.bind(';mm', 'hint all spawn -d mpv --force-window=immediate {hint-url}')
 config.bind(';mf', 'hint all spawn -d firefox {hint-url}')
 
 # Disable autoplay
 c.content.autoplay = False
 
+# Enable spellcheck
+c.spellcheck.languages = ['en-GB', 'sv-SE']
 # Add full keyboard layout to hint chars
 ## This is a bad idea but works nicely as typing practice
 c.hints.chars =  'asdfghjkl;\'\\' + 'qwertyuiop[]' + '<zxcvbnm,./' + '1234567890-='
