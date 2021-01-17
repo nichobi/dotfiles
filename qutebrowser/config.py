@@ -1,30 +1,44 @@
+## Sourcing ##
+
+# Load automatic configuration
 config.load_autoconfig()
+# Load custom theme
 config.source('theme.py')
 
-# Don't view pdf files in-browser
-c.content.pdfjs = False
 
-#Always restore open sites when qutebrowser is reopened.
+## Misc. ##
+
+# Always restore open sites when qutebrowser is reopened.
 c.auto_save.session = True
+
+# Prefer dark color schemes
+c.colors.webpage.prefers_color_scheme_dark = True
 
 # Require a confirmation before quitting the application if downloads are active.
 c.confirm_quit = ["downloads"]
 
-# Set default_page to blank page
-c.url.default_page = "about:blank"
-
-# Put the download bar at the bottom of the screen
-c.downloads.position = "bottom"
-
-# Remove finished downloads from the download bar after 5 minutes
-c.downloads.remove_finished = 300000
-
-# Bind for opening download immediately
-config.bind('<Ctrl-o>', 'prompt-open-download', mode='prompt')
-
 # Use neovim in alacritty as an editor
 c.editor.command = ["alacritty", "-t", "Qutebrowser Editor", "-d", "80", "24",
                     "-e", "nvim", "{}", "+call cursor({line}, {column})"]
+
+# Font settings
+c.fonts.default_family = 'Source Code Pro'
+c.fonts.default_size   = '11pt'
+
+# Enable hidpi mode
+c.qt.highdpi = True
+
+# Enable smooth scrolling
+c.scrolling.smooth = True
+
+# Enable spellcheck
+c.spellcheck.languages = ['en-GB', 'sv-SE']
+
+
+## Binds ##
+
+# Bind for opening download immediately
+config.bind('<Ctrl-o>', 'prompt-open-download', mode='prompt')
 
 # Bind Ctrl-e in command mode to edit the current command
 config.bind('<Ctrl+e>', 'edit-command', mode='command')
@@ -62,17 +76,42 @@ config.bind('mf', 'spawn -d firefox {url}')
 config.bind(';mm', 'hint all spawn -d mpv --force-window=immediate {hint-url}')
 config.bind(';mf', 'hint all spawn -d firefox {hint-url}')
 
+
+## Content ##
+
+# Don't view pdf files in-browser
+c.content.pdfjs = False
+
 # Disable autoplay
 c.content.autoplay = False
 
-# Enable spellcheck
-c.spellcheck.languages = ['en-GB', 'sv-SE']
+# Anti-fingerprinting
+c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'
+c.content.headers.accept_language = 'en-US,en;q=0.5'
+c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+c.content.cookies.accept = "no-3rdparty"
+
+
+## Downloads ##
+
+# Put the download bar at the bottom of the screen
+c.downloads.position = "bottom"
+
+# Remove finished downloads from the download bar after 5 minutes
+c.downloads.remove_finished = 300000
+
+
+## Hints ##
+
 # Add full keyboard layout to hint chars
-## This is a bad idea but works nicely as typing practice
+# This is a bad idea but works nicely as typing practice
 c.hints.chars =  'asdfghjkl;\'\\' + 'qwertyuiop[]' + '<zxcvbnm,./' + '1234567890-='
 
 # Don't lead hint mode when page loads
 c.hints.leave_on_load = False
+
+
+## Tabs ##
 
 # Load the default page after closing the last tab
 c.tabs.last_close = "close"
@@ -83,23 +122,11 @@ c.tabs.show = "multiple"
 # Set a maximum tab width so small numbers of tabs aren't so huge
 c.tabs.max_width = 250
 
-# Enable hidpi mode
-c.qt.highdpi = True
 
-# Enable smooth scrolling
-c.scrolling.smooth = True
+## URL ##
 
-# Prefer dark color schemes
-c.colors.webpage.prefers_color_scheme_dark = True;
-
-# Font settings
-c.fonts.default_family = 'Source Code Pro'
-c.fonts.default_size   = '11pt'
-
-# Anti-fingerprinting
-c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'
-c.content.headers.accept_language = 'en-US,en;q=0.5'
-c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+# Set default_page to blank page
+c.url.default_page = "about:blank"
 
 # Set up search engines
 c.url.searchengines = {
