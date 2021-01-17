@@ -91,6 +91,15 @@ c.content.headers.accept_language = 'en-US,en;q=0.5'
 c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
 c.content.cookies.accept = "no-3rdparty"
 
+# Adblock filter lists
+c.content.blocking.adblock.lists = [
+        "https://easylist.to/easylist/easylist.txt",
+        "https://easylist.to/easylist/easyprivacy.txt",
+        "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
+        "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
+        "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
+]
+
 
 ## Downloads ##
 
