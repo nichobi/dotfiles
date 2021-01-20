@@ -18,6 +18,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'machakann/vim-sandwich'
 Plug 'machakann/vim-highlightedyank'
+Plug 'cohama/lexima.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 " Plug 'vim-latex/vim-latex'

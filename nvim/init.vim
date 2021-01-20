@@ -9,7 +9,7 @@ call LoadInit("plugins.vim")
 " Appearance and styling
 call LoadInit("visual.vim")
 " Language server integration
-call LoadInit("visual.vim")
+call LoadInit("lsp.vim")
 " Key bindings
 call LoadInit("map.vim")
 " Commands
