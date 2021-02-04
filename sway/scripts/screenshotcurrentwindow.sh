@@ -4,5 +4,5 @@ APPNAME=$(swaymsg -t get_tree   | jq -r '.. | (.nodes? // empty)[] | select(.foc
 PICDIR=$(xdg-user-dir PICTURES)
 DATE=$(date +'%Y-%m-%d %H-%M-%S')
 
-grimshot save win "$PICDIR/screenshots/$APPNAME $DATE.png"
+grimshot --notify save active "$PICDIR/screenshots/$APPNAME $DATE.png"
 
