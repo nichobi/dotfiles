@@ -18,7 +18,10 @@ bindsym --locked XF86MonBrightnessUp exec \
     brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
 
 # Bind PrtSc to take screenshots
-bindsym Print      exec grimshot --notify copy screen
-bindsym Alt+Print  exec grimshot --notify copy area
-bindsym Ctrl+Print exec $scripts/screenshotcurrentwindow.sh
+bindsym Print            exec grimshot --notify copy screen
+bindsym Alt+Print        exec grimshot --notify copy area
+bindsym Ctrl+Print       exec grimshot --notify copy active
 
+bindsym Shift+Print      exec grimshot --notify save screen
+bindsym Shift+Alt+Print  exec grimshot --notify save area
+bindsym Shift+Ctrl+Print exec $scripts/screenshotcurrentwindow.sh
