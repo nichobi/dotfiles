@@ -12,7 +12,7 @@ config.source('theme.py')
 c.auto_save.session = True
 
 # Prefer dark color schemes
-c.colors.webpage.prefers_color_scheme_dark = True
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 # Require a confirmation before quitting the application if downloads are active.
 c.confirm_quit = ["downloads"]
