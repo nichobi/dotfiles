@@ -51,6 +51,10 @@ config.bind('dd', 'tab-close')
 config.bind('ch', 'tab-only --next') # Close tabs to the left
 config.bind('cl', 'tab-only --prev') # Close tabs to the right
 
+# Bindings to move in tab history
+config.bind('gh', 'set-cmd-text -s :back ')
+config.bind('gl', 'set-cmd-text -s :forward ')
+
 # Binds for qute-pass
 config.bind('zl',  'spawn --userscript qute-pass')
 config.bind('zol', 'spawn --userscript qute-pass --otp-only')
