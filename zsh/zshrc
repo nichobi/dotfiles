@@ -1,0 +1,29 @@
+ZCACHEDIR=${XDG_CACHE_HOME:-~/.cache}/zsh
+ADOTDIR=$ZCACHEDIR/antigen
+#ANTIGEN_LOG=$ADOTDIR/log
+source /usr/share/zsh/share/antigen.zsh
+
+autoload -Uz compinit
+compinit -d $ZCACHEDIR/compdump
+zmodload zsh/complist
+
+antigen bundles <<EOBUNDLES
+  shrink-path
+  vi-mode
+  fzf
+  Aloxaf/fzf-tab
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-syntax-highlighting # Must be last!
+EOBUNDLES
+antigen apply
+
+setopt auto_cd # cd by typing directory name if it's not a command
+setopt interactive_comments
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+for f in $ZDOTDIR/zshrc.d/*.zsh; do
+  source $f
+done
+

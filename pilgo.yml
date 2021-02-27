@@ -36,8 +36,7 @@ options:
     - bashrc
     - inputrc
     - profile
-    - zprofile
-    - zshrc
+    - zshenv
     options:
       alias:
         link: .alias
@@ -47,10 +46,8 @@ options:
         link: .inputrc
       profile:
         link: .profile
-      zprofile:
-        link: .zprofile
-      zshrc:
-        link: .zshrc
+      zshenv:
+        link: .zshenv
     flatten: true
     useHome: true
   tmux:
@@ -64,3 +61,17 @@ options:
   xkb:
     link: .xkb
     useHome: true
+  zsh:
+    targets:
+    - zprofile
+    - zshenv
+    - zshrc
+    - zshrc.d
+    options:
+      zprofile:
+        link: .zprofile
+      zshenv:
+        link: .zshenv
+        useHome: true
+      zshrc:
+        link: .zshrc
