@@ -65,8 +65,12 @@ config.bind('zol', 'spawn --userscript qute-pass --otp-only')
 config.bind('zpl', 'spawn --userscript qute-pass --password-only')
 config.bind('zul', 'spawn --userscript qute-pass --username-only')
 
-# Bind key for opening images
-config.bind(';I', 'hint images run open {hint-url}')
+# Binds for images
+config.unbind(';i')
+config.bind(';ii', 'hint images')
+config.bind(';io', 'hint images run open {hint-url}')
+config.bind(';iO', 'hint images run open -t {hint-url}')
+config.bind(';ig', 'hint images run open https://www.google.com/searchbyimage?&image_url={hint-url}')
 
 # Bind for opening link in private window
 config.bind(';p', 'hint all run open -p {hint-url}')
