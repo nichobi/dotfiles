@@ -43,6 +43,10 @@ config.bind('<Ctrl-o>', 'prompt-open-download', mode='prompt')
 # Bind Ctrl-e in command mode to edit the current command
 config.bind('<Ctrl+e>', 'edit-command', mode='command')
 
+# Binds for moving through completion items
+config.bind('<Ctrl-j>', 'completion-item-focus next', mode='command')
+config.bind('<Ctrl-k>', 'completion-item-focus prev', mode='command')
+
 # Rebind close tab to 'dd'
 config.unbind('d')
 config.bind('dd', 'tab-close')
