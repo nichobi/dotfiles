@@ -75,6 +75,9 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     export _JAVA_AWT_WM_NONREPARENTING=1
     export NO_AT_BRIDGE=1
 
+    export QT_STYLE_OVERRIDE=adwaita-dark
+    export GTK_THEME=Adwaita:dark
+
     exec systemd-cat --identifier=sway sway
 fi
 

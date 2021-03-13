@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=2
+pkgver=3
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -31,6 +31,9 @@ depends=(
   'mpv'                   # Video player
   'qutebrowser-git'       # Browser
   'zathura'               # Document viewer
+
+  # Theming
+  'adwaita-qt'            # Consistent theme between QT and GTK
 )
 optdepends=(
   'jome-git'              # Graphical emoji picker
