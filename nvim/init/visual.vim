@@ -9,6 +9,7 @@ set inccommand=split
 " Wrap lines that don't fit on screen at word boundaries
 set wrap
 set linebreak
+set breakindent
 
 " Open new windows below or to the right
 set splitbelow
