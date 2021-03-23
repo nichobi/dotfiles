@@ -52,8 +52,11 @@ config.unbind('d')
 config.bind('dd', 'tab-close')
 
 # Bindings to close all tabs to the left or right of the current tab
-config.bind('ch', 'tab-only --next') # Close tabs to the left
-config.bind('cl', 'tab-only --prev') # Close tabs to the right
+# --pinned flag requires https://github.com/qutebrowser/qutebrowser/pull/6287
+# Merged in 2.2.0
+config.bind('co', 'tab-only --pinned keep') # Close other tabs
+config.bind('ch', 'tab-only --next --pinned keep') # Close tabs to the left
+config.bind('cl', 'tab-only --prev --pinned keep') # Close tabs to the right
 
 # Bindings to move in tab history
 config.bind('gh', 'set-cmd-text -s :back ')
