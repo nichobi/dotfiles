@@ -86,9 +86,9 @@ config.bind('aG', 'open -t https://www.google.com/search?q=cache:{url}')
 
 # Open links in other applications
 config.unbind('m')
-config.bind('mm', 'spawn -d mpv --force-window=immediate {url}')
+config.bind('mm', 'spawn -d umpv {url}')
 config.bind('mf', 'spawn -d firefox {url}')
-config.bind(';mm', 'hint all spawn -d mpv --force-window=immediate {hint-url}')
+config.bind(';mm', 'hint all spawn -d umpv {hint-url}')
 config.bind(';mf', 'hint all spawn -d firefox {hint-url}')
 
 
