@@ -155,17 +155,16 @@ c.url.default_page = "about:blank"
 # Set up search engines
 c.url.searchengines = {
   "DEFAULT": "https://duckduckgo.com?q={}",
-  "au":     "https://aur.archlinux.org/packages/?K={}",
-  "aw":     "https://wiki.archlinux.org/?search={}",
-  "dd":     "https://duckduckgo.com?q={}",
-  "df":     "https://dwarffortresswiki.org?search={}",
-  "g":      "https://www.google.com/search?q={}",
-  "gh":     "https://github.com/search?q={}",
-  "gm":     "https://mail.google.com/mail/u/0/#search/{}",
-  "gp":     "https://photos.google.com/search/{}",
-  "hoo":    "https://hoogle.haskell.org/?hoogle={}",
-  "sp":     "https://startpage.com/sp/search?query={}",
-  "sx":     "https://searx.isacsson.se?q={}",
-  "yt":     "https://www.youtube.com/results?search_query={}"
+  "au":      "https://aur.archlinux.org/packages/?K={}",
+  "aw":      "https://wiki.archlinux.org/?search={}",
+  "dd":      "https://duckduckgo.com?q={}",
+  "df":      "https://dwarffortresswiki.org?search={}",
+  "g":       "https://www.google.com/search?q={}",
+  "gh":      "https://github.com/search?q={}",
+  "gm":      "https://mail.google.com/mail/u/0/#search/{}",
+  "gp":      "https://photos.google.com/search/{}",
+  "hoo":     "https://hoogle.haskell.org/?hoogle={}",
+  "sp":      "https://startpage.com/sp/search?query={}",
+  "yt":      "https://www.youtube.com/results?search_query={}"
 }
 
