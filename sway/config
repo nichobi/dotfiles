@@ -65,7 +65,7 @@ set $altmenu bash -c "\
       -b 'Yes, exit sway' 'swaymsg exit'
 
     # Choose an emoji and copy it to clipboard
-    bindsym $mod+m exec jome -nd | $scripts/pastestdin.sh
+    bindsym $mod+m exec jome -nd | xargs wtype
 #
 # Moving around:
 #
