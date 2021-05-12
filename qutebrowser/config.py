@@ -88,8 +88,10 @@ config.bind('aG', 'open -t https://www.google.com/search?q=cache:{url}')
 config.unbind('m')
 config.bind('mm', 'spawn -d umpv {url}')
 config.bind('mf', 'spawn -d firefox {url}')
+config.bind('mc', 'spawn -d google-chrome-stable {url}')
 config.bind(';mm', 'hint all spawn -d umpv {hint-url}')
 config.bind(';mf', 'hint all spawn -d firefox {hint-url}')
+config.bind(';mc', 'hint all spawn -d google-chrome-stable {hint-url}')
 
 
 ## Content ##
