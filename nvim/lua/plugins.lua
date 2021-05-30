@@ -17,12 +17,12 @@ return require('packer').startup(function()
   -- Basic Scala integration
   use 'derekwyatt/vim-scala'
   -- Better status bar
-  use 'vim-airline/vim-airline'
+  use 'hoob3rt/lualine.nvim'
   -- Add/delete/replace surroundings such as parentheses
   use 'machakann/vim-sandwich'
   -- Highlight the yanked region
   -- Replace with integrated version? https://github.com/neovim/neovim/pull/12279
-  use 'machakann/vim-highlightedyank' 
+  use 'machakann/vim-highlightedyank'
   -- Auto close parentheses, etc.
   use 'cohama/lexima.vim'
   -- Smart hybrid line numbers
@@ -42,6 +42,7 @@ return require('packer').startup(function()
   if g.lsp_client == 'nvim' then
     use 'neovim/nvim-lsp'
     use 'scalameta/nvim-metals'
+    use 'hrsh7th/nvim-compe'
   elseif g.lsp_client == 'coc' then
     use {'neoclide/coc.nvim', branch ='release'}
   end

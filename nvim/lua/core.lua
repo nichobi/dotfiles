@@ -14,7 +14,7 @@ opt.expandtab = true
 g.netrw_liststyle = 3
 
 -- Which lsp_client to use, 'coc' or 'nvim'
-g.lsp_client = 'coc'
+g.lsp_client = 'nvim'
 
 -- Preserve undo history
 opt.undofile = true
@@ -42,4 +42,7 @@ opt.joinspaces = false
 
 -- Allow cursor to extend beyond the end of a line in block selection
 opt.virtualedit = 'block'
+
+-- Remove F, required for nvim-metals
+vim.opt_global.shortmess:remove("F")
 
