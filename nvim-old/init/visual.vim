@@ -22,6 +22,9 @@ set number relativenumber
 set title
 set titlestring=%f\ -\ nvim
 
+" Rainbow parentheses
+let g:rainbow_active = 1
+
 " Show signcolumn in numberrow if using nvim 5.0 or greater
 if has('nvim-5.0') | set signcolumn=number
 else               | set signcolumn=auto
@@ -49,4 +52,12 @@ augroup END
 autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal norelativenumber
 autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal nonumber
 autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal signcolumn=no
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+}
+EOF
 

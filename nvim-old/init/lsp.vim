@@ -10,5 +10,5 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 let g:scala_scaladoc_indent = 1
 
 " Autocheck all scala files on write
-autocmd BufWritePre *.scala silent call CocAction('format')
+"autocmd BufWritePre *.scala silent call CocAction('format')
 
