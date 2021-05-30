@@ -3,18 +3,18 @@ local opt = vim.opt
 local g_opt = vim.opt_global
 
 -- Enable mouse support
-opt.mouse='a'
+opt.mouse = 'a'
 
 -- Set tab to always use two spaces
-opt.tabstop=2
-opt.shiftwidth=0 -- Automatically matches tabstop
+opt.tabstop = 2
+opt.shiftwidth = 0 -- Automatically matches tabstop
 opt.expandtab = true
 
 -- Use wide format for file tree (:Explore)
 g.netrw_liststyle = 3
 
 -- Which lsp_client to use, 'coc' or 'nvim'
-g['lsp_client'] = 'coc'
+g.lsp_client = 'coc'
 
 -- Preserve undo history
 opt.undofile = true
@@ -41,5 +41,5 @@ opt.gdefault = true
 opt.joinspaces = false
 
 -- Allow cursor to extend beyond the end of a line in block selection
-opt.virtualedit='block'
+opt.virtualedit = 'block'
 

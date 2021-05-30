@@ -15,7 +15,7 @@ wk.register({
   },
 })
 
-if g['lsp_client'] == 'coc' then
+if g.lsp_client == 'coc' then
   wk.register({
     g = {
       d = { "<Plug>coc-definition", "Open definition" },

@@ -28,7 +28,7 @@ opt.title = true
 opt.titlestring = [[%f - nvim]]
 
 -- Rainbow parentheses
-g['rainbow_active'] = 1
+g.rainbow_active = 1
 
 -- Show signcolumn in number row
 opt.signcolumn='number'

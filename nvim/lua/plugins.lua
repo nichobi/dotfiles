@@ -39,10 +39,10 @@ return require('packer').startup(function()
   use 'jeffkreeftmeijer/vim-dim'
 
 
-  if g['lsp_client'] == 'nvim' then
+  if g.lsp_client == 'nvim' then
     use 'neovim/nvim-lsp'
     use 'scalameta/nvim-metals'
-  elseif g['lsp_client'] == 'coc' then
+  elseif g.lsp_client == 'coc' then
     use {'neoclide/coc.nvim', branch ='release'}
   end
 end)
