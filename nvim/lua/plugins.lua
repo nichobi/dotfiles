@@ -37,7 +37,11 @@ return require('packer').startup(function()
   use 'folke/which-key.nvim'
   -- ANSI-only colorscheme
   use 'jeffkreeftmeijer/vim-dim'
-
+  -- File/fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+  }
 
   if g.lsp_client == 'nvim' then
     use 'neovim/nvim-lsp'
