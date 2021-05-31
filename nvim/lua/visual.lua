@@ -69,7 +69,8 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-local function metalsstatus()
+-- lualine setup
+local function metalsStatus()
   return (vim.g['metals_status'] or '')
 end
 
@@ -83,7 +84,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'filename'},
-    lualine_c = {metalsstatus},
+    lualine_c = {metalsStatus},
   },
 }
 

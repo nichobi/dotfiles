@@ -2,8 +2,8 @@ local cmd = vim.cmd
 local fn = vim.fn
 local g = vim.g
 
+-- Bootstrap packer if not already installed
 local packer_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
 if fn.empty(fn.glob(packer_path)) > 0 then
   cmd('!git clone https://github.com/wbthomason/packer.nvim '..packer_path)
   cmd('packadd packer.nvim')
@@ -44,8 +44,11 @@ return require('packer').startup(function()
   }
 
   if g.lsp_client == 'nvim' then
-    use 'neovim/nvim-lsp'
+    -- LSP configurations
+    use 'neovim/nvim-lspconfig'
+    -- Scala LSP
     use 'scalameta/nvim-metals'
+    -- Completion engine
     use 'hrsh7th/nvim-compe'
   elseif g.lsp_client == 'coc' then
     use {'neoclide/coc.nvim', branch ='release'}

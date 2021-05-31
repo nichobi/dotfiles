@@ -25,18 +25,18 @@ if g.lsp_client == 'nvim' then
 
   require('compe').setup({
     enabled = true,
-    autocomplete = true;
+    autocomplete = true,
     debug = false,
     min_length = 1,
     source = {
-      path = true;
-      buffer = true;
-      calc = true;
-      nvim_lsp = true;
-      nvim_lua = true;
-      vsnip = true;
-      ultisnips = true;
-      nvim_lsp = true
+      path = true,
+      buffer = true,
+      calc = true,
+      nvim_lsp = true,
+      nvim_lua = true,
+      vsnip = true,
+      ultisnips = true,
+      nvim_lsp = true,
     },
   })
 elseif g.lsp_client == 'coc' then
