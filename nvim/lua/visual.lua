@@ -63,6 +63,7 @@ cmd([[
 ]])
 
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = {'bash', 'scala', 'haskell', 'java', 'lua', 'html', 'css'},
   highlight = {
     enable = true
   },
