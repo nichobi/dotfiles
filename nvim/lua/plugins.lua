@@ -23,8 +23,6 @@ return require('packer').startup(function()
   -- Highlight the yanked region
   -- Replace with integrated version? https://github.com/neovim/neovim/pull/12279
   use 'machakann/vim-highlightedyank'
-  -- Auto close parentheses, etc.
-  use 'cohama/lexima.vim'
   -- Smart hybrid line numbers
   use 'jeffkreeftmeijer/vim-numbertoggle'
   -- Give each level of parentheses a different colour
