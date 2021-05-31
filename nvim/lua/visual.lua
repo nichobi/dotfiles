@@ -1,6 +1,7 @@
-local opt = vim.opt
 local cmd = vim.cmd
-local g = vim.g
+local fn  = vim.fn
+local g   = vim.g
+local opt = vim.opt
 
 cmd('colorscheme dim')
 
@@ -88,4 +89,15 @@ require('lualine').setup {
   },
 }
 
+-- Style signcolumn icons
+fn.sign_define('LspDiagnosticsSignError',       {text = '', texthl = 'LspDiagnosticsDefaultError'})
+fn.sign_define('LspDiagnosticsSignWarning',     {text = '', texthl = 'LspDiagnosticsDefaultWarning'})
+fn.sign_define('LspDiagnosticsSignInformation', {text = '', texthl = 'LspDiagnosticsDefaultInformation'})
+fn.sign_define('LspDiagnosticsSignHint',        {text = '', texthl = 'LspDiagnosticsDefaultHint'})
+cmd [[
+  highlight LspDiagnosticsDefaultError       ctermfg=9'
+  highlight LspDiagnosticsDefaultWarning     ctermfg=11'
+  highlight LspDiagnosticsDefaultInformation ctermfg=7'
+  highlight LspDiagnosticsDefaultHint        ctermfg=7'
+]]
 
