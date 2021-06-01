@@ -46,3 +46,6 @@ opt.virtualedit = 'block'
 -- Remove F, required for nvim-metals
 vim.opt_global.shortmess:remove("F")
 
+-- Reduce timeoutlen so which-key activates sooner
+opt.timeoutlen = 500
+
