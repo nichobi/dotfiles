@@ -1,5 +1,6 @@
 local g = vim.g
 local cmd = vim.cmd
+local opt = vim.opt
 
 -- Configuration for vim-scala
 cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
@@ -21,7 +22,7 @@ if g.lsp_client == 'nvim' then
         augroup end
       ]]
 
-  vim.o.completeopt = 'menuone,noselect'
+  opt.completeopt = 'menuone,noselect'
 
   require('compe').setup({
     enabled = true,

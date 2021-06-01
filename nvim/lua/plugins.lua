@@ -9,7 +9,7 @@ if fn.empty(fn.glob(packer_path)) > 0 then
   cmd('packadd packer.nvim')
 end
 
-return require('packer').startup(function()
+require('packer').startup(function()
   -- Manage packer with packer
   use 'wbthomason/packer.nvim'
   -- Sync clipboard with tmux
