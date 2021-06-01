@@ -32,7 +32,15 @@ require('packer').startup(function()
   -- Highlight a unique character in every word on a line
   use 'unblevable/quick-scope'
   -- Show key binding popups
-  use 'folke/which-key.nvim'
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      require('which-key').setup{plugins = {
+          spelling = {enabled = true}
+        }
+      }
+    end
+  }
   -- ANSI-only colorscheme
   use 'jeffkreeftmeijer/vim-dim'
   -- File/fuzzy finder
