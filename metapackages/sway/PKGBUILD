@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=3
+pkgver=4
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -29,7 +29,7 @@ depends=(
   # Useful applications
   'imv'                   # Image viewer
   'mpv'                   # Video player
-  'qutebrowser-git'       # Browser
+  'qutebrowser'           # Browser
   'zathura'               # Document viewer
 
   # Theming
