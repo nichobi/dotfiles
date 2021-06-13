@@ -194,5 +194,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+include /etc/sway/config.d/*
 include $swaydir/config.d/*
 
