@@ -8,14 +8,18 @@ cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
 g.scala_scaladoc_indent = 1
 
 if g.lsp_client == 'nvim' then
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+
   -- Haskell language server
-  require'lspconfig'.hls.setup{}
+  require'lspconfig'.hls.setup{capabilities = capabilities}
   -- Bash language server
-  require'lspconfig'.bashls.setup{}
+  require'lspconfig'.bashls.setup{capabilities = capabilities}
 
 
   metals_config = require('metals').bare_config
   metals_config.init_options.statusBarProvider = 'on'
+  metals_config.capabilities = capabilities
   cmd [[augroup lsp
         au!
         au FileType scala,sbt lua require('metals').initialize_or_attach(metals_config)
