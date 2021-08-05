@@ -1,0 +1,30 @@
+#!/bin/sh
+if [ $# -eq 0 ] ; then
+  paru -Syu;
+  sudo pacdiff;
+  longoverdue;
+  echo "Restart services? yes, no, reboot";
+  while :
+  do
+    read -r input;
+    case $input in
+
+      y*)
+        sudo longoverdue restart;
+        exit;
+        ;;
+
+      r*)
+        sudo reboot;
+        ;;
+
+      n*)
+        exit;
+        ;;
+
+    esac
+  done
+else
+  paru "$@"
+fi
+

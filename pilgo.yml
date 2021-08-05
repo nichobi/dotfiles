@@ -1,5 +1,6 @@
 targets:
 - alacritty
+- bin
 - flashfocus
 - ghci
 - gitconfig
@@ -18,6 +19,9 @@ targets:
 - zathura
 - zsh
 options:
+  bin:
+    link: .local/bin
+    useHome: true
   ghci:
     link: .ghci
     useHome: true

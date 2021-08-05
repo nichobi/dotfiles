@@ -12,7 +12,6 @@ alias ll='exa -l'
 alias ls=exa
 alias myfotd='cat ~/.fotd/myfotd'
 alias oops='sudo "$BASH" -c "$(history -p !!)"'
-alias p=paru
 alias pR="paru  -Qq  | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -Rsn"
 alias pRe="paru -Qqe | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -Rsn"
 alias pS="paru  -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
