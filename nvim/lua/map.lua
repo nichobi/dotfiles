@@ -22,6 +22,7 @@ wk.register({
     r = {'<cmd>Telescope oldfiles<cr>',   'Open Recent File'},
     g = {'<cmd>Telescope live_grep<cr>',  'Search working directory'},
     b = {'<cmd>Telescope buffers<cr>',    'Open buffer'},
+    p = {'<cmd>Telescope projects<cr>',   'Open projects'},
     n = {'<cmd>enew<cr>',                 'New File'},
   },
 })

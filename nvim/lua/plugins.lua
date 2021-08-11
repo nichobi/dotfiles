@@ -46,7 +46,17 @@ require('packer').startup(function()
   -- File/fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
+    config = function()
+      require('telescope').load_extension('projects')
+    end
+  }
+  -- Automatically cd to project root
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup{}
+    end
   }
 
   if g.lsp_client == 'nvim' then
