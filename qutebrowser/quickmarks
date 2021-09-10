@@ -14,13 +14,12 @@ jf     https://jellyfin.isacsson.se
 keep   https://keep.google.com
 map    https://www.google.com/maps
 mes    https://messenger.com
+pro    https://prowlarr.isacsson.se
 rad    https://radarr.isacsson.se
 son    https://sonarr.isacsson.se
 tw     https://twitter.com
 yt     https://www.youtube.com/feed/subscriptions
 
 # Course pages
-fmif45 https://canvas.education.lu.se/courses/8833
-eitf95 https://canvas.education.lu.se/courses/10906
-eita50 https://canvas.education.lu.se/courses/11034
-
+edan65  https://fileadmin.cs.lth.se/cs/Education/EDAN65/2021/web/WeekByWeek.html
+edan65m https://moodle.cs.lth.se/course/view.php?id=919
