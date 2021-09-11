@@ -1,2 +1,4 @@
 # Laptop display
-output eDP-1 resolution 2560x1600 scale 1.5
+  # Scale is slightly above 1.5 because sway had single width blank lines
+  # on the bottom and right the edge of the screen
+output eDP-1 resolution 2560x1600 scale 1.512
