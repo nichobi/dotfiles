@@ -3,10 +3,6 @@ ADOTDIR=$ZCACHEDIR/antigen
 #ANTIGEN_LOG=$ADOTDIR/log
 source /usr/share/zsh/share/antigen.zsh
 
-autoload -Uz compinit
-compinit -d $ZCACHEDIR/compdump
-zmodload zsh/complist
-
 antigen bundles <<EOBUNDLES
   shrink-path
   vi-mode
@@ -17,11 +13,11 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 antigen apply
 
-setopt auto_cd # cd by typing directory name if it's not a command
-setopt interactive_comments
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
+setopt interactive_comments # Comments in interactive shell
+setopt auto_cd              # cd by typing directory name if it's not a command
+setopt auto_pushd           # Automatically pushd when changing directory
+setopt pushd_ignore_dups    # Ignore duplicate directories in pushd
+#setopt pushdminus           # 
 
 for f in $ZDOTDIR/zshrc.d/*.zsh; do
   source $f

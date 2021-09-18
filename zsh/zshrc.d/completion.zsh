@@ -1,6 +1,7 @@
-# autoload -Uz compinit
-# compinit -d $ZCACHEDIR/compdump
-# zmodload zsh/complist
+autoload -Uz compinit
+compinit -d $ZCACHEDIR/compdump
+zmodload zsh/complist
+autoload bashcompinit && bashcompinit
 
 setopt always_to_end # move cursor to end if word had one match
 setopt auto_list # automatically list choices on ambiguous completion
