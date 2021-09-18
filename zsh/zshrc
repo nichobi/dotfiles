@@ -1,5 +1,6 @@
 ZCACHEDIR=${XDG_CACHE_HOME:-~/.cache}/zsh
 ADOTDIR=$ZCACHEDIR/antigen
+fpath=($ZDOTDIR/completion $fpath)
 #ANTIGEN_LOG=$ADOTDIR/log
 source /usr/share/zsh/share/antigen.zsh
 

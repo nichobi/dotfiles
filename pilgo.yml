@@ -67,6 +67,7 @@ options:
     useHome: true
   zsh:
     targets:
+    - completion
     - zprofile
     - zshenv
     - zshrc
