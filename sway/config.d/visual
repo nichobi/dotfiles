@@ -1,5 +1,5 @@
 # Wallpaper
-output * bg $swaydir/images/iss043e86375_lrg.jpg fill
+output * bg $swaydir/images/ISS043-E-86375.JPG fill
 
 # Colour borders
 # class                 | border  │ background │ text    │ indicator │ child_border
