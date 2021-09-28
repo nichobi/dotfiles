@@ -1,0 +1,98 @@
+## Beets settings ##
+directory: ~/Music
+library: ~/.config/beets/musiclibrary.db
+
+import:
+  move: yes
+  log: ~/.config/beets/imports.log
+
+per_disc_numbering: yes
+original_date: yes
+languages: en
+
+match:
+  preferred:
+    media: ['CD', 'Digital Media|File']
+    original_year: yes
+
+paths:
+  default: %the{$albumartist}/%if{$original_year,$original_year,$year} - $album%aunique{}/%if{$multidisc,Disc $disc/}$track $title
+  singleton: %the{$artist}/Non-Album/$title
+
+## Plugin configuration ##
+plugins:
+  alternatives
+  bandcamp
+  chroma
+  convert
+  discogs
+  duplicates
+  edit
+  embedart
+  fetchart
+  fromfilename
+  inline
+  lastimport
+  mbsync
+  missing
+  random
+  replaygain
+  the
+
+acoustid:
+  apikey: 77UD6iWvfo
+
+alternatives:
+  lossy:
+    directory: /mnt/data/MusicLossy
+    formats: aac mp3
+    query: "path+"
+    removable: true
+
+convert:
+  dest: /mnt/data/MusicLossy
+  never_convert_lossy_files: yes
+  format: aac
+
+edit:
+  itemsfields: track title artist album path
+
+embedart:
+  maxwidth: 600
+
+fetchart:
+  sources:
+    - filesystem
+    - coverart
+    - itunes
+    - amazon
+    - albumart
+    - wikipedia
+
+# Inline Plugin
+item_fields:
+  multidisc: 1 if disctotal > 1 else 0
+
+album_fields:
+  length: |
+    total = 0
+    for item in items:
+      total += item.length
+    return total
+  formats: |
+    formats = set()
+    for item in items:
+      formats.add(item.format)
+    return ', '.join(sorted(formats))
+  formatn: |
+    formats = set()
+    for item in items:
+      formats.add(item.format)
+    return len(formats)
+
+lastfm:
+  user: nichobi
+
+replaygain:
+  backend: ffmpeg
+

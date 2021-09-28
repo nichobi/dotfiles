@@ -1,5 +1,6 @@
 targets:
 - alacritty
+- beets
 - bin
 - flashfocus
 - ghci
