@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-base
-pkgver=2
+pkgver=3
 pkgrel=1
 pkgdesc="nichobi base packages"
 arch=('any')
@@ -22,7 +22,6 @@ depends=(
   'tmux'                  # Terminal multiplexer
   'wget'                  # Internet file retriever
   'zsh'                   # Shell
-  'oh-my-zsh-git'         # zsh config manager
 
   # Package management
   'informant'             # Arch News checker
