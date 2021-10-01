@@ -1,0 +1,17 @@
+#!/bin/sh
+cachefile=$HOME/.cache/lowbatnotify
+acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
+	read -r status capacity
+  last_notification=$(cat "$cachefile" 2>/dev/null || echo 100)
+
+  # echo "$status" "$capacity" "$last_notification"
+	if [ "$status" = Discharging ] && [ "$capacity" -le 25 ]; then
+    if [ "$(echo "$capacity <= ($last_notification - 5)" | bc)" -eq 1 ]; then
+      notify-send -u critical -t 60000 "$capacity% battery"
+      echo "$capacity - ($capacity % 5)" | bc > "$cachefile"
+    fi
+  elif [ "$status" != Discharging ] && [ "$last_notification" != 100 ]; then
+    echo 100 > "$cachefile"
+  fi
+}
+
