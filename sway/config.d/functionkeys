@@ -1,21 +1,25 @@
 # Set up wob links
-exec mkfifo $SWAYSOCK.200wob && tail -f $SWAYSOCK.200wob | wob -a top -m 200
+exec mkfifo $SWAYSOCK.100wob && tail -f $SWAYSOCK.100wob | wob -a top -m 100
 exec mkfifo $SWAYSOCK.255wob && tail -f $SWAYSOCK.255wob | wob -a top -m 255
 
 # Special keys
 # https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
 bindsym --locked XF86AudioRaiseVolume exec \
-    pamixer --allow-boost --set-limit 200 -ui 5 && pamixer --get-volume > $SWAYSOCK.200wob
+  pamixer --allow-boost -ui 5 --set-limit 200 \
+  && pamixer --get-volume > $SWAYSOCK.100wob
 bindsym --locked XF86AudioLowerVolume exec \
-    pamixer --allow-boost --set-limit 200 -ud 5 && pamixer --get-volume > $SWAYSOCK.200wob
+  pamixer --allow-boost -ud 5 --set-limit 200 \
+  && pamixer --get-volume > $SWAYSOCK.100wob
 bindsym --locked XF86AudioMute exec \
-    pamixer -t && (pamixer --get-mute && echo 0 > $SWAYSOCK.200wob) || pamixer --get-volume > $SWAYSOCK.200wob
-bindsym --locked XF86AudioMicMute      exec \
-    pamixer --default-source -t
+  pamixer --toggle-mute \
+  && (pamixer --get-mute && echo 0 > $SWAYSOCK.100wob) \
+  || pamixer --get-volume > $SWAYSOCK.100wob
+bindsym --locked XF86AudioMicMute exec \
+  pamixer --default-source -t
 bindsym --locked XF86MonBrightnessDown exec \
-    brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
+  brightnessctl set 5%- && brightnessctl get > $SWAYSOCK.255wob
 bindsym --locked XF86MonBrightnessUp exec \
-    brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
+  brightnessctl set 5%+ && brightnessctl get > $SWAYSOCK.255wob
 
 # Bind PrtSc to take screenshots
 bindsym Print            exec grimshot --notify copy screen
@@ -25,3 +29,4 @@ bindsym Ctrl+Print       exec grimshot --notify copy active
 bindsym Shift+Print      exec grimshot --notify save screen
 bindsym Shift+Alt+Print  exec grimshot --notify save area
 bindsym Shift+Ctrl+Print exec $scripts/screenshotcurrentwindow.sh
+
