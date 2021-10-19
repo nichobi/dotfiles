@@ -51,6 +51,9 @@ config.bind('<Ctrl-k>', 'completion-item-focus prev', mode='command')
 config.unbind('d')
 config.bind('dd', 'tab-close')
 
+# Unbind home-page key
+config.unbind('<Ctrl+h>')
+
 # Bindings to close all tabs to the left or right of the current tab
 # --pinned flag requires https://github.com/qutebrowser/qutebrowser/pull/6287
 # Merged in 2.2.0
