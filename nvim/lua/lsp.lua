@@ -17,7 +17,7 @@ if g.lsp_client == 'nvim' then
   require'lspconfig'.bashls.setup{capabilities = capabilities}
 
 
-  metals_config = require('metals').bare_config
+  metals_config = require('metals').bare_config()
   metals_config.init_options.statusBarProvider = 'on'
   metals_config.capabilities = capabilities
   cmd [[augroup lsp
