@@ -30,7 +30,12 @@ require('packer').startup(function()
   -- Improved syntax highlighting for supported languages
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   -- Highlight a unique character in every word on a line
-  use 'unblevable/quick-scope'
+  use {
+    'unblevable/quick-scope',
+    config = function()
+      vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
+    end
+  }
   -- Show key binding popups
   use {
     'folke/which-key.nvim',
