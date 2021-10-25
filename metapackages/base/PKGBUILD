@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-base
-pkgver=4
+pkgver=5
 pkgrel=1
 pkgdesc="nichobi base packages"
 arch=('any')
@@ -11,6 +11,7 @@ depends=(
   # Base setup
   'atool'                 # Archive manager
   'antigen'               # zsh plugin manager
+  'dashbinsh'             # Use dash as /bin/sh
   'exa'                   # ls replacement
   'fd'                    # File searcher
   'fzf'                   # Fuzzy finder
