@@ -14,6 +14,12 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   -- Sync clipboard with tmux
   use 'roxma/vim-tmux-clipboard'
+  -- LSP configurations
+  use 'neovim/nvim-lspconfig'
+  -- Scala LSP
+  use 'scalameta/nvim-metals'
+  -- Completion engine, with snippet plugin
+  use {'hrsh7th/nvim-compe', requires = {'hrsh7th/vim-vsnip'}}
   -- Basic Scala integration
   use 'derekwyatt/vim-scala'
   -- Better status bar
@@ -63,16 +69,7 @@ require('packer').startup(function()
       require("project_nvim").setup{}
     end
   }
-
-  if g.lsp_client == 'nvim' then
-    -- LSP configurations
-    use 'neovim/nvim-lspconfig'
-    -- Scala LSP
-    use 'scalameta/nvim-metals'
-    -- Completion engine, with snippet plugin
-    use {'hrsh7th/nvim-compe', requires = {'hrsh7th/vim-vsnip'}}
-  elseif g.lsp_client == 'coc' then
-    use {'neoclide/coc.nvim', branch ='release'}
-  end
 end)
+
+
 

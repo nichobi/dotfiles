@@ -13,9 +13,6 @@ opt.expandtab = true
 -- Use wide format for file tree (:Explore)
 g.netrw_liststyle = 3
 
--- Which lsp_client to use, 'coc' or 'nvim'
-g.lsp_client = 'nvim'
-
 -- Preserve undo history
 opt.undofile = true
 
