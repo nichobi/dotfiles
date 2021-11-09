@@ -19,7 +19,16 @@ require('packer').startup(function()
   -- Scala LSP
   use 'scalameta/nvim-metals'
   -- Completion engine, with snippet plugin
-  use {'hrsh7th/nvim-compe', requires = {'hrsh7th/vim-vsnip'}}
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-calc',
+      'hrsh7th/cmp-path',
+    }
+  }
+
   -- Basic Scala integration
   use 'derekwyatt/vim-scala'
   -- Better status bar

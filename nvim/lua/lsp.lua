@@ -7,8 +7,7 @@ cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
 -- Use proper scaladoc comment indentation
 g.scala_scaladoc_indent = 1
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Haskell language server
 require'lspconfig'.hls.setup{capabilities = capabilities}
@@ -27,21 +26,37 @@ cmd [[augroup lsp
 
 opt.completeopt = 'menuone,noselect'
 
-require('compe').setup({
-  enabled = true,
-  autocomplete = true,
-  debug = false,
-  min_length = 1,
-  source = {
-    path = true,
-    buffer = true,
-    calc = true,
-    nvim_lsp = true,
-    nvim_lua = true,
-    vsnip = true,
-    ultisnips = true,
-    nvim_lsp = true,
-    neorg = true,
+local cmp = require('cmp')
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
   },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+  }, {
+    { name = 'buffer' },
+    { name = 'calc' },
+    { name = 'path' },
+  })
+})
+
+
+-- Use buffer source for `/`.
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
 

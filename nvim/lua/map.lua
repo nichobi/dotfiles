@@ -55,11 +55,16 @@ wk.register({
   ['gi']    = {'<cmd>lua vim.lsp.buf.implementation()<CR>',   'Go to implementation'},
   ['gr']    = {'<cmd>lua vim.lsp.buf.references()<CR>',       'Go to references'},
 })
+
+-- nvim-cmp bindings
+-- These currently don't work correctly when bound manually,
+-- so letting nvim-cmp set up bindings automatically
+--local cmp = require('cmp')
 wk.register({
-  ['<C-Space>']  = {[[compe#complete()]],             'Complete'},
-  ['<CR>']       = {[[compe#confirm('<CR>')]],        'Confirm'},
-  ['<C-e>']      = {[[compe#close('<C-e>')]],         'Close'},
-  ['<C-f>']      = {[[compe#scroll({'delta': +4 })]], 'Scroll'},
-  ['<C-d>']      = {[[compe#scroll({'delta': -4 })]], 'Scroll'},
-}, {mode = 'i', expr = true})
+  --['<C-Space>'] = {cmp.mapping.complete(),                 'Complete'},
+  --['<CR>']      = {cmp.mapping.confirm({ select = true }), 'Confirm'},
+  --['<C-e>']     = {cmp.mapping.close(),                    'Close'},
+  --['<C-f>']     = {cmp.mapping.scroll_docs(4),             'Scroll down'},
+  --['<C-d>']     = {cmp.mapping.scroll_docs(-4),            'Scroll up'},
+}, {mode = 'i'})
 
