@@ -1,9 +1,9 @@
 aetc   https://www.alteregotradingcompany.org/hub/index.php?action=unread;all
 ascii  https://ascii.nichobi.com
 baz    https://bazarr.nichobi.com
+bw     https://bookwyrm.social
 cal    https://calendar.google.com
 del    https://deluge.nichobi.com
-duo    https://duo.google.com
 gh     https://github.com
 gm     https://mail.google.com
 gp     https://photos.google.com
@@ -16,6 +16,7 @@ map    https://www.google.com/maps
 mes    https://messenger.com
 pro    https://prowlarr.nichobi.com
 rad    https://radarr.nichobi.com
+sg     https://app.thestorygraph.com
 son    https://sonarr.nichobi.com
 tw     https://twitter.com
 yt     https://www.youtube.com/feed/subscriptions
