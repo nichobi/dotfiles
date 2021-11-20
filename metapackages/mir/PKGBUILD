@@ -1,0 +1,35 @@
+# Maintainer: Nicholas Boyd Isacsson
+
+pkgname=nichobi-mir
+pkgver=1
+pkgrel=1
+pkgdesc="nichobi mir server packages"
+arch=('any')
+depends=(
+  'nichobi-base' # base-devel as a metapackage
+
+  # Base server
+  'openssh'                # ssh server
+  'nginx-mainline'         # Webserver
+  'certbot'                # SSL certificate fetcher
+  'certbot-dns-cloudflare' # Cloudflare plugin for certbot
+  'inadyn-fork'            # Dynamic DNS manager
+  'pass-web'               # Webclient for pass
+
+  # Media
+  'beets'                  # Music library manager
+  'beets-alternatives-git' # Manage alternative versions of library
+  'beets-bandcamp'         # Bandcamp plugin for beets
+  'navidrome-bin'          # Music server
+  'jellyfin'               # Media server
+  'deluge'                 # Torrent client
+  'sonarr'                 # TV series manager
+  'radarr'                 # Film manager
+  'bazarr'                 # Subtitle manager
+  'prowlarr'               # Indexer manager
+
+  # Archiving
+  'podget'                 # Podcast downloader
+  'yt-dlp-drop-in'         # Website video downloader
+)
+
