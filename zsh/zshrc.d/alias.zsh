@@ -15,6 +15,7 @@ alias oops='sudo "$BASH" -c "$(history -p !!)"'
 alias pR="paru  -Qq  | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -Rsn"
 alias pRe="paru -Qqe | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -Rsn"
 alias pS="paru  -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
+alias rsync="rsync -hv --info=progress2"
 alias tb="nc termbin.com 9999"
 alias tmux='tmux -u'
 alias updatemusicfolder="ssh mir 'beet alt update lossy' && rsync -thr --no-i-r --progress mir:/mnt/data/MusicLossy/ ~/Music/ --delete"
