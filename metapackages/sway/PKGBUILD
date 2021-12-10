@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=4
+pkgver=5
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -9,10 +9,11 @@ depends=(
   'nichobi-base'
 
   # Base setup
-  'sway'                  # Window manager
-  'swaylock-effects-git'  # Lock screen
-  'swayidle'              # Idle managment daemon
   'alacritty'             # Terminal
+  'sway'                  # Window manager
+  'swayidle'              # Idle managment daemon
+  'swaylock-effects-git'  # Lock screen
+  'waybar'                # Bar
 
   # Utilities
   'brightnessctl'         # Brightness controller
@@ -23,6 +24,7 @@ depends=(
   'pinentry-dmenu'        # Pinentry program
   'runin-git'             # Run command in terminal and pipe stdin & stdout for it
   'wl-clipboard'          # Clipboard manager
+  'waybar-mpris-git'      # Media module for waybar
   'wob'                   # Volume/backlight overlay bar
   'ydotool'               # Input automation tool
 
