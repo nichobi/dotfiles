@@ -21,6 +21,7 @@ alias tmux='tmux -u'
 alias updatemusicfolder="ssh mir 'beet alt update lossy' && rsync -thr --no-i-r --progress mir:/mnt/data/MusicLossy/ ~/Music/ --delete"
 alias webcamdisable='sudo modprobe -r uvcvideo'
 alias webcamenable='sudo modprobe uvcvideo'
+alias wget='wget --content-disposition'
 alias screenmirrorx11='SDL_VIDEODRIVER=x11 wf-recorder -c rawvideo -m sdl -f pipe:wayland-mirror'
 alias screenmirrorwayland='SDL_VIDEODRIVER=wayland wf-recorder -c rawvideo -m sdl -f pipe:wayland-mirror'
 
