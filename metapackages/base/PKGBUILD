@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-base
-pkgver=6
+pkgver=7
 pkgrel=1
 pkgdesc="nichobi base packages"
 arch=('any')
@@ -26,7 +26,6 @@ depends=(
   'zsh'                   # Shell
 
   # Package management
-  'informant'             # Arch News checker
   'longoverdue'           # Service update checker
   'pacman-backup-hook'    # Hook to keep list of explicit packages
   'pacman-contrib'        # Pacman scripts and tools
