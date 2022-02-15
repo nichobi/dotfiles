@@ -31,6 +31,9 @@ opt.numberwidth = 3
 opt.title = true
 opt.titlestring = [[%f - nvim]]
 
+-- Disable mode text in message area
+opt.showmode = false
+
 -- Rainbow parentheses
 g.rainbow_active = 1
 
