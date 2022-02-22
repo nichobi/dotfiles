@@ -46,3 +46,5 @@ opt.shortmess:remove("F")
 -- Reduce timeoutlen so which-key activates sooner
 opt.timeoutlen = 500
 
+opt.diffopt:append { 'algorithm:histogram' }
+
