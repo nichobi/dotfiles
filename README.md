@@ -1,5 +1,5 @@
 # nichobi's dotfiles
-##Configuration files for my Arch Linux setup.
+## Configuration files for my Arch Linux setup.
 This is my setup Wayland enviroment based around Sway as the window manager, Alacritty as a terminal, and neovim as an editor.
 
 Dotfiles are managed with [pilgo](https://startpage.com/sp/search?query=pilgo), according to the setup in [pilgo.yml](pilgo.yml).
