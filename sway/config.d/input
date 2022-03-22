@@ -16,7 +16,7 @@ input type:touchpad {
 input type:keyboard {
     # us_se is my custom keyboard layout, located in dotfiles/xkb/symbols/us_se
     xkb_layout us_se,se
-    xkb_options ctrl:nocaps,grp:lctrl_lwin_toggle,shift:both_capslock
+    xkb_options ctrl:nocaps,grp:lctrl_lwin_toggle,shift:both_capslock,compose:lctrl
     repeat_delay 500
     repeat_rate 15
 }
