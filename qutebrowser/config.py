@@ -35,6 +35,11 @@ c.scrolling.smooth = True
 # Enable spellcheck
 c.spellcheck.languages = ['en-GB', 'sv-SE']
 
+c.fileselect.handler = 'external'
+c.fileselect.folder.command         = ["alacritty", "-e", "ranger", "--choosedir={}"]
+c.fileselect.multiple_files.command = ["alacritty", "-e", "ranger", "--choosefiles={}"]
+c.fileselect.single_file.command    = ["alacritty", "-e", "ranger", "--choosefile={}"]
+
 
 ## Binds ##
 
