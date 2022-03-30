@@ -13,13 +13,14 @@ c.auto_save.session = True
 
 # Prefer dark color schemes
 c.colors.webpage.preferred_color_scheme = 'dark'
+#c.colors.webpage.darkmode.enabled = True
 
 # Require a confirmation before quitting the application if downloads are active.
 c.confirm_quit = ["downloads"]
 
 # Use neovim in alacritty as an editor
 c.editor.command = ["alacritty", "-t", "Qutebrowser Editor", "-e",
-                    "nvim", "{}", "+call cursor({line}, {column})"]
+                    "nvim", "{}", "+call cursor({line},{column0})"]
 
 # Font settings
 c.fonts.default_family = 'Source Code Pro'
