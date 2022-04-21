@@ -140,7 +140,8 @@ c.downloads.remove_finished = 300000
 
 # Add full keyboard layout to hint chars
 # This is a bad idea but works nicely as typing practice
-c.hints.chars =  'asdfghjkl;\'\\' + 'qwertyuiop[]' + '<zxcvbnm,./' + '1234567890-='
+# Now adapted for my redox layout, so somewhat nonsensical for other layouts
+c.hints.chars =  'asdfghjkl;\'' + 'qwerty[]uiop-' + 'zxcvbnm,./\\' + '`1234567890='
 
 # Don't lead hint mode when page loads
 c.hints.leave_on_load = False
