@@ -12,6 +12,14 @@ end
 require('packer').startup(function()
   -- Manage packer with packer
   use 'wbthomason/packer.nvim'
+  -- My own vim colorscheme
+  use {
+    --'~/projects/nicolour-nvim',
+    'nichobi/nicolour-nvim',
+    requires = {
+      'rktjmp/lush.nvim'
+    }
+  }
   -- Sync clipboard with tmux
   use 'roxma/vim-tmux-clipboard'
   -- LSP configurations

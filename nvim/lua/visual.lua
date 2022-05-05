@@ -3,7 +3,8 @@ local fn  = vim.fn
 local g   = vim.g
 local opt = vim.opt
 
-cmd('colorscheme dim')
+opt.termguicolors = true
+cmd('colorscheme nicolour-nvim')
 
 -- Show at least one line above/below the cursor
 opt.scrolloff=1
