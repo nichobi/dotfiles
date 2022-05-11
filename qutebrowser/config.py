@@ -19,7 +19,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 c.confirm_quit = ["downloads"]
 
 # Use neovim in alacritty as an editor
-c.editor.command = ["alacritty", "-t", "Qutebrowser Editor", "-e",
+c.editor.command = ["alacritty", "-t", "qutebrowser editor", "-e",
                     "nvim", "{}", "+call cursor({line},{column0})"]
 
 # Font settings

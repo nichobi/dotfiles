@@ -12,7 +12,7 @@ hide_edge_borders both
 focus_on_window_activation smart
 
 # Make specified windows float
-for_window [title="Qutebrowser Editor"] floating enable
+for_window [title="qutebrowser editor"] floating enable
 for_window [app_id="jome"] floating enable
 for_window [title="Launcher"] floating enable
 

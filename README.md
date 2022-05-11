@@ -8,7 +8,7 @@ Dotfiles are managed with [pilgo](https://startpage.com/sp/search?query=pilgo), 
 The repo contains configs for the following software:
 * [Alacritty](https://github.com/alacritty/alacritty): Terminal emulator
 * [Paru](https://github.com/Morganamilo/paru): AUR helper and pacman wrapper
-* [Qutebrowser](https://github.com/qutebrowser/qutebrowser): Keyboard driven, Vim-like browser
+* [qutebrowser](https://github.com/qutebrowser/qutebrowser): Keyboard driven, Vim-like browser
 * [Sway](https://github.com/swaywm/sway): Tiling window manager for Wayland
   * [Flashfocus](https://github.com/tmux/tmux): Flash windows on focus change
   * [Mako](https://github.com/emersion/mako): Notfication Daemon
