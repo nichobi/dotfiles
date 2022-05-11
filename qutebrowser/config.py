@@ -82,6 +82,8 @@ config.unbind(';i')
 config.bind(';ii', 'hint images')
 config.bind(';io', 'hint images run open {hint-url}')
 config.bind(';iO', 'hint images run open -t {hint-url}')
+config.bind(';iy', 'hint images yank')
+config.bind(';iY', 'hint images yank-primary')
 config.bind(';ig', 'hint images run open https://www.google.com/searchbyimage?&image_url={hint-url}')
 
 # Bind for opening link in private window
