@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=5
+pkgver=6
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -35,7 +35,8 @@ depends=(
   'zathura'               # Document viewer
 
   # Theming
-  'adwaita-qt'            # Consistent theme between QT and GTK
+  'adwaita-qt5'           # Consistent theme between QT and GTK
+  'adwaita-qt6'           # Consistent theme between QT and GTK
 )
 optdepends=(
   'jome-git'              # Graphical emoji picker
