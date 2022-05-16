@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-devel
-pkgver=2
+pkgver=3
 pkgrel=1
 pkgdesc="nichobi development packages"
 arch=('any')
@@ -26,5 +26,6 @@ depends=(
 
   # Shell
   'bash-language-server'    # Bash language server
+  'shellcheck'              # Static analysis
 )
 
