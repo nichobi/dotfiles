@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-mir
-pkgver=2
+pkgver=3
 pkgrel=1
 pkgdesc="nichobi mir server packages"
 arch=('any')
@@ -22,6 +22,7 @@ depends=(
   'beets-bandcamp'         # Bandcamp plugin for beets
   'navidrome-bin'          # Music server
   'jellyfin'               # Media server
+  'jellyfin-ffmpeg5'       # Jellyfin ffmpeg fork for transcoding
   'deluge'                 # Torrent client
   'sonarr'                 # TV series manager
   'radarr'                 # Film manager
