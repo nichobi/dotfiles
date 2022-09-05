@@ -24,7 +24,7 @@ cmd [[augroup lsp
       augroup end
     ]]
 
-opt.completeopt = 'menuone,noselect'
+opt.completeopt = 'menu,menuone,noselect'
 
 local cmp = require('cmp')
 cmp.setup({
@@ -33,6 +33,7 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body)
     end,
   },
+  mapping = cmp.mapping.preset.insert(),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
@@ -46,6 +47,7 @@ cmp.setup({
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
@@ -53,6 +55,7 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
