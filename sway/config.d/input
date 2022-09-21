@@ -22,7 +22,7 @@ input type:keyboard {
   repeat_rate 15
 }
 
-input 19780:21060:Falbatech_The_Redox_Keyboard {
+input 19780:21060:Falbatech_Redox {
   # Don't rebind a bunch of stuff for the Redox, can just reprogram it instead
   xkb_options grp:lctrl_lwin_toggle
   xkb_variant ,
