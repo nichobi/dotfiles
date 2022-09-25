@@ -173,6 +173,7 @@ c.url.searchengines = {
   "bw":      "https://bookwyrm.social/search?q={}",
   "dd":      "https://duckduckgo.com?q={}",
   "df":      "https://dwarffortresswiki.org?search={}",
+  "dl":      "https://deepl.com/translator#_/en/{}",
   "g":       "https://www.google.com/search?q={}",
   "gh":      "https://github.com/search?q={}",
   "gm":      "https://mail.google.com/mail/u/0/#search/{}",
