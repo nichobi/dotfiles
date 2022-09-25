@@ -1,19 +1,21 @@
-aetc   https://www.alteregotradingcompany.org/hub/index.php?action=unread;all
+aetc   https://alteregotradingcompany.org/hub/index.php?action=unread;all
 ascii  https://ascii.nichobi.com
 baz    https://bazarr.nichobi.com
 bw     https://bookwyrm.social
 cal    https://calendar.google.com
 del    https://deluge.nichobi.com
+dl     https://deepl.com
 gh     https://github.com
 gm     https://mail.google.com
 gp     https://photos.google.com
 gr     https://goodreads.com
 hoo    https://hoogle.haskell.org
-inst   https://www.instagram.com
+inst   https://instagram.com
 jf     https://jellyfin.nichobi.com
 keep   https://keep.google.com
+key    https://keybr.com
 ma     https://mastodon.social/web
-map    https://www.google.com/maps
+map    https://google.com/maps
 mes    https://messenger.com
 pro    https://prowlarr.nichobi.com
 rad    https://radarr.nichobi.com
@@ -21,7 +23,7 @@ re     https://teddit.net
 sg     https://app.thestorygraph.com
 son    https://sonarr.nichobi.com
 tw     https://twitter.com
-yt     https://www.youtube.com/feed/subscriptions
+yt     https://youtube.com/feed/subscriptions
 
 # Course pages
 eitf05 https://canvas.education.lu.se/courses/19937
