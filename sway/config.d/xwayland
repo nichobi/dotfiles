@@ -1,3 +1,6 @@
-xwayland force scale 2
+# Set xprop for xwayland-hidpi-xprop-git
+exec_always 'xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2'
+# Old config for xwayland-hidpi-git
+#xwayland force scale 2
 exec xsettingsd
 

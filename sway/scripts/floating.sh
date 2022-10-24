@@ -17,3 +17,4 @@ tail --pid=$pid -f /dev/null
 
 echo Killing subscription
 kill $subscription
+

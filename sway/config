@@ -24,6 +24,7 @@ set $menu bash -c "\
           | sort | uniq \
           | runin 'alacritty --title Launcher' fzf \
           | xargs -r swaymsg -t command exec gtk-launch"
+set $menu exec alacritty --title=Launcher -e $scripts/launcher.sh
 
 # Run any executable
 set $altmenu bash -c "\
