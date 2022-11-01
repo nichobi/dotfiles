@@ -7,7 +7,7 @@ cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
 -- Use proper scaladoc comment indentation
 g.scala_scaladoc_indent = 1
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities
 
 -- Haskell language server
 require'lspconfig'.hls.setup{capabilities = capabilities}
