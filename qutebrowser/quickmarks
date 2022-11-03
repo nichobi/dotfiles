@@ -28,6 +28,6 @@ tw     https://twitter.com
 yt     https://youtube.com/feed/subscriptions
 
 # Course pages
-eitf05 https://canvas.education.lu.se/courses/19937
-etsn05 https://canvas.education.lu.se/courses/20127
-edan20 https://canvas.education.lu.se/courses/19793
+edap15  https://fileadmin.cs.lth.se/cs/Education/EDAP15/2022/web/
+edap15m https://moodle.cs.lth.se/course/view.php?id=970
+edan01  https://canvas.education.lu.se/courses/21118
