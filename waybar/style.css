@@ -15,6 +15,10 @@ window#waybar {
     transition-duration: .5s;
 }
 
+button {
+    border-radius: 80px;
+}
+
 /*
 window#waybar.hidden {
     opacity: 0.2;
@@ -40,7 +44,6 @@ window#waybar.chromium {
 }
 
 #workspaces button {
-    border-radius: 80px;
     padding: 2px 2px 0px 2px;
     background-color: transparent;
     color: #ffffff;
