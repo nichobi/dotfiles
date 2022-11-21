@@ -15,6 +15,7 @@ targets:
 - sway
 - tmux
 - waybar
+- wob
 - xkb
 - xsettingsd
 - zathura
