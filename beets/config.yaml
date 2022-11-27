@@ -38,6 +38,7 @@ plugins:
   random
   replaygain
   the
+  yapl
 
 acoustid:
   apikey: 77UD6iWvfo
@@ -95,4 +96,9 @@ lastfm:
 
 replaygain:
   backend: ffmpeg
+
+yapl:
+  input_path: /home/nichobi/Music/playlists/
+  output_path: /home/nichobi/Music/playlists/
+  relative: true
 
