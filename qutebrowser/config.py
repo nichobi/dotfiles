@@ -185,7 +185,6 @@ c.url.searchengines = {
   "re":      "https://teddit.net/r/all/search?q={}",
   "sg":      "https://app.thestorygraph.com/browse?search_term={}",
   "sp":      "https://startpage.com/sp/search?query={}",
-  "tw":      "https://twitter.com/search?q={}",
   "yt":      "https://www.youtube.com/results?search_query={}"
 }
 
