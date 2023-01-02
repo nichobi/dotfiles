@@ -38,7 +38,7 @@ wk.register({
   ['<leader>'] = {
     D  = {'<cmd>lua vim.lsp.buf.type_definition()<CR>',                            'Type definition'},
     ca = {'<cmd>lua vim.lsp.buf.code_action()<CR>',                                'Code action'},
-    e  = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',               'Show line diagnostics'},
+    e  = {'<cmd>lua vim.diagnostic.open_float()<CR>',                              'Show line diagnostics'},
     F  = {'<cmd>lua vim.lsp.buf.formatting()<CR>',                                 'Format'},
     q  = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',                         'View location list'},
     rn = {'<cmd>lua vim.lsp.buf.rename()<CR>',                                     'Rename symbol'},
