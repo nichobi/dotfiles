@@ -55,6 +55,8 @@ require('packer').startup(function()
   use 'luochen1990/rainbow'
   -- Improved syntax highlighting for supported languages
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  -- Add a buffer bar
+  use 'romgrk/barbar.nvim'
   -- Highlight a unique character in every word on a line
   use {
     'unblevable/quick-scope',

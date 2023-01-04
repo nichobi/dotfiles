@@ -96,6 +96,13 @@ require('lualine').setup {
   },
 }
 
+require'bufferline'.setup {
+  animation = false,
+  auto_hide = true,
+  closable = false,
+  icons = false,
+}
+
 -- Style signcolumn icons
 fn.sign_define('LspDiagnosticsSignError',       {text = '', texthl = 'LspDiagnosticsDefaultError'})
 fn.sign_define('LspDiagnosticsSignWarning',     {text = '', texthl = 'LspDiagnosticsDefaultWarning'})
