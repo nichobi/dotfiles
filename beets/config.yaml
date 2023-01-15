@@ -5,6 +5,7 @@ library: ~/.config/beets/musiclibrary.db
 import:
   move: yes
   log: ~/.config/beets/imports.log
+  languages: en
 
 per_disc_numbering: yes
 original_date: yes
@@ -29,10 +30,12 @@ plugins:
   duplicates
   edit
   embedart
+  extrafiles
   fetchart
   fromfilename
   inline
   lastimport
+  mbsubmit
   mbsync
   missing
   random
@@ -60,6 +63,42 @@ edit:
 
 embedart:
   maxwidth: 600
+
+extrafiles:
+  patterns:
+    artworkdir:
+      - '[sS]cans/'
+      - '[sS]can/'
+      - '[aA]rtwork/'
+      - '[cC]over/'
+      - '[cC]overs/'
+      - '[pP]icutres/'
+    artworkfiles:
+      - '*.png'
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.gif'
+      - '*.pdf'
+    datafiles:
+      - '*.log'
+      - '*.txt'
+      - '*.md5'
+      - '*.ffp'
+      - '*.cue'
+      - '*.CUE'
+      - '*.nfo'
+      - '*.st5'
+      - '*.auCDtect'
+      - '*.accurip'
+      - '*.sfv'
+      - '*.xml'
+    extradir:
+      - '[eE]xtras/'
+  paths:
+    artworkdir: $albumpath/artwork
+    extradir: $albumpath/data
+    artworkfiles: $albumpath/artwork/$filename
+    datafiles: $albumpath/data/$filename
 
 fetchart:
   sources:
@@ -95,7 +134,9 @@ lastfm:
   user: nichobi
 
 replaygain:
+  auto: yes
   backend: ffmpeg
+  overwrite: yes
 
 yapl:
   input_path: /home/nichobi/Music/playlists/
