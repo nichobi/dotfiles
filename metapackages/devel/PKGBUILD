@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-devel
-pkgver=3
+pkgver=4
 pkgrel=1
 pkgdesc="nichobi development packages"
 arch=('any')
@@ -21,8 +21,7 @@ depends=(
   'coursier-native'         # Coursier, required by nvim-metals
 
   # Haskell
-  'ghc'                     # Glasgow Haskell Compiler
-  'haskell-language-server' # Haskell language server
+  'ghcup'                   # Installer for GHC & haskell-language-server
 
   # Shell
   'bash-language-server'    # Bash language server
