@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=6
+pkgver=7
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -19,12 +19,12 @@ depends=(
   'brightnessctl'         # Brightness controller
   'flashfocus-git'        # Flash windows on focus
   'grimshot'              # Screenshot helper
-  'mako'                  # Notification demon
   'pamixer'               # Pulseaudio mixer
   'pinentry-dmenu'        # Pinentry program
   'runin-git'             # Run command in terminal and pipe stdin & stdout for it
-  'wl-clipboard'          # Clipboard manager
+  'swaync'                # Notification demon
   'waybar-mpris-git'      # Media module for waybar
+  'wl-clipboard'          # Clipboard manager
   'wob'                   # Volume/backlight overlay bar
   'ydotool'               # Input automation tool
 
