@@ -11,6 +11,7 @@ targets:
 - nvim
 - paru
 - qutebrowser
+- readline
 - shell
 - sway
 - tmux
@@ -20,6 +21,7 @@ targets:
 - xsettingsd
 - zathura
 - zsh
+- zshenv
 options:
   bin:
     link: .local/bin
@@ -33,26 +35,6 @@ options:
   haskeline:
     link: .haskeline
     useHome: true
-  shell:
-    targets:
-    - alias
-    - bashrc
-    - inputrc
-    - profile
-    - zshenv
-    options:
-      alias:
-        link: .alias
-      bashrc:
-        link: .bashrc
-      inputrc:
-        link: .inputrc
-      profile:
-        link: .profile
-      zshenv:
-        link: .zshenv
-    flatten: true
-    useHome: true
   xkb:
     link: .xkb
     useHome: true
@@ -60,14 +42,13 @@ options:
     targets:
     - completion
     - zprofile
-    - zshenv
     - zshrc
     - zshrc.d
     options:
       zprofile:
         link: .zprofile
-      zshenv:
-        link: .zshenv
-        useHome: true
       zshrc:
         link: .zshrc
+  zshenv:
+    link: .zshenv
+    useHome: true
