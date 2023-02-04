@@ -4,7 +4,7 @@ targets:
 - bin
 - flashfocus
 - ghci
-- gitconfig
+- git
 - gnupg
 - haskeline
 - mako
@@ -26,9 +26,6 @@ options:
     useHome: true
   ghci:
     link: .ghci
-    useHome: true
-  gitconfig:
-    link: .gitconfig
     useHome: true
   gnupg:
     link: .gnupg
