@@ -7,12 +7,42 @@ cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
 -- Use proper scaladoc comment indentation
 g.scala_scaladoc_indent = 1
 
+require("mason").setup()
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Haskell language server
 require'lspconfig'.hls.setup{capabilities = capabilities}
 -- Bash language server
 require'lspconfig'.bashls.setup{capabilities = capabilities}
+-- Latex language server
+require'lspconfig'.texlab.setup{
+  capabilities = capabilities,
+  settings = {
+    texlab = {
+      auxDirectory = "build",
+      build = {
+        executable = "tectonic",
+        args = {"%f", "--synctex", "--outdir", "build"},
+        onSave = true,
+        forwardSearchAfter = true,
+      },
+      forwardSearch = {
+          executable = "zathura",
+          args = { "--synctex-forward", "%l:1:%f", "%p" },
+      },
+    }
+  }
+}
+-- LanguageTool language server
+require'lspconfig'.ltex.setup{
+  capabilities = capabilities,
+  settings = {
+    ltex = {
+      language = "en-GB",
+    }
+  },
+}
 
 
 metals_config = require('metals').bare_config()
