@@ -1,12 +1,12 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-base
-pkgver=7
+pkgver=8
 pkgrel=1
 pkgdesc="nichobi base packages"
 arch=('any')
 depends=(
-  'base-devel-meta'       # base-devel as a metapackage
+  'base-devel'            # base-devel as a metapackage
 
   # Base setup
   'atool'                 # Archive manager
