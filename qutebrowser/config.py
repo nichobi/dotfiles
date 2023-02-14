@@ -182,6 +182,7 @@ c.url.searchengines = {
   "hoo":     "https://hoogle.haskell.org/?hoogle={}",
   "keep":    "https://keep.google.com/u/0/#search/text%253D{}",
   "map":     "https://www.google.com/maps/search/{}",
+  "pm":      "https://mail.proton.me/u/0/all-mail#keyword={}",
   "re":      "https://teddit.net/r/all/search?q={}",
   "sg":      "https://app.thestorygraph.com/browse?search_term={}",
   "sp":      "https://startpage.com/sp/search?query={}",

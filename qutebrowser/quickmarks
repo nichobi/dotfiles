@@ -2,10 +2,11 @@ aetc   https://alteregotradingcompany.org/hub/index.php?action=unread;all
 ascii  https://ascii.nichobi.com
 baz    https://bazarr.nichobi.com
 bw     https://bookwyrm.social
-cal    https://calendar.google.com
+cal    https://mail.proton.me
 cg     https://coursegit.cs.lth.se
 del    https://deluge.nichobi.com
 dl     https://deepl.com
+gcal   https://calendar.google.com
 gh     https://github.com
 gm     https://mail.google.com
 gp     https://photos.google.com
@@ -20,6 +21,7 @@ ma     https://fosstodon.org
 map    https://google.com/maps
 mes    https://messenger.com
 ol     https://overleaf.com/project
+pm     https://mail.proton.me
 pro    https://prowlarr.nichobi.com
 rad    https://radarr.nichobi.com
 re     https://teddit.net
