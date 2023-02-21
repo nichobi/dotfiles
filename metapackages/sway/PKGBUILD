@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=7
+pkgver=8
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -12,7 +12,7 @@ depends=(
   'alacritty'             # Terminal
   'sway'                  # Window manager
   'swayidle'              # Idle managment daemon
-  'swaylock-effects-git'  # Lock screen
+  'swaylock-effects'      # Lock screen
   'waybar'                # Bar
 
   # Utilities
