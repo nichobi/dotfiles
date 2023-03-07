@@ -85,8 +85,8 @@ wk.register({
   ['<A-0>'] = {'<cmd>BufferLast<CR>',                   'Go to last buffer'},
   ['<leader>b'] = {
     name = 'buffer',
-    n = {'<cmd>BufferPrevious<CR>',                     'Previous buffer'},
-    p = {'<cmd>BufferNext<CR>',                         'Next buffer'},
+    n = {'<cmd>BufferNext<CR>',                         'Next buffer'},
+    p = {'<cmd>BufferPrevious<CR>',                     'Previous buffer'},
     d = {
       name = 'close',
       d = {'<cmd>BufferClose<CR>',                      'Close buffer'},
@@ -95,7 +95,7 @@ wk.register({
       l = {'<cmd>BufferCloseBuffersRight<CR>',          'Close buffers to the left'},
     },
     f = {'<cmd>BufferPick<CR>',                         'Pick a buffer'},
-    p = {'<cmd>BufferPin<CR>',                          'Pin/unpin a buffer'},
+    P = {'<cmd>BufferPin<CR>',                          'Pin/unpin a buffer'},
     o = {
       name = 'order',
       b = {'<cmd>BufferOrderByBufferNumber<CR>',        'Order by buffer number'},
