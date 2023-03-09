@@ -7,8 +7,6 @@ cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
 -- Use proper scaladoc comment indentation
 g.scala_scaladoc_indent = 1
 
-require("mason").setup()
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Haskell language server
