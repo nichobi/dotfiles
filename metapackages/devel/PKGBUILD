@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-devel
-pkgver=5
+pkgver=6
 pkgrel=1
 pkgdesc="nichobi development packages"
 arch=('any')
@@ -18,7 +18,7 @@ depends=(
   'scala3'                  # Scala 3
   'ammonite'                # Script-focused Scala REPL
   'jdk11-openjdk'           # Requirement for metals
-  'coursier-native'         # Coursier, required by nvim-metals
+  'coursier-native-bin'     # Coursier, required by nvim-metals
 
   # Haskell
   'ghcup-hs-bin'            # Installer for GHC & haskell-language-server
