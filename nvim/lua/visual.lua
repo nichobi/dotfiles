@@ -99,8 +99,13 @@ require('lualine').setup {
 require'bufferline'.setup {
   animation = false,
   auto_hide = true,
-  closable = false,
-  icons = false,
+  icons = {
+    filetype = { enabled = false },
+    -- Disable close, save and unpin buttons
+    button   = '', --disable close button
+    modified = {button = ''},
+    pinned   = {button = ''},
+  },
 }
 
 -- Style signcolumn icons
