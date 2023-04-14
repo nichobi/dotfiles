@@ -1,7 +1,12 @@
-local cmd = vim.cmd
-local fn  = vim.fn
-local g   = vim.g
-local opt = vim.opt
+local autocmd = vim.api.nvim_create_autocmd
+local cmd     = vim.cmd
+local fn      = vim.fn
+local g       = vim.g
+local opt     = vim.opt
+
+local function highlight(name, val)
+  vim.api.nvim_set_hl(0, name, val)
+end
 
 opt.termguicolors = true
 cmd('colorscheme nicolour-nvim')
@@ -42,33 +47,22 @@ g.rainbow_active = 1
 opt.signcolumn='number'
 
 -- Highlight trailing whitespace in red while in normal mode
-cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
-cmd([[
-  match ExtraWhitespace /\s\+$/
-  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-  autocmd BufWinLeave * call clearmatches()
-]])
+highlight('ExtraWhitespace', {ctermbg = 'red', bg = 'red'})
+cmd([[match ExtraWhitespace /\s\+$/]])
+autocmd({'BufWinEnter'}, {command = [[match ExtraWhitespace /\s\+$/]]       })
+autocmd({'InsertEnter'}, {command = [[match ExtraWhitespace /\s\+\%#\@<!$/]]})
+autocmd({'InsertLeave'}, {command = [[match ExtraWhitespace /\s\+$/]]       })
+autocmd({'BufWinLeave'}, {command = [[call clearmatches()]]                 })
 
 -- Highlight lines longer than 100 chars in darkgrey
-cmd('highlight LongLine ctermbg=darkgrey guibg=darkgrey')
+highlight('LongLine', {ctermbg = 'darkgrey', bg = 'darkgrey'})
 cmd([[2mat LongLine '\%101v.']])
 
-cmd([[
-  augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-  augroup END
-]])
-
 -- Disable numbers for terminal buffers
-cmd([[
-  autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal norelativenumber
-  autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal nonumber
-  autocmd BufWinEnter,WinEnter,TermOpen term://* setlocal signcolumn=no
-]])
+autocmd({"BufEnter", "BufWinEnter", "TermOpen"}, {
+  pattern = {"term://*"},
+  command = "setlocal norelativenumber nonumber signcolumn=no",
+})
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {'bash', 'scala', 'haskell', 'java', 'lua', 'html', 'css'},
@@ -113,10 +107,8 @@ fn.sign_define('LspDiagnosticsSignError',       {text = '', texthl = 'LspDiag
 fn.sign_define('LspDiagnosticsSignWarning',     {text = '', texthl = 'LspDiagnosticsDefaultWarning'})
 fn.sign_define('LspDiagnosticsSignInformation', {text = '', texthl = 'LspDiagnosticsDefaultInformation'})
 fn.sign_define('LspDiagnosticsSignHint',        {text = '', texthl = 'LspDiagnosticsDefaultHint'})
-cmd [[
-  highlight LspDiagnosticsDefaultError       ctermfg=9'
-  highlight LspDiagnosticsDefaultWarning     ctermfg=11'
-  highlight LspDiagnosticsDefaultInformation ctermfg=7'
-  highlight LspDiagnosticsDefaultHint        ctermfg=7'
-]]
+highlight('LspDiagnosticsDefaultError',       {ctermfg=9})
+highlight('LspDiagnosticsDefaultWarning',     {ctermfg=11})
+highlight('LspDiagnosticsDefaultInformation', {ctermfg=7})
+highlight('LspDiagnosticsDefaultHint',        {ctermfg=7})
 
