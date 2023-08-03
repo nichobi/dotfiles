@@ -72,10 +72,11 @@ config.bind('gh', 'set-cmd-text -s :back ')
 config.bind('gl', 'set-cmd-text -s :forward ')
 
 # Binds for qute-pass
-config.bind('zl',  'spawn --userscript qute-pass --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"')
-config.bind('zol', 'spawn --userscript qute-pass --otp-only --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"')
-config.bind('zpl', 'spawn --userscript qute-pass --password-only --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"')
-config.bind('zul', 'spawn --userscript qute-pass --username-only --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"')
+c.aliases['pass'] = 'spawn --userscript qute-pass --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"'
+config.bind('zl',  'pass')
+config.bind('zol', 'pass --otp-only')
+config.bind('zpl', 'pass --password-only')
+config.bind('zul', 'pass --username-only')
 
 # Binds for images
 config.unbind(';i')
