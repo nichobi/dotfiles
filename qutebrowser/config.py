@@ -181,10 +181,13 @@ c.url.searchengines = {
   "gp":      "https://photos.google.com/search/{}",
   "gr":      "https://www.goodreads.com/search?q={}",
   "hoo":     "https://hoogle.haskell.org/?hoogle={}",
+  "im":      "https://immich.nichobi.com/search?q={}&clip=true",
   "keep":    "https://keep.google.com/u/0/#search/text%253D{}",
   "map":     "https://www.google.com/maps/search/{}",
   "pm":      "https://mail.proton.me/u/0/all-mail#keyword={}",
   "re":      "https://teddit.net/r/all/search?q={}",
+  "res":     "https://teddit.net/r/{unquoted}",
+  "sc":      "https://www.shellcheck.net/wiki/SC{}",
   "sg":      "https://app.thestorygraph.com/browse?search_term={}",
   "sp":      "https://startpage.com/sp/search?query={}",
   "yt":      "https://www.youtube.com/results?search_query={}"

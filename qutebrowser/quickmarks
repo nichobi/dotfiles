@@ -13,11 +13,12 @@ gp     https://photos.google.com
 gr     https://goodreads.com
 hoo    https://hoogle.haskell.org
 inst   https://instagram.com
+im     https://immich.nichobi.com
 jf     https://jellyfin.nichobi.com
 keep   https://keep.google.com
 key    https://keybr.com
 lb     https://listenbrainz.org/user/nichobi
-ma     https://fosstodon.org
+ma     https://elk.zone
 map    https://google.com/maps
 mes    https://messenger.com
 ol     https://overleaf.com/project
@@ -34,4 +35,4 @@ thecs    https://cs.lth.se/examensarbete/hur-gaar-det-till/
 thelth   https://www.student.lth.se/kurs-och-programinformation/examensarbete/arbetsprocess-examensarbete-foer-civilingenjoerer/
 thelthen https://www.student.lth.se/english/masters-students/degree-project/engineering-msc/
 theform  https://kurser.lth.se/exjobb/application/13370
-cnc      https://learn.du.se/ultra/courses/_10387_1/outline
+
