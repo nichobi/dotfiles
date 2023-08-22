@@ -60,6 +60,9 @@ config.bind('dd', 'tab-close')
 # Unbind home-page key
 config.unbind('<Ctrl+h>')
 
+# Unbind bookmark-add key
+config.unbind('M')
+
 # Bindings to close all tabs to the left or right of the current tab
 # --pinned flag requires https://github.com/qutebrowser/qutebrowser/pull/6287
 # Merged in 2.2.0
