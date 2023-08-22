@@ -163,8 +163,8 @@ c.tabs.max_width = 250
 
 ## URL ##
 
-# Set default_page to blank page
-c.url.default_page = "about:blank"
+# Set default_page to qutebrowser start screen
+c.url.default_page = "qute://start"
 
 # Set up search engines
 c.url.searchengines = {
