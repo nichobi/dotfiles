@@ -193,6 +193,7 @@ c.url.searchengines = {
   "sc":      "https://www.shellcheck.net/wiki/SC{}",
   "sg":      "https://app.thestorygraph.com/browse?search_term={}",
   "sp":      "https://startpage.com/sp/search?query={}",
+  "tr":      "https://libretranslate.com/?q={}",
   "yt":      "https://www.youtube.com/results?search_query={}"
 }
 
