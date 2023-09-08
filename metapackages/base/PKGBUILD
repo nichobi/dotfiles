@@ -12,7 +12,7 @@ depends=(
   'atool'                 # Archive manager
   'antigen'               # zsh plugin manager
   'dashbinsh'             # Use dash as /bin/sh
-  'exa'                   # ls replacement
+  'eza'                   # ls replacement
   'fd'                    # File searcher
   'fzf'                   # Fuzzy finder
   'neovim'                # Editor
