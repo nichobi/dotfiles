@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-mir
-pkgver=4
+pkgver=5
 pkgrel=1
 pkgdesc="nichobi mir server packages"
 arch=('any')
@@ -24,7 +24,7 @@ depends=(
   'jellyfin-server'        # Media server
   'jellyfin-web'           # Media server web UI
   'jellyfin-vue-git'       # Media server next-gen web UI
-  'jellyfin-ffmpeg5'       # Jellyfin ffmpeg fork for transcoding
+  'jellyfin-ffmpeg6-bin'   # Jellyfin's ffmpeg fork for transcoding
   'deluge'                 # Torrent client
   'sonarr'                 # TV series manager
   'radarr'                 # Film manager
