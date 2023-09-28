@@ -8,6 +8,7 @@ targets:
 - gnupg
 - haskeline
 - mako
+- mpv
 - nvim
 - paru
 - qutebrowser
