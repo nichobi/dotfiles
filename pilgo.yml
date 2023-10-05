@@ -20,6 +20,7 @@ targets:
 - wob
 - xkb
 - xsettingsd
+- yt-dlp
 - zathura
 - zsh
 - zshenv

@@ -1,0 +1,8 @@
+--add-metadata
+--write-thumbnail
+--embed-thumbnail
+--write-info-json
+--embed-subs
+--all-subs
+--compat-options filename
+
