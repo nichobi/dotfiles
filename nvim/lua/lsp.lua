@@ -21,7 +21,7 @@ require'lspconfig'.texlab.setup{
       auxDirectory = "build",
       build = {
         executable = "tectonic",
-        args = {"%f", "--synctex", "--outdir", "build"},
+        args = {"%f", "--synctex", "--outdir", "build/"},
         onSave = true,
         forwardSearchAfter = true,
       },
@@ -38,6 +38,9 @@ require'lspconfig'.ltex.setup{
   settings = {
     ltex = {
       language = "en-GB",
+      disabledRules = {
+        ['en-GB'] = {"OXFORD_SPELLING_Z_NOT_S"},
+      }
     }
   },
 }
