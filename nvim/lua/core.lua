@@ -5,6 +5,10 @@ local g_opt = vim.opt_global
 -- Enable mouse support
 opt.mouse = 'a'
 
+-- Prompt for a decision instead of failing for commands that may cause changes
+-- to be lost
+opt.confirm = true
+
 -- Set tab to always use two spaces
 opt.tabstop = 2
 opt.shiftwidth = 0 -- Automatically matches tabstop
