@@ -47,7 +47,7 @@ c.fileselect.single_file.command    = ["alacritty", "-e", "ranger", "--choosefil
 config.bind('<Ctrl-o>', 'prompt-open-download', mode='prompt')
 
 # Bind Ctrl-e in command mode to edit the current command
-config.bind('<Ctrl+e>', 'edit-command', mode='command')
+config.bind('<Ctrl+e>', 'cmd-edit', mode='command')
 
 # Binds for moving through completion items
 config.bind('<Ctrl-j>', 'completion-item-focus next', mode='command')
@@ -71,8 +71,8 @@ config.bind('ch', 'tab-only --next --pinned keep') # Close tabs to the left
 config.bind('cl', 'tab-only --prev --pinned keep') # Close tabs to the right
 
 # Bindings to move in tab history
-config.bind('gh', 'set-cmd-text -s :back ')
-config.bind('gl', 'set-cmd-text -s :forward ')
+config.bind('gh', 'cmd-set-text -s :back ')
+config.bind('gl', 'cmd-set-text -s :forward ')
 
 # Binds for qute-pass
 c.aliases['pass'] = 'spawn --userscript qute-pass --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"'
