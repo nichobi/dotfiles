@@ -115,20 +115,12 @@ item_fields:
 
 album_fields:
   length: |
-    total = 0
-    for item in items:
-      total += item.length
-    return total
+    sum(map(lambda i: i.length, items))
+
   formats: |
-    formats = set()
-    for item in items:
-      formats.add(item.format)
-    return ', '.join(sorted(formats))
+    ', '.join(sorted(set(map(lambda i: i.format, items))))
   formatn: |
-    formats = set()
-    for item in items:
-      formats.add(item.format)
-    return len(formats)
+    len(set(map(lambda i: i.format, items)))
 
 lastfm:
   user: nichobi
