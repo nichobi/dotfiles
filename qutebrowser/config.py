@@ -74,6 +74,10 @@ config.bind('cl', 'tab-only --prev --pinned keep') # Close tabs to the right
 config.bind('gh', 'cmd-set-text -s :back ')
 config.bind('gl', 'cmd-set-text -s :forward ')
 
+# Bindings to set url to clipboard, with chance to edit
+config.bind('gp', 'cmd-set-text :open {clipboard} ')
+config.bind('gP', 'cmd-set-text :open {primary} ')
+
 # Binds for qute-pass
 c.aliases['pass'] = 'spawn --userscript qute-pass --username-target secret --username-pattern "username: (.+)" --dmenu-invocation "runin-dmenu"'
 config.bind('zl',  'pass')
