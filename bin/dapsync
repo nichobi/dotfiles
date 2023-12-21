@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e # Fail on command error
+
+sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=4D3D-2FC5 /mnt/disk
+
+if [ "$(cat /etc/hostname)" = "mir" ]; then
+  musicsource="$HOME/Music/"
+else
+  musicsource="mir:Music/"
+fi
+
+if [ -f /mnt/disk/.scrobbler.log ]; then
+  if [ -f ~/.scrobbler.log ]; then
+    mv -v ~/.scrobbler.log ~/.scrobbler.log.bak
+  fi
+  mv -v /mnt/disk/.scrobbler.log ~/
+  ~/projects/logscrobbler/logscrobbler.sh ~/.scrobbler.log
+fi
+
+if [ "$1" = "--checksum" ]; then
+  rsync -thrv --info=progress2 "$musicsource" /mnt/disk/Music --delete --modify-window=1 --fuzzy --delete-delay --checksum
+else
+  rsync -thrv --info=progress2 "$musicsource" /mnt/disk/Music --delete --modify-window=1 --fuzzy --delete-delay
+fi
+
+sudo umount -v /mnt/disk
+
