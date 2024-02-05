@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-devel
-pkgver=6
+pkgver=7
 pkgrel=1
 pkgdesc="nichobi development packages"
 arch=('any')
@@ -26,5 +26,8 @@ depends=(
   # Shell
   'bash-language-server'    # Bash language server
   'shellcheck'              # Static analysis
+
+  # Writing
+  'ltex-ls-bin'             # LSP server for LaTeX, Markdown, etc.
 )
 

@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-sway
-pkgver=8
+pkgver=9
 pkgrel=1
 pkgdesc="Sway setup"
 arch=('any')
@@ -22,6 +22,7 @@ depends=(
   'pamixer'               # Pulseaudio mixer
   'pinentry-dmenu'        # Pinentry program
   'runin-git'             # Run command in terminal and pipe stdin & stdout for it
+  'sway-contrib'          # A collection of user-contributed sway scripts
   'swaync'                # Notification demon
   'waybar-mpris-git'      # Media module for waybar
   'wl-clipboard'          # Clipboard manager
