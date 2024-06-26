@@ -72,6 +72,8 @@ require'nvim-treesitter.configs'.setup {
     'html',
     'java',
     'lua',
+    'markdown',
+    'markdown_inline',
     'scala',
   },
   highlight = {
