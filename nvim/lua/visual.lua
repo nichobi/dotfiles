@@ -65,7 +65,15 @@ autocmd({"BufEnter", "BufWinEnter", "TermOpen"}, {
 })
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {'bash', 'scala', 'haskell', 'java', 'lua', 'html', 'css'},
+  ensure_installed = {
+    'bash',
+    'css',
+    'haskell',
+    'html',
+    'java',
+    'lua',
+    'scala',
+  },
   highlight = {
     enable = true
   },
