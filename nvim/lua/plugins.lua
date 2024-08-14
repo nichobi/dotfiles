@@ -26,6 +26,8 @@ require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   -- Scala LSP
   use 'scalameta/nvim-metals'
+  -- C# LSP
+  use 'seblj/roslyn.nvim'
   -- Completion engine, with snippet plugin
   use {
     'hrsh7th/nvim-cmp',

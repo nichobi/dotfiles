@@ -45,6 +45,17 @@ require'lspconfig'.ltex.setup{
   },
 }
 
+-- Roslyn C# LSP
+require("roslyn").setup({
+  config = {
+    capabilities = capabilities,
+  },
+  exe = {
+    "dotnet",
+    vim.fs.joinpath(vim.fn.stdpath("data"), "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
+  },
+  filewatching = true,
+})
 
 metals_config = require('metals').bare_config()
 metals_config.init_options.statusBarProvider = 'on'
