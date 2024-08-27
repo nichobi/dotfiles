@@ -10,7 +10,7 @@ wk.register({
   }
 })
 
--- Smarter j/k movement that takes line wraps into account wxcept when coynts are set
+-- Smarter j/k movement that takes line wraps into account except when counts are set
 wk.register({
   j = {"v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'j' : 'gj'", 'Move cursor down'},
   k = {"v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'k' : 'gk'", 'Move cursor up'},

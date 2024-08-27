@@ -30,7 +30,7 @@ opt.splitright = true
 opt.number = true
 opt.relativenumber = true
 
--- Set number row minimum width to 2 digits (third is occupied by a space)
+-- Set number row minimum width to 2 digits (third is occupied by a space
 opt.numberwidth = 3
 
 -- Set the window title to 'filename - nvim'
