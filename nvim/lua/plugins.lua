@@ -81,9 +81,20 @@ require('packer').startup(function()
   -- File/fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }},
     config = function()
+      require('telescope').setup{
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-j>"] = require('telescope.actions').move_selection_next,
+              ["<C-k>"] = require('telescope.actions').move_selection_previous,
+            }
+          }
+        }
+      }
       require('telescope').load_extension('projects')
+      require('telescope').load_extension('fzf')
     end
   }
   -- Automatically cd to project root
