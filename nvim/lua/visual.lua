@@ -22,6 +22,9 @@ opt.wrap = true
 opt.linebreak = true
 opt.breakindent = true
 
+-- Show a symbol on linebreaks
+opt.showbreak = "↳ "
+
 -- Open new windows below or to the right
 opt.splitbelow = true
 opt.splitright = true
