@@ -10,6 +10,14 @@ wk.register({
   }
 })
 
+wk.register({
+  mode = {"x", "o"},
+  ai = {function() require'treesitter_indent_object.textobj'.select_indent_outer() end,          "Select indent level"},
+  aI = {function() require'treesitter_indent_object.textobj'.select_indent_outer(true) end,      "Select indent level lines"},
+  ii = {function() require'treesitter_indent_object.textobj'.select_indent_inner() end,          "Select inner indent level"},
+  iI = {function() require'treesitter_indent_object.textobj'.select_indent_inner(true, 'V') end, "Select inner indent level lines"},
+})
+
 -- Smarter j/k movement that takes line wraps into account except when counts are set
 wk.register({
   j = {"v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'j' : 'gj'", 'Move cursor down'},

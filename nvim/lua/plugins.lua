@@ -48,6 +48,8 @@ require('packer').startup(function()
   use 'hoob3rt/lualine.nvim'
   -- Add/delete/replace surroundings such as parentheses
   use 'machakann/vim-sandwich'
+  -- Add objects for selecting indentation levels
+  use "kiyoon/treesitter-indent-object.nvim"
   -- Highlight the yanked region
   -- Replace with integrated version? https://github.com/neovim/neovim/pull/12279
   use 'machakann/vim-highlightedyank'
