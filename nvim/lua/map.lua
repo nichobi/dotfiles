@@ -20,12 +20,13 @@ wk.register({
 wk.register({
   ['<leader>f'] = {
     name = '+file',
-    f = {'<cmd>Telescope find_files<cr>', 'Find File'},
-    r = {'<cmd>Telescope oldfiles<cr>',   'Open Recent File'},
+    f = {'<cmd>Telescope find_files<cr>', 'Find file'},
+    F = {'<cmd>Telescope find_files hidden=true no_ignore=true<cr>', 'Find file (hidden)'},
+    r = {'<cmd>Telescope oldfiles<cr>',   'Open recent file'},
     g = {'<cmd>Telescope live_grep<cr>',  'Search working directory'},
     b = {'<cmd>Telescope buffers<cr>',    'Open buffer'},
     p = {'<cmd>Telescope projects<cr>',   'Open projects'},
-    n = {'<cmd>enew<cr>',                 'New File'},
+    n = {'<cmd>enew<cr>',                 'New file'},
   },
 })
 
