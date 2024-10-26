@@ -6,8 +6,16 @@ mountpoint /mnt/disk && exit 1
 sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=4D3D-2FC5 /mnt/disk
 
 # Unmount on exit or failure
-trap 'sudo umount -v /mnt/disk' EXIT
+trap unmount_disk EXIT
 trap exit INT HUP TERM
+unmount_disk () {
+  i=0
+  until sudo umount -v /mnt/disk || [ $i -ge 3 ]; do
+    i=$((i+1))
+    sleep $i
+  done
+}
+
 
 if [ "$(cat /etc/hostname)" = "mir" ]; then
   musicsource="$HOME/Music/"
