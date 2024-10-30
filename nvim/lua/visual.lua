@@ -78,6 +78,7 @@ require'nvim-treesitter.configs'.setup {
     'markdown',
     'markdown_inline',
     'scala',
+    'helm',
   },
   auto_install = true,
   highlight = {

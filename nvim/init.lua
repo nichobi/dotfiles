@@ -10,4 +10,6 @@ require('lsp')
 require('map')
 -- Commands
 require('commands')
+-- Filetype matching
+require('filetypes')
 
