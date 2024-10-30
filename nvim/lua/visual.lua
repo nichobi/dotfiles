@@ -49,13 +49,13 @@ g.rainbow_active = 1
 -- Show signcolumn in number row
 opt.signcolumn='number'
 
--- Highlight trailing whitespace in red while in normal mode
-highlight('ExtraWhitespace', {ctermbg = 'red', bg = 'red'})
-cmd([[match ExtraWhitespace /\s\+$/]])
-autocmd({'BufWinEnter'}, {command = [[match ExtraWhitespace /\s\+$/]]       })
-autocmd({'InsertEnter'}, {command = [[match ExtraWhitespace /\s\+\%#\@<!$/]]})
-autocmd({'InsertLeave'}, {command = [[match ExtraWhitespace /\s\+$/]]       })
-autocmd({'BufWinLeave'}, {command = [[call clearmatches()]]                 })
+-- Highlight trailing whitespace with a curly underline
+highlight('TrailingWhitespace', {undercurl = true})
+cmd([[match TrailingWhitespace /\s\+$/]])
+autocmd({'BufWinEnter'}, {command = [[match TrailingWhitespace /\s\+$/]]       })
+autocmd({'InsertEnter'}, {command = [[match TrailingWhitespace /\s\+\%#\@<!$/]]})
+autocmd({'InsertLeave'}, {command = [[match TrailingWhitespace /\s\+$/]]       })
+autocmd({'BufWinLeave'}, {command = [[call clearmatches()]]                    })
 
 -- Highlight lines longer than 100 chars in darkgrey
 highlight('LongLine', {ctermbg = 'darkgrey', bg = 'darkgrey'})
