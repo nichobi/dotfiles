@@ -45,7 +45,7 @@ require('packer').startup(function()
   -- Basic Scala integration
   use 'derekwyatt/vim-scala'
   -- Better status bar
-  use 'hoob3rt/lualine.nvim'
+  use 'nvim-lualine/lualine.nvim'
   -- Add/delete/replace surroundings such as parentheses
   use 'machakann/vim-sandwich'
   -- Add objects for selecting indentation levels
