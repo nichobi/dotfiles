@@ -91,6 +91,15 @@ local function metalsStatus()
   return (vim.g['metals_status'] or '')
 end
 
+local shortModeNames = {
+  ["INSERT"]  = "I ",
+  ["COMMAND"] = "C ",
+  ["NORMAL"]  = "N ",
+  ["VISUAL"]  = "V ",
+  ["V-BLOCK"] = "VB",
+  ["V-LINE"]  = "VL",
+}
+
 require('lualine').setup {
   options = {
     icons_enabled = false,
@@ -99,8 +108,8 @@ require('lualine').setup {
     section_separators = '',
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'filename'},
+    lualine_a = {{ 'mode', fmt = function(str) return shortModeNames[str] or str end }},
+    lualine_b = {{'filename', path = 1}},
     lualine_c = {metalsStatus},
   },
 }
