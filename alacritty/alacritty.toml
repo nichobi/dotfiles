@@ -1,0 +1,47 @@
+[colors.bright]
+black = "0x555555"
+blue = "0x0071ff"
+cyan = "0x4bb8fd"
+green = "0x00ff0b"
+magenta = "0x7100ff"
+red = "0xff331c"
+white = "0xffffff"
+yellow = "0xfcd200"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x0042b6"
+cyan = "0x238bc0"
+green = "0x1cce0b"
+magenta = "0x4b00b0"
+red = "0xd53100"
+white = "0xaaaaaa"
+yellow = "0xe9b32a"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xffffff"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Semibold"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control|Shift"
