@@ -135,4 +135,3 @@ highlight('LspDiagnosticsDefaultError',       {ctermfg=9})
 highlight('LspDiagnosticsDefaultWarning',     {ctermfg=11})
 highlight('LspDiagnosticsDefaultInformation', {ctermfg=7})
 highlight('LspDiagnosticsDefaultHint',        {ctermfg=7})
-
