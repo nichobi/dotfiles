@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ghcup=/usr/bin/ghcup
+if [ $# -eq 0 ] ; then
+  for x in ghc cabal stack hls; do
+    $ghcup install "$x" --set latest
+    $ghcup gc --unset --cache
+  done
+else
+  $ghcup "$@"
+fi
