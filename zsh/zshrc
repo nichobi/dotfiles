@@ -29,4 +29,3 @@ setopt pushd_ignore_dups    # Ignore duplicate directories in pushd
 for f in $ZDOTDIR/zshrc.d/*.zsh; do
   source $f
 done
-

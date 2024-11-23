@@ -15,4 +15,3 @@ if [ "$new_is_tiling" == true ] ; then
   fi
   swaymsg "[pid=$new_pid] scratchpad show, floating disable"
 fi
-

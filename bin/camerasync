@@ -29,4 +29,3 @@ if [ "$(cat /etc/hostname)" = "mir" ]; then
 else
   ssh mir "immich-go upload ~/Pictures/SONY\ DSC-HX5V/"
 fi
-

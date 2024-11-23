@@ -3,4 +3,3 @@ seat * hide_cursor when-typing enable
 
 # Don't focus windows hovered over by cursor
 focus_follows_mouse no
-

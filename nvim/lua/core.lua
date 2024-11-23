@@ -51,4 +51,3 @@ opt.shortmess:remove("F")
 opt.timeoutlen = 500
 
 opt.diffopt:append { 'algorithm:histogram' }
-

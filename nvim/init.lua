@@ -12,4 +12,3 @@ require('map')
 require('commands')
 -- Filetype matching
 require('filetypes')
-

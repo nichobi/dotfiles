@@ -6,4 +6,3 @@ output * bg $swaydir/images/ISS043-E-86375.JPG fill
 client.focused		        #000000   #000000      #FFFFFF   #000000     #505050
 client.focused_inactive 	#101010   #101010      #FFFFFF   #101010     #383838
 client.unfocused	        #303030   #303030      #FFFFFF   #303030     #202020
-

@@ -8,4 +8,3 @@ setopt hist_ignore_space      # Ignore commands that begin with a space
 setopt hist_reduce_blanks     # Remove superfluous blanks from history items
 setopt inc_append_history     # Save history entries as soon as they are entered
 setopt share_history          # Share history between zsh instances
-

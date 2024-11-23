@@ -34,4 +34,3 @@ for_window [tiling] exec $scripts/autotiling.sh
 
 # Flash windows when selected
 exec_always flashfocus
-

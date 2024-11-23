@@ -6,4 +6,3 @@
 // @run-at document-start
 // ==/UserScript==
 window.location.replace("https://www.reddit.com/hot")
-

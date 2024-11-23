@@ -28,4 +28,3 @@ swaylock -f -K --clock -c 000000 \
 	 "$@"
 	 #--effect-scale 0.5 --effect-blur 7x3 --effect-scale 2 \
 	 #--effect-vignette 0.5:0.5 \
-

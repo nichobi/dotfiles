@@ -13,4 +13,3 @@ if [ "$isSplit" == true ]; then
   fi
 fi
 ! [ -t 0 ] && echo "$stdin"
-

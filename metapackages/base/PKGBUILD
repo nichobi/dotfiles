@@ -32,4 +32,3 @@ depends=(
   'paru'                  # AUR helper
   'reflector'             # Pacman mirror manager
 )
-

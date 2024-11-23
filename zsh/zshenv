@@ -27,4 +27,3 @@ export STACK_XDG=1
 export TERMINAL=alacritty
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-

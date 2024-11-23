@@ -14,4 +14,3 @@ acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
     echo 100 > "$cachefile"
   fi
 }
-

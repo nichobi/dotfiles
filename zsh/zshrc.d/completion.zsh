@@ -49,4 +49,3 @@ rehash_precmd() {
   fi
 }
 add-zsh-hook -Uz precmd rehash_precmd
-

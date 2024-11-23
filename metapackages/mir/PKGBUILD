@@ -35,4 +35,3 @@ depends=(
   'podget'                 # Podcast downloader
   'yt-dlp-drop-in'         # Website video downloader
 )
-

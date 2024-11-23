@@ -21,4 +21,3 @@ depends=(
   'lib32-vulkan-radeon'
   'vulkan-radeon'
 )
-

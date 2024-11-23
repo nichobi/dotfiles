@@ -106,4 +106,3 @@ wk.add({
   { "<leader>bow", "<cmd>BufferOrderByWindowNumber<CR>", desc = "Order by window number" },
   { "<leader>bp", "<cmd>BufferPrevious<CR>", desc = "Previous buffer" },
 })
-

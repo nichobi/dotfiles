@@ -43,4 +43,3 @@ optdepends=(
   'jome-git'              # Graphical emoji picker
   'wtype'                 # Type characters automatically (used for jome binding)
 )
-

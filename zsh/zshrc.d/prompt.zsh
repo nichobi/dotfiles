@@ -11,4 +11,3 @@ trunced_dir() {
 
 setopt promptsubst
 PS1='%B%F{green}%n@%m%f%b:%B%F{blue}$(trunced_dir)%f%b$ '
-

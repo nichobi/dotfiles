@@ -350,4 +350,3 @@ c.colors.tabs.selected.odd.fg = white_bright
 ## color)
 ## Type: QtColor
 # c.colors.webpage.bg = 'white'
-

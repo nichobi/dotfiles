@@ -13,4 +13,3 @@ xkb_symbols "us_se"  {
     include "level3(ralt_switch)"
 
 };
-

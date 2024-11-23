@@ -30,4 +30,3 @@ depends=(
   # Writing
   'ltex-ls-bin'             # LSP server for LaTeX, Markdown, etc.
 )
-

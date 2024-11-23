@@ -23,4 +23,3 @@ The repo contains configs for the following software:
 ## Setup
 Run `./dotfileinstall`
 Directory names can be provided as args to only install certain dotfiles.
-

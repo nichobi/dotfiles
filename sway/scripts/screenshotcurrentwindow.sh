@@ -5,4 +5,3 @@ PICDIR=$(xdg-user-dir PICTURES)
 DATE=$(date +'%Y-%m-%d %H-%M-%S')
 
 grimshot --notify save active "$PICDIR/screenshots/$APPNAME $DATE.png"
-

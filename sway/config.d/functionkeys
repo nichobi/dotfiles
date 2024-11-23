@@ -30,4 +30,3 @@ bindsym Ctrl+Print       exec grimshot --notify copy active
 bindsym Shift+Print      exec grimshot --notify save screen
 bindsym Shift+Alt+Print  exec grimshot --notify save area
 bindsym Shift+Ctrl+Print exec $scripts/screenshotcurrentwindow.sh
-

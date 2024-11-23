@@ -22,4 +22,3 @@ Packages for my Lenovo Ideapad S540API, including drivers and utilities. It also
 
 ### nichobi-sway
 Packages for my Sway setup and graphical environment. It includes essentials for my Sway setup as well as a few key applications (browser, video player, image viewer)
-

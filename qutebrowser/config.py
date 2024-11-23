@@ -200,4 +200,3 @@ c.url.searchengines = {
   "tr":      "https://libretranslate.com/?q={}",
   "yt":      "https://www.youtube.com/results?search_query={}"
 }
-
