@@ -1,0 +1,32 @@
+#!/bin/sh
+set -e # Fail on command error
+
+sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=1BF6-9755 /mnt/disk
+
+# Unmount on exit or failure
+trap unmount_disk EXIT
+trap exit INT HUP TERM
+unmount_disk () {
+  i=0
+  until sudo umount -v /mnt/disk || [ $i -ge 3 ]; do
+    i=$((i+1))
+    sleep $i
+  done
+}
+
+if [ "$(cat /etc/hostname)" = "mir" ]; then
+  photodest="$HOME/Pictures/SONY DSC-HX5V/"
+else
+  photodest="mir:Pictures/SONY DSC-HX5V/"
+fi
+
+rsync -ravh --info=progress2 /mnt/disk/DCIM "$photodest"
+
+sudo umount -v /mnt/disk
+
+if [ "$(cat /etc/hostname)" = "mir" ]; then
+  immich-go upload ~/Pictures/SONY\ DSC-HX5V/
+else
+  ssh mir "immich-go upload ~/Pictures/SONY\ DSC-HX5V/"
+fi
+
