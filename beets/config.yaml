@@ -22,26 +22,31 @@ paths:
 
 ## Plugin configuration ##
 plugins:
-  alternatives
-  bandcamp
-  chroma
-  convert
-  discogs
-  duplicates
-  edit
-  embedart
-  extrafiles
-  fetchart
-  fromfilename
-  inline
-  lastimport
-  mbsubmit
-  mbsync
-  missing
-  random
-  replaygain
-  the
-  yapl
+  #- alternatives
+  #- bandcamp
+  - bandcamp
+  #- chroma
+  - convert
+  #- discogs
+  - duplicates
+  - edit
+  - embedart
+  - extrafiles
+  - fetchart
+  - fromfilename
+  - inline
+  #- lastimport
+  - lyrics
+  - mbsubmit
+  - mbsync
+  - missing
+  - permissions
+  - random
+  - replaygain
+  - substitute
+  - the
+  - unimported
+  - yapl
 
 acoustid:
   apikey: 77UD6iWvfo
