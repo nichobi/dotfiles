@@ -1,7 +1,7 @@
 # Maintainer: Nicholas Boyd Isacsson
 
 pkgname=nichobi-mir
-pkgver=6
+pkgver=7
 pkgrel=1
 pkgdesc="nichobi mir server packages"
 arch=('any')
@@ -20,7 +20,7 @@ depends=(
   'beets'                  # Music library manager
   'beets-alternatives-git' # Manage alternative versions of library
   'beets-bandcamp'         # Bandcamp plugin for beets
-  'navidrome-bin'          # Music server
+  'navidrome'              # Music server
   'jellyfin-server'        # Media server
   'jellyfin-web'           # Media server web UI
   'jellyfin-vue-git'       # Media server next-gen web UI
