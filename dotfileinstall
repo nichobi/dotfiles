@@ -1,0 +1,123 @@
+#!/bin/bash
+set -euo pipefail
+
+# Source environment variables so they can be used in the script
+source ./zsh/zshenv
+
+config_home="${XDG_CONFIG_HOME:-$PWD/.config}"
+
+function confirm {
+  while true; do
+    read -rp "$* [y/n]: " response
+    case "$response" in
+      [Yy]*) return 0;;
+      [Nn]*) echo "Aborted"; return 1;;
+    esac
+  done
+}
+
+lndot() {
+  src=$1
+  dest=$2
+  if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
+    :
+  else
+    echo "Linking '$src' to '$dest'"
+    if [ -e "$dest" ]; then
+      echo Destination exists:
+      eza --smart-group -g -ld "$dest" 2>/dev/null || ls -ld --color "$dest"
+      confirm "Replace existing destination: $dest" && mv -i "$dest" "$dest.bak" || return 0
+    fi
+    ln --symbolic --no-target-directory --interactive --backup=numbered --verbose "$src" "$dest"
+  fi
+}
+
+install_dot() {
+  for dir in "$@"; do
+    cd "$dir"
+    case $dir in
+      beets)
+        install_file -- *
+        ;;
+      bin)
+        install_file -t ~/.local -- *
+        ;;
+      electron)
+        install_file -f -- *
+        ;;
+      gnupg)
+        install_file -ft "$GNUPGHOME" -- *
+        ;;
+      haskeline)
+        # https://github.com/haskell/haskeline/issues/150
+        install_file -fdt ~ haskeline
+        ;;
+      metapackages)
+        ;;
+      zsh)
+        install_file -dft ~ zshenv
+        install_file -d zprofile zshrc
+        install_file completion zshrc.d
+        ;;
+      qutebrowser)
+        install_file -- *
+        ;;
+      xkb)
+        install_file -dt ~ .
+        ;;
+      *)
+        #lndot "$PWD/$dir" "$config_home/$dir"
+        install_file .
+        ;;
+    esac
+    cd ..
+  done
+}
+
+install_file() {
+  prefix_dot=0
+  flatten=0
+  target="$config_home"
+
+  OPTIND=1
+  while getopts 'dft:' arg; do
+    case $arg in
+      d)
+        prefix_dot=1
+        ;;
+      f)
+        flatten=1
+        ;;
+      t)
+        target="$OPTARG"
+        ;;
+      ?)
+        echo "install_file invalid arg: $arg" 1>&2
+        exit 1
+    esac
+  done
+  shift $((OPTIND-1))
+
+  for file in "$@"; do
+    source="$(readlink -f $file)"
+
+    # Build destination
+    dest=$target
+    [ $flatten -ne 1 ] &&
+      dest="$dest/$dir"
+    [ "$file" != . ] &&
+      dest="$dest/$file"
+    [ "$prefix_dot" -eq 1 ] &&
+      dest="$(dirname "$dest")/.$(basename "$dest")"
+
+    lndot "$source" "$dest"
+  done
+}
+
+if [ "$#" -eq 0 ]; then
+  file_list=(*/)
+  trimmed_file_list=("${file_list[@]%/}")
+  install_dot "${trimmed_file_list[@]}"
+else
+  install_dot "$@"
+fi
