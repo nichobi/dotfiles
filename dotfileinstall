@@ -54,6 +54,9 @@ install_dot() {
         ;;
       metapackages)
         ;;
+      nvim)
+        install_file -- *
+        ;;
       zsh)
         install_file -dft ~ zshenv
         install_file -d zprofile zshrc
