@@ -21,7 +21,7 @@ require'lspconfig'.texlab.setup{
       auxDirectory = "build",
       build = {
         executable = "tectonic",
-        args = {"%f", "--synctex", "--outdir", "build/"},
+        args = {"%f", "--synctex", "--keep-logs", "--keep-intermediates", "--outdir", "build/"},
         onSave = true,
         forwardSearchAfter = true,
       },
@@ -33,13 +33,17 @@ require'lspconfig'.texlab.setup{
   }
 }
 -- LanguageTool language server
-require'lspconfig'.ltex.setup{
+require'ltex-ls'.setup {
   capabilities = capabilities,
   settings = {
     ltex = {
       language = "en-GB",
+      enablePickyRules = true,
       disabledRules = {
-        ['en-GB'] = {"OXFORD_SPELLING_Z_NOT_S"},
+        ['en-GB'] = {
+          "OXFORD_SPELLING_Z_NOT_S",
+          "KIND_OF_A" -- Disabled so ltex doesn't complain about "the type of an expression" in thesis
+        },
       }
     }
   },

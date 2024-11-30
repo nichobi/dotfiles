@@ -28,6 +28,9 @@ require('packer').startup(function()
   use 'scalameta/nvim-metals'
   -- C# LSP
   use 'seblj/roslyn.nvim'
+  -- Latex/Written language LSP
+  use 'vigoux/ltex-ls.nvim'
+
   -- Completion engine, with snippet plugin
   use {
     'hrsh7th/nvim-cmp',
