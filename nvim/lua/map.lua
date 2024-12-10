@@ -34,7 +34,7 @@ wk.add({
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find file" },
   { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search working directory" },
   { "<leader>fn", "<cmd>enew<cr>", desc = "New file" },
-  { "<leader>fp", "<cmd>Telescope projects<cr>", desc = "Open projects" },
+  { "<leader>fp", "<cmd>Telescope project<cr>", desc = "Open projects" },
   { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Open recent file" },
 })
 

@@ -92,7 +92,12 @@ require('lazy').setup({
     { 'jeffkreeftmeijer/vim-dim' },
     -- File/fuzzy finder
     { 'nvim-telescope/telescope.nvim',
-      dependencies = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }},
+      dependencies = {
+        'nvim-lua/popup.nvim',
+        'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        'nvim-telescope/telescope-project.nvim',
+      },
       config = function()
         require('telescope').setup{
           defaults = {
@@ -102,9 +107,17 @@ require('lazy').setup({
                 ["<C-k>"] = require('telescope.actions').move_selection_previous,
               }
             }
+          },
+          extensions = {
+            project = {
+              base_dirs = {
+                '~/projects',
+                '~/dotfiles'
+              }
+            }
           }
         }
-        require('telescope').load_extension('projects')
+        require('telescope').load_extension('project')
         require('telescope').load_extension('fzf')
       end
     },
