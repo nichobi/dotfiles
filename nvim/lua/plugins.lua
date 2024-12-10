@@ -85,6 +85,10 @@ require('lazy').setup({
       opts = {
         plugins = {
           spelling = {enabled = true}
+        },
+        triggers = {
+          { "<auto>", mode = "nixsotc" },
+          { "s", mode = { "n", "v" } },
         }
       }
     },
