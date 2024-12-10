@@ -2,122 +2,125 @@ local cmd = vim.cmd
 local fn = vim.fn
 local g = vim.g
 
--- Bootstrap packer if not already installed
-local packer_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(packer_path)) > 0 then
-  cmd('!git clone https://github.com/wbthomason/packer.nvim '..packer_path)
-  cmd('packadd packer.nvim')
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
+vim.opt.rtp:prepend(lazypath)
 
-require('packer').startup(function()
-  -- Manage packer with packer
-  use 'wbthomason/packer.nvim'
-  -- My own vim colorscheme
-  use {
-    --'~/projects/nicolour-nvim',
-    'nichobi/nicolour-nvim',
-    requires = {
-      'rktjmp/lush.nvim'
-    }
-  }
-  -- Sync clipboard with tmux
-  use 'roxma/vim-tmux-clipboard'
-  -- LSP configurations
-  use 'neovim/nvim-lspconfig'
-  -- Scala LSP
-  use 'scalameta/nvim-metals'
-  -- C# LSP
-  use 'seblj/roslyn.nvim'
-  -- Latex/Written language LSP
-  use 'vigoux/ltex-ls.nvim'
+require('lazy').setup({
+  spec = {
+    -- My own vim colorscheme
+    {
+      --dir = '~/projects/nicolour-nvim',
+      'nichobi/nicolour-nvim',
+      dependencies = {
+        'rktjmp/lush.nvim'
+      }
+    },
+    -- Sync clipboard with tmux
+    { 'roxma/vim-tmux-clipboard' },
+    -- LSP configurations
+    { 'neovim/nvim-lspconfig' },
+    -- Scala LSP
+    { 'scalameta/nvim-metals' },
+    -- C# LSP
+    { 'seblj/roslyn.nvim' },
+    -- Latex/Written language LSP
+    { 'vigoux/ltex-ls.nvim' },
 
-  -- Completion engine, with snippet plugin
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-calc',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip',
-    }
-  }
+    -- Completion engine, with snippet plugin
+    {
+      'hrsh7th/nvim-cmp',
+      dependencies = {
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-calc',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-vsnip',
+        'hrsh7th/vim-vsnip',
+      }
+    },
 
-  -- Basic Scala integration
-  use 'derekwyatt/vim-scala'
-  -- Better status bar
-  use 'nvim-lualine/lualine.nvim'
-  -- Add/delete/replace surroundings such as parentheses
-  use 'machakann/vim-sandwich'
-  -- Add objects for selecting indentation levels
-  use "kiyoon/treesitter-indent-object.nvim"
-  -- Highlight the yanked region
-  -- Replace with integrated version? https://github.com/neovim/neovim/pull/12279
-  use 'machakann/vim-highlightedyank'
-  -- Smart hybrid line numbers
-  use 'jeffkreeftmeijer/vim-numbertoggle'
-  -- Give each level of parentheses a different colour
-  use 'luochen1990/rainbow'
-  -- Improved syntax highlighting for supported languages
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  -- Add a buffer bar
-  use 'romgrk/barbar.nvim'
-  -- Highlight a unique character in every word on a line
-  use {
-    'unblevable/quick-scope',
-    config = function()
-      vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
-    end
-  }
-  -- Show key binding popups
-  use {
-    'folke/which-key.nvim',
-    config = function()
-      require('which-key').setup{plugins = {
+    -- Basic Scala integration
+    { 'derekwyatt/vim-scala' },
+    -- Better status bar
+    { 'nvim-lualine/lualine.nvim' },
+    -- Add/delete/replace surroundings such as parentheses
+    { 'machakann/vim-sandwich' },
+    -- Add objects for selecting indentation levels
+    { 'kiyoon/treesitter-indent-object.nvim' },
+    -- Highlight the yanked region
+    -- Replace with integrated version? https://github.com/neovim/neovim/pull/12279
+    { 'machakann/vim-highlightedyank' },
+    -- Smart hybrid line numbers
+    { 'jeffkreeftmeijer/vim-numbertoggle' },
+    -- Give each level of parentheses a different colour
+    { 'luochen1990/rainbow' },
+    -- Improved syntax highlighting for supported languages
+    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+    -- Add a buffer bar
+    { 'romgrk/barbar.nvim' },
+    -- Highlight a unique character in every word on a line
+    {
+      'unblevable/quick-scope',
+      config = function()
+        vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
+      end
+    },
+    -- Show key binding popups
+    { 'folke/which-key.nvim',
+      opts = {
+        plugins = {
           spelling = {enabled = true}
         }
       }
-    end
-  }
-  -- ANSI-only colorscheme
-  use 'jeffkreeftmeijer/vim-dim'
-  -- File/fuzzy finder
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }},
-    config = function()
-      require('telescope').setup{
-        defaults = {
-          mappings = {
-            i = {
-              ["<C-j>"] = require('telescope.actions').move_selection_next,
-              ["<C-k>"] = require('telescope.actions').move_selection_previous,
+    },
+    -- ANSI-only colorscheme
+    { 'jeffkreeftmeijer/vim-dim' },
+    -- File/fuzzy finder
+    { 'nvim-telescope/telescope.nvim',
+      dependencies = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }},
+      config = function()
+        require('telescope').setup{
+          defaults = {
+            mappings = {
+              i = {
+                ["<C-j>"] = require('telescope.actions').move_selection_next,
+                ["<C-k>"] = require('telescope.actions').move_selection_previous,
+              }
             }
           }
         }
-      }
-      require('telescope').load_extension('projects')
-      require('telescope').load_extension('fzf')
-    end
-  }
-  -- Automatically cd to project root
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup{
+        require('telescope').load_extension('projects')
+        require('telescope').load_extension('fzf')
+      end
+    },
+
+    -- Automatically cd to project root
+    { "ahmedkhalf/project.nvim",
+      opts = {
         manual_mode = true,
       }
-    end
+    },
+
+    { 'rmagatti/auto-session',
+      opts =
+        {
+          suppressed_dirs = { "~/", "~/projects", "~/Downloads", "/"},
+        }
+    },
   }
-  -- Keep open buffers across sessions when opening nvim without args
-  use {
-    'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        suppressed_dirs = { "~/", "~/projects", "~/Downloads", "/"},
-      }
-    end
-}
-end)
+})
