@@ -19,6 +19,9 @@ function confirm {
 lndot() {
   src=$1
   dest=$2
+  if [ ! -d "$(dirname "$dest")" ]; then
+    mkdir -p "$(dirname "$dest")"
+  fi
   if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
     :
   else
