@@ -1,14 +1,26 @@
-local g = vim.g
-local wk = require('which-key')
+function map(args)
+  opts = args.opts or {}
+  mode = args.mode or {'n'}
+  for _, map in ipairs(args) do
+    if #map ~= 2 then error('map: expected 2 args, found ' .. #map) end
+    opts = { noremap = true, silent = true }
+    for k,v in pairs(map) do
+      if type(k) ~= 'number' then
+        opts[k] = v
+      end
+    end
+    vim.keymap.set(mode, map[1], map[2], opts)
+  end
+end
 
 -- Document vim-sandwich
-wk.add({
-  { "sa", desc = "Add surrounding" },
-  { "sd", desc = "Delete surrounding" },
-  { "sr", desc = "Replace surrounding" },
+map({
+  --{ "sa", desc = "Add surrounding" },
+  --{ "sd", desc = "Delete surrounding" },
+  --{ "sr", desc = "Replace surrounding" },
 })
 
-wk.add({
+map({
   mode = { "o", "x" },
   { "aI", function() require'treesitter_indent_object.textobj'.select_indent_outer() end,
     desc = "Select indent level lines" },
@@ -21,14 +33,14 @@ wk.add({
 })
 
 -- Smarter j/k movement that takes line wraps into account except when counts are set
-wk.add({
+map({
   { "j", "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'j' : 'gj'", desc = "Move cursor down", expr = true, replace_keycodes = false },
   { "k", "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'k' : 'gk'", desc = "Move cursor up", expr = true, replace_keycodes = false },
 })
 
 -- File related bindings
-wk.add({
-  { "<leader>f", group = "file" },
+map({
+  --{ "<leader>f", group = "file" },
   { "<leader>fF", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "Find file (hidden)" },
   { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Open buffer" },
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find file" },
@@ -39,7 +51,7 @@ wk.add({
 })
 
 -- LSP bindings
-wk.add({
+map({
   { "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature help" },
   { "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", desc = "Type definition" },
   { "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>", desc = "Format" },
@@ -63,7 +75,7 @@ wk.add({
 -- These currently don't work correctly when bound manually,
 -- so letting nvim-cmp set up bindings automatically
 --local cmp = require('cmp')
---wk.register({
+--map({
 --  ['<C-Space>'] = {cmp.mapping.complete(),                 'Complete'},
 --  ['<CR>']      = {cmp.mapping.confirm({ select = true }), 'Confirm'},
 --  ['<C-e>']     = {cmp.mapping.close(),                    'Close'},
@@ -72,7 +84,7 @@ wk.add({
 --}, {mode = 'i'})
 
 -- barbar.nvim bindings
-wk.add({
+map({
   -- Move to previous/next
   { "<A-j>", "<cmd>BufferNext<CR>", desc = "Next buffer" },
   { "<A-k>", "<cmd>BufferPrevious<CR>", desc = "Previous buffer" },
@@ -90,16 +102,16 @@ wk.add({
   { "<A-7>", "<cmd>BufferGoto 7<CR>", desc = "Go to buffer 7" },
   { "<A-8>", "<cmd>BufferGoto 8<CR>", desc = "Go to buffer 8" },
   { "<A-9>", "<cmd>BufferGoto 9<CR>", desc = "Go to buffer 9" },
-  { "<leader>b", group = "buffer" },
+  --{ "<leader>b", group = "buffer" },
   { "<leader>bP", "<cmd>BufferPin<CR>", desc = "Pin/unpin a buffer" },
-  { "<leader>bd", group = "close" },
+  --{ "<leader>bd", group = "close" },
   { "<leader>bdd", "<cmd>BufferClose<CR>", desc = "Close buffer" },
   { "<leader>bdh", "<cmd>BufferCloseBuffersLeft<CR>", desc = "Close buffers to the right" },
   { "<leader>bdl", "<cmd>BufferCloseBuffersRight<CR>", desc = "Close buffers to the left" },
   { "<leader>bdo", "<cmd>BufferCloseAllButCurrentOrPinned<CR>", desc = "Close other buffers" },
   { "<leader>bf", "<cmd>BufferPick<CR>", desc = "Pick a buffer" },
   { "<leader>bn", "<cmd>BufferNext<CR>", desc = "Next buffer" },
-  { "<leader>bo", group = "order" },
+  --{ "<leader>bo", group = "order" },
   { "<leader>bob", "<cmd>BufferOrderByBufferNumber<CR>", desc = "Order by buffer number" },
   { "<leader>bod", "<cmd>BufferOrderByDirectory<CR>", desc = "Order by directory" },
   { "<leader>bol", "<cmd>BufferOrderByLanguage<CR>", desc = "Order by language" },
