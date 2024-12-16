@@ -111,11 +111,12 @@ require('packer').startup(function()
       }
     end
   }
+  -- Keep open buffers across sessions when opening nvim without args
   use {
     'rmagatti/auto-session',
     config = function()
       require("auto-session").setup {
-        --suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+        suppressed_dirs = { "~/", "~/projects", "~/Downloads", "/"},
       }
     end
 }
