@@ -1,16 +1,20 @@
 local ft = vim.filetype
 
--- Match jrag files as Java, for roughly correct highlighting
-ft.add({
-  pattern = {
-    [".*.jrag"] = "java",
-  },
-})
+local function file_exists(name)
+   local f = io.open(name, "r")
+   return f ~= nil and io.close(f)
+end
 
 -- Match helm template files for treesitter highlighting
 ft.add({
   pattern = {
+    [".*.jrag"] = "java",
     [".*/templates/.*%.tpl"]   = "helm",
-    [".*/templates/.*%.ya?ml"] = "helm",
+    ["(.*)/templates/.*%.ya?ml"] = function(path, bufnr, prefix)
+      if file_exists(prefix .. "/Chart.yaml") then
+        return "helm"
+      end
+      return "yaml"
+    end,
   },
 })
