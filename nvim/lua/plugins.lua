@@ -3,15 +3,15 @@ local fn = vim.fn
 local g = vim.g
 
 -- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system({ 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
+      { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
+      { out, 'WarningMsg' },
+      { '\nPress any key to exit...' },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
@@ -82,19 +82,21 @@ require('lazy').setup({
           spelling = {enabled = true}
         },
         triggers = {
-          { "<auto>", mode = "nixsotc" },
-          { "s", mode = { "n", "v" } },
+          { '<auto>', mode = 'nixsotc' },
+          { 's', mode = { 'n', 'v' } },
         }
       }
     },
-    -- ANSI-only colorscheme
-    { 'jeffkreeftmeijer/vim-dim' },
+    -- Notification UI
+    { 'j-hui/fidget.nvim',
+      opts = {},
+    },
     -- File/fuzzy finder
     { 'nvim-telescope/telescope.nvim',
       dependencies = {
         'nvim-lua/popup.nvim',
         'nvim-lua/plenary.nvim',
-        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         'nvim-telescope/telescope-project.nvim',
       },
       config = function()
@@ -102,8 +104,8 @@ require('lazy').setup({
           defaults = {
             mappings = {
               i = {
-                ["<C-j>"] = require('telescope.actions').move_selection_next,
-                ["<C-k>"] = require('telescope.actions').move_selection_previous,
+                ['<C-j>'] = require('telescope.actions').move_selection_next,
+                ['<C-k>'] = require('telescope.actions').move_selection_previous,
               }
             }
           },
@@ -121,17 +123,10 @@ require('lazy').setup({
       end
     },
 
-    -- Automatically cd to project root
-    { "ahmedkhalf/project.nvim",
-      opts = {
-        manual_mode = true,
-      }
-    },
-
     { 'rmagatti/auto-session',
       opts =
         {
-          suppressed_dirs = { "~/", "~/projects", "~/Downloads", "/"},
+          suppressed_dirs = { '~/', '~/projects', '~/Downloads', '/'},
         }
     },
   }
