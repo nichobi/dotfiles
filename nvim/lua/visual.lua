@@ -49,6 +49,9 @@ g.rainbow_active = 1
 -- Show signcolumn in number row
 opt.signcolumn='number'
 
+-- Highlight yanked region
+autocmd({'TextYankPost'}, {callback = function() return (not vim.v.event.visual) and vim.highlight.on_yank({higroup='Visual', timeout=1000}) end})
+
 -- Highlight trailing whitespace with a curly underline
 highlight('TrailingWhitespace', {undercurl = true})
 cmd([[match TrailingWhitespace /\s\+$/]])

@@ -57,9 +57,6 @@ require('lazy').setup({
     { 'machakann/vim-sandwich' },
     -- Add objects for selecting indentation levels
     { 'kiyoon/treesitter-indent-object.nvim' },
-    -- Highlight the yanked region
-    -- Replace with integrated version? https://github.com/neovim/neovim/pull/12279
-    { 'machakann/vim-highlightedyank' },
     -- Smart hybrid line numbers
     { 'jeffkreeftmeijer/vim-numbertoggle' },
     -- Give each level of parentheses a different colour
