@@ -61,14 +61,6 @@ require("roslyn").setup({
   filewatching = true,
 })
 
-metals_config = require('metals').bare_config()
-metals_config.init_options.statusBarProvider = 'on'
-metals_config.capabilities = capabilities
-cmd [[augroup lsp
-      au!
-      au FileType scala,sbt lua require('metals').initialize_or_attach(metals_config)
-      augroup end
-    ]]
 
 opt.completeopt = 'menu,menuone,noselect'
 
