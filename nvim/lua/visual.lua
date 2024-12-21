@@ -70,24 +70,6 @@ autocmd({"BufEnter", "BufWinEnter", "TermOpen"}, {
   command = "setlocal norelativenumber nonumber signcolumn=no",
 })
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    'bash',
-    'css',
-    'haskell',
-    'html',
-    'java',
-    'lua',
-    'markdown',
-    'markdown_inline',
-    'scala',
-    'helm',
-  },
-  auto_install = true,
-  highlight = {
-    enable = true
-  },
-}
 
 -- lualine setup
 local function metalsStatus()

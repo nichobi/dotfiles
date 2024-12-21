@@ -80,15 +80,56 @@ require('lazy').setup({
     -- Give each level of parentheses a different colour
     { 'luochen1990/rainbow' },
     -- Improved syntax highlighting for supported languages
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
-    -- Add a buffer bar
-    { 'romgrk/barbar.nvim' },
-    -- Highlight a unique character in every word on a line
-    {
-      'unblevable/quick-scope',
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
       config = function()
-        vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
+        require'nvim-treesitter.configs'.setup {
+          ensure_installed = {
+            'bash',
+            'css',
+            'haskell',
+            'helm',
+            'html',
+            'java',
+            'json',
+            'lua',
+            'markdown',
+            'markdown_inline',
+            'norg',
+            'python',
+            'scala',
+            'vim',
+            'vimdoc',
+            'yaml',
+          },
+          incremental_selection = {
+            enable = true,
+            keymaps = {
+              init_selection = 'gnn',
+              node_incremental = 'grn',
+              scope_incremental = 'grc',
+              node_decremental = 'grm',
+            },
+          },
+          indent = {
+            enable = true
+          },
+          auto_install = true,
+          highlight = {
+            enable = true
+          },
+        }
       end
+    },
+    -- Add a buffer bar
+    { 'romgrk/barbar.nvim',
+      init = function() vim.g.barbar_auto_setup = false end,
+      opts = {
+        icons = {
+          filetype = {
+            enabled = false
+          }
+        }
+      }
     },
     -- Show key binding popups
     { 'folke/which-key.nvim',
