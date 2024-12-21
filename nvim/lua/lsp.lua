@@ -63,6 +63,3 @@ require("roslyn").setup({
 
 
 opt.completeopt = 'menu,menuone,noselect'
-
-
--- Use buffer source for `/`.

@@ -71,18 +71,6 @@ map({
   { "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "Go to references" },
 })
 
--- nvim-cmp bindings
--- These currently don't work correctly when bound manually,
--- so letting nvim-cmp set up bindings automatically
---local cmp = require('cmp')
---map({
---  ['<C-Space>'] = {cmp.mapping.complete(),                 'Complete'},
---  ['<CR>']      = {cmp.mapping.confirm({ select = true }), 'Confirm'},
---  ['<C-e>']     = {cmp.mapping.close(),                    'Close'},
---  ['<C-f>']     = {cmp.mapping.scroll_docs(4),             'Scroll down'},
---  ['<C-d>']     = {cmp.mapping.scroll_docs(-4),            'Scroll up'},
---}, {mode = 'i'})
-
 -- barbar.nvim bindings
 map({
   -- Move to previous/next
