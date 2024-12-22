@@ -1,5 +1,6 @@
 local lsp = vim.lsp
 local diag = vim.diagnostic
+local ts = require('telescope.builtin')
 
 function map(args)
   opts = args.opts or {}
@@ -47,20 +48,14 @@ map({
 -- File related bindings
 map({
   --{ '<leader>f', group = 'file' },
-  { '<leader>fF', '<cmd>Telescope find_files hidden=true no_ignore=true<cr>',
+  { '<leader>fF', function() ts.find_files{hidden = true, no_ignore = true} end,
     desc = 'Find file (hidden)' },
-  { '<leader>fb', '<cmd>Telescope buffers<cr>',
-    desc = 'Open buffer' },
-  { '<leader>ff', '<cmd>Telescope find_files<cr>',
-    desc = 'Find file' },
-  { '<leader>fg', '<cmd>Telescope live_grep<cr>',
-    desc = 'Search working directory' },
-  { '<leader>fn', '<cmd>enew<cr>',
-    desc = 'New file' },
-  { '<leader>fp', '<cmd>Telescope project<cr>',
-    desc = 'Open projects' },
-  { '<leader>fr', '<cmd>Telescope oldfiles<cr>',
-    desc = 'Open recent file' },
+  { '<leader>fb', ts.buffers,      desc = 'Open buffer' },
+  { '<leader>ff', ts.find_files,   desc = 'Find file' },
+  { '<leader>fg', ts.live_grep,    desc = 'Search working directory' },
+  { '<leader>fn', '<cmd>enew<cr>', desc = 'New file' },
+  { '<leader>fp', ts.project,      desc = 'Open projects' },
+  { '<leader>fr', ts.oldfiles,     desc = 'Open recent file' },
 })
 
 -- LSP bindings
@@ -74,8 +69,8 @@ map({
   { '<leader>D',  lsp.buf.type_definition, desc = 'Type definition' },
   { '<leader>ca', lsp.buf.code_action,     desc = 'Code action' },
   { '<leader>rn', lsp.buf.rename,          desc = 'Rename symbol' },
-  { '<leader>e',  diag.open_float,         desc = 'Show line diagnostics' },
   { '<leader>F',  lsp.buf.format,          desc = 'Format' },
+  { '<leader>e',  diag.open_float,         desc = 'Show line diagnostics' },
   { ']d',         diag.goto_next,          desc = 'Next diagnostic' },
   { '[d',         diag.goto_prev,          desc = 'Previous diagnostic' },
   { '<leader>q',  diag.setloclist,         desc = 'View location list' },

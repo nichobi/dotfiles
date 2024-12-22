@@ -44,9 +44,6 @@ opt.joinspaces = false
 -- Allow cursor to extend beyond the end of a line in block selection
 opt.virtualedit = 'block'
 
--- Remove F, required for nvim-metals
-opt.shortmess:remove('F')
-
 -- Reduce timeoutlen so which-key activates sooner
 opt.timeoutlen = 500
 

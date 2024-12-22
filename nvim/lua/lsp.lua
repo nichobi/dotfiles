@@ -44,13 +44,13 @@ require'ltex-ls'.setup {
 }
 
 -- Roslyn C# LSP
-require("roslyn").setup({
+require('roslyn').setup({
   config = {
     capabilities = capabilities,
   },
   exe = {
-    "dotnet",
-    vim.fs.joinpath(vim.fn.stdpath("data"), "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
+    'dotnet',
+    vim.fs.joinpath(vim.fn.stdpath('data'), 'roslyn', 'Microsoft.CodeAnalysis.LanguageServer.dll'),
   },
   filewatching = true,
 })
