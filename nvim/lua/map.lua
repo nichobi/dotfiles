@@ -1,6 +1,7 @@
 local lsp = vim.lsp
 local diag = vim.diagnostic
-local ts = require('telescope.builtin')
+local ts = require('telescope')
+ts.builtin = require('telescope.builtin') -- Is this unsafe? Probably…
 
 function map(args)
   opts = args.opts or {}
@@ -48,14 +49,14 @@ map({
 -- File related bindings
 map({
   --{ '<leader>f', group = 'file' },
-  { '<leader>fF', function() ts.find_files{hidden = true, no_ignore = true} end,
+  { '<leader>fF', function() ts.builtin.find_files{hidden = true, no_ignore = true} end,
     desc = 'Find file (hidden)' },
-  { '<leader>fb', ts.buffers,      desc = 'Open buffer' },
-  { '<leader>ff', ts.find_files,   desc = 'Find file' },
-  { '<leader>fg', ts.live_grep,    desc = 'Search working directory' },
-  { '<leader>fn', '<cmd>enew<cr>', desc = 'New file' },
-  { '<leader>fp', ts.project,      desc = 'Open projects' },
-  { '<leader>fr', ts.oldfiles,     desc = 'Open recent file' },
+  { '<leader>fb', ts.builtin.buffers,            desc = 'Open buffer' },
+  { '<leader>ff', ts.builtin.find_files,         desc = 'Find file' },
+  { '<leader>fg', ts.builtin.live_grep,          desc = 'Search working directory' },
+  { '<leader>fn', '<cmd>enew<cr>',               desc = 'New file' },
+  { '<leader>fp', ts.extensions.project.project, desc = 'Open projects' },
+  { '<leader>fr', ts.builtin.oldfiles,           desc = 'Open recent file' },
 })
 
 -- LSP bindings
@@ -63,17 +64,18 @@ map({
   { 'K',          lsp.buf.hover,           desc = 'Show hover' },
   { '<C-k>',      lsp.buf.signature_help,  desc = 'Signature help' },
   { 'gD',         lsp.buf.declaration,     desc = 'Go to declaration' },
-  { 'gd',         lsp.buf.definition,      desc = 'Go to definition' },
-  { 'gi',         lsp.buf.implementation,  desc = 'Go to implementation' },
-  { 'gr',         lsp.buf.references,      desc = 'Go to references' },
-  { '<leader>D',  lsp.buf.type_definition, desc = 'Type definition' },
   { '<leader>ca', lsp.buf.code_action,     desc = 'Code action' },
   { '<leader>rn', lsp.buf.rename,          desc = 'Rename symbol' },
   { '<leader>F',  lsp.buf.format,          desc = 'Format' },
   { '<leader>e',  diag.open_float,         desc = 'Show line diagnostics' },
   { ']d',         diag.goto_next,          desc = 'Next diagnostic' },
   { '[d',         diag.goto_prev,          desc = 'Previous diagnostic' },
-  { '<leader>q',  diag.setloclist,         desc = 'View location list' },
+  { '<leader>q',  ts.builtin.diagnostics,  desc = 'List diagnostics' },
+  -- Go to if one, telescope if several
+  { 'gd',         ts.builtin.lsp_definitions,      desc = 'Go to definition' },
+  { 'gi',         ts.builtin.lsp_implementations,  desc = 'Go to implementation' },
+  { 'gr',         ts.builtin.lsp_references,       desc = 'Go to references' },
+  { '<leader>D',  ts.builtin.lsp_type_definitions, desc = 'Type definition' },
   { '<leader>wa', lsp.buf.add_workspace_folder,
     desc = 'Add workspace folder' },
   { '<leader>wl', function() print(vim.inspect(lsp.buf.list_workspace_folders())) end,
