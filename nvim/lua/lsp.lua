@@ -1,11 +1,5 @@
 local g = vim.g
-local cmd = vim.cmd
 local opt = vim.opt
-
--- Configuration for vim-scala
-cmd('au BufRead,BufNewFile *.sbt set filetype=scala')
--- Use proper scaladoc comment indentation
-g.scala_scaladoc_indent = 1
 
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
@@ -18,16 +12,16 @@ require'lspconfig'.texlab.setup{
   capabilities = capabilities,
   settings = {
     texlab = {
-      auxDirectory = "build",
+      auxDirectory = 'build',
       build = {
-        executable = "tectonic",
-        args = {"%f", "--synctex", "--keep-logs", "--keep-intermediates", "--outdir", "build/"},
+        executable = 'tectonic',
+        args = {'%f', '--synctex', '--keep-logs', '--keep-intermediates', '--outdir', 'build/'},
         onSave = true,
         forwardSearchAfter = true,
       },
       forwardSearch = {
-          executable = "zathura",
-          args = { "--synctex-forward", "%l:1:%f", "%p" },
+          executable = 'zathura',
+          args = { '--synctex-forward', '%l:1:%f', '%p' },
       },
     }
   }
@@ -37,12 +31,12 @@ require'ltex-ls'.setup {
   capabilities = capabilities,
   settings = {
     ltex = {
-      language = "en-GB",
+      language = 'en-GB',
       enablePickyRules = true,
       disabledRules = {
         ['en-GB'] = {
-          "OXFORD_SPELLING_Z_NOT_S",
-          "KIND_OF_A" -- Disabled so ltex doesn't complain about "the type of an expression" in thesis
+          'OXFORD_SPELLING_Z_NOT_S',
+          'KIND_OF_A' -- Disabled so ltex doesn't complain about 'the type of an expression' in thesis
         },
       }
     }

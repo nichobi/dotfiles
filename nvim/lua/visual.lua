@@ -23,7 +23,7 @@ opt.linebreak = true
 opt.breakindent = true
 
 -- Show a symbol on linebreaks
-opt.showbreak = "↳ "
+opt.showbreak = '↳ '
 
 -- Open new windows below or to the right
 opt.splitbelow = true
@@ -65,9 +65,9 @@ highlight('LongLine', {ctermbg = 'darkgrey', bg = 'darkgrey'})
 cmd([[2mat LongLine '\%101v.']])
 
 -- Disable numbers for terminal buffers
-autocmd({"BufEnter", "BufWinEnter", "TermOpen"}, {
-  pattern = {"term://*"},
-  command = "setlocal norelativenumber nonumber signcolumn=no",
+autocmd({'BufEnter', 'BufWinEnter', 'TermOpen'}, {
+  pattern = {'term://*'},
+  command = 'setlocal norelativenumber nonumber signcolumn=no',
 })
 
 
@@ -77,12 +77,12 @@ local function metalsStatus()
 end
 
 local shortModeNames = {
-  ["INSERT"]  = "I ",
-  ["COMMAND"] = "C ",
-  ["NORMAL"]  = "N ",
-  ["VISUAL"]  = "V ",
-  ["V-BLOCK"] = "VB",
-  ["V-LINE"]  = "VL",
+  ['INSERT']  = 'I ',
+  ['COMMAND'] = 'C ',
+  ['NORMAL']  = 'N ',
+  ['VISUAL']  = 'V ',
+  ['V-BLOCK'] = 'VB',
+  ['V-LINE']  = 'VL',
 }
 
 require('lualine').setup {

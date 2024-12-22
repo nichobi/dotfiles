@@ -45,7 +45,7 @@ opt.joinspaces = false
 opt.virtualedit = 'block'
 
 -- Remove F, required for nvim-metals
-opt.shortmess:remove("F")
+opt.shortmess:remove('F')
 
 -- Reduce timeoutlen so which-key activates sooner
 opt.timeoutlen = 500
