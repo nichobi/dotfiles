@@ -3,7 +3,9 @@ set -eu
 
 # Fail if already mounted
 mountpoint /mnt/disk && exit 1
-sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=4D3D-2FC5 /mnt/disk
+sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=4D3D-2FC5 /mnt/disk ||
+sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=8228-E3D0 /mnt/disk ||
+sudo mount -vo rw,fmask=0133,dmask=0022,gid="$(id -g)",uid="$(id -u)" UUID=1387-D3D9 /mnt/disk
 
 # Unmount on exit or failure
 trap unmount_disk EXIT
@@ -31,8 +33,7 @@ if [ -f /mnt/disk/.scrobbler.log ]; then
   ~/projects/logscrobbler/logscrobbler.sh ~/.scrobbler.log
 fi
 
-if [ "$1" = "--checksum" ]; then
-  rsync -thrv --info=progress2 "$musicsource" /mnt/disk/Music --delete --modify-window=1 --fuzzy --delete-delay --checksum
-else
-  rsync -thrv --info=progress2 "$musicsource" /mnt/disk/Music --delete --modify-window=1 --fuzzy --delete-delay
-fi
+rsync -thrv --info=progress2 "$musicsource" /mnt/disk/Music --delete --modify-window=1 --fuzzy "$@"
+
+beet ls -ap path+ | sed 's|/Disc 01$||;s|^/home/nichobi||' \
+  > /mnt/disk/.rockbox/folder_advance_list.txt
