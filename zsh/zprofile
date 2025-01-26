@@ -2,7 +2,9 @@
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/$(archlinux-java get)"
 PATH="$PATH:/opt/bin:$JAVA_HOME/bin"
-PATH="$PATH:$HOME/.cabal/bin"
+PATH="$PATH:$HOME/.local/share/cabal/bin"
+PATH="$PATH:$HOME/.local/share/coursier/bin"
+
 export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
 
@@ -62,6 +64,9 @@ if [ "$(tty)" = "/dev/tty1" ] && command -v sway >/dev/null 2>&1 ; then
     # Set QT platform for Wayland to fix slowdown issue
     # github.com/qutebrowser/qutebrowser/issues/4857
     export QT_QPA_PLATFORM=wayland
+    # Fix qutebrowser scaling
+    # https://github.com/qutebrowser/qutebrowser/discussions/7938
+    export QT_SCALE_FACTOR_ROUNDING_POLICY=RoundPreferFloor
 
     export XDG_CURRENT_DESKTOP=sway
     export XDG_SESSION_TYPE=wayland
@@ -77,6 +82,7 @@ if [ "$(tty)" = "/dev/tty1" ] && command -v sway >/dev/null 2>&1 ; then
 
     export QT_STYLE_OVERRIDE=adwaita-dark
     export GTK_THEME=Adwaita:dark
+    export GTK_USE_PORTAL=1
 
     exec systemd-cat --identifier=sway sway
 fi
