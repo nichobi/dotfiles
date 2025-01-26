@@ -1,18 +1,13 @@
-ZCACHEDIR=${XDG_CACHE_HOME:-~/.cache}/zsh
-ADOTDIR=$ZCACHEDIR/antigen
 fpath=($ZDOTDIR/completion $fpath)
-#ANTIGEN_LOG=$ADOTDIR/log
-source /usr/share/zsh/share/antigen.zsh
 
-antigen bundles <<EOBUNDLES
-  shrink-path
-  jeffreytse/zsh-vi-mode
-  fzf
-  Aloxaf/fzf-tab
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-syntax-highlighting # Must be last!
-EOBUNDLES
-antigen apply
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+
+plug 'shrink-path'
+plug 'jeffreytse/zsh-vi-mode'
+plug 'fzf'
+plug 'Aloxaf/fzf-tab'
+plug 'zsh-users/zsh-autosuggestions'
+plug 'zsh-users/zsh-syntax-highlighting' # Must be last!
 
 # Rebind history search, fix for:
 # https://github.com/jeffreytse/zsh-vi-mode/issues/127
