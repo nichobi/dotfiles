@@ -1,13 +1,52 @@
 fpath=($ZDOTDIR/completion $fpath)
 
-[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
-
-plug 'shrink-path'
-plug 'jeffreytse/zsh-vi-mode'
-plug 'fzf'
-plug 'Aloxaf/fzf-tab'
-plug 'zsh-users/zsh-autosuggestions'
-plug 'zsh-users/zsh-syntax-highlighting' # Must be last!
+github_plugins=(
+  omz/shrink-path
+  jeffreytse/zsh-vi-mode
+  omz/fzf
+  Aloxaf/fzf-tab
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-syntax-highlighting # Must be last!
+)
+plugin-install() {
+  [[ ! -d $ZCACHEDIR/plugins ]] && mkdir $ZCACHEDIR/plugins
+  for plugin in $github_plugins; do
+    if [[ ! -d $ZCACHEDIR/plugins/${plugin:t} ]]; then
+      if [[ ${plugin:h} == 'omz' ]]; then
+        curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/${plugin:t}/${plugin:t}.plugin.zsh \
+          --create-dirs --silent --show-error \
+          --output $ZCACHEDIR/plugins/${plugin:t}/${plugin:t}.plugin.zsh
+      else
+        git clone https://github.com/${plugin} $ZCACHEDIR/plugins/${plugin:t}
+      fi
+    fi
+  done
+  plugin-compile
+}
+plugin-source() {
+  for plugin in $github_plugins; do
+    if [[ -f $ZCACHEDIR/plugins/${plugin:t}/${plugin:t}.plugin.zsh ]]; then
+      source $ZCACHEDIR/plugins/${plugin:t}/${plugin:t}.plugin.zsh
+    fi
+  done
+}
+plugin-update() {
+  for d in $ZCACHEDIR/plugins/*/.git(/); do
+    echo "Updating ${d:h:t}..."
+    command git -C "${d:h}" pull --ff --recurse-submodules --depth 1 --rebase --autostash
+  done
+  plugin-compile
+}
+plugin-compile() {
+  local f
+  autoload -Uz zrecompile
+  for f in $ZCACHEDIR/plugins/**/*.zsh; do
+    [[ $f != */test-data/* ]] || continue  # fix for zsh-syntax-highlighting
+    zrecompile -pq "$f"
+  done
+}
+plugin-install
+plugin-source
 
 # Rebind history search, fix for:
 # https://github.com/jeffreytse/zsh-vi-mode/issues/127
