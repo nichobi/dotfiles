@@ -6,6 +6,8 @@ cal    https://calendar.proton.me
 cg     https://coursegit.cs.lth.se
 del    https://deluge.nichobi.com
 dl     https://deepl.com
+em     https://mail.fripost.org
+fp     https://mail.fripost.org
 gcal   https://calendar.google.com
 gh     https://github.com
 gm     https://mail.google.com
@@ -18,10 +20,12 @@ jf     https://jellyfin.nichobi.com
 keep   https://keep.google.com
 key    https://keybr.com
 lb     https://listenbrainz.org/user/nichobi
-ma     https://elk.zone
+ma     https://social.spejset.org
+mae    https://elk.zone
 mas    https://social.spejset.org
 map    https://google.com/maps
 mes    https://messenger.com
+ms     https://merrysky.net
 ol     https://overleaf.com/project
 pm     https://mail.proton.me
 pro    https://prowlarr.nichobi.com
