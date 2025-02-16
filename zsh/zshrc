@@ -1,32 +1,34 @@
 fpath=($ZDOTDIR/completion $fpath)
 
-github_plugins=(
-  omz/shrink-path
+plugins=(
+  ohmyzsh/shrink-path
   jeffreytse/zsh-vi-mode
-  omz/fzf
+  ohmyzsh/fzf
   Aloxaf/fzf-tab
   zsh-users/zsh-autosuggestions
   zsh-users/zsh-syntax-highlighting # Must be last!
 )
 plugin-install() {
   [[ ! -d $ZCACHEDIR/plugins ]] && mkdir $ZCACHEDIR/plugins
-  for plugin in $github_plugins; do
+  for plugin in $plugins; do
     if [[ ! -d $ZCACHEDIR/plugins/${plugin:t} ]]; then
-      if [[ ${plugin:h} == 'omz' ]]; then
-        curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/${plugin:t}/${plugin:t}.plugin.zsh \
-          --create-dirs --silent --show-error \
-          --output $ZCACHEDIR/plugins/${plugin:t}/${plugin:t}.plugin.zsh
+      if [[ ${plugin:h} == 'ohmyzsh' ]]; then
+        [[ ! -d $ZCACHEDIR/plugins/ohmyzsh ]] && git clone https://github.com/ohmyzsh/ohmyzsh.git $ZCACHEDIR/plugins/ohmyzsh
+        ln -s ohmyzsh/plugins/${plugin:t} $ZCACHEDIR/plugins/
       else
         git clone https://github.com/${plugin} $ZCACHEDIR/plugins/${plugin:t}
       fi
+      local new_installed=1
     fi
   done
-  plugin-compile
+  [[ -n "$new_installed" ]] && plugin-compile
 }
 plugin-source() {
-  for plugin in $github_plugins; do
+  for plugin in $plugins; do
     if [[ -f $ZCACHEDIR/plugins/${plugin:t}/${plugin:t}.plugin.zsh ]]; then
       source $ZCACHEDIR/plugins/${plugin:t}/${plugin:t}.plugin.zsh
+    else
+      echo "Unable to source $plugin" >&2
     fi
   done
 }
