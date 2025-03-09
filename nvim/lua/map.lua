@@ -57,6 +57,7 @@ map({
   { '<leader>fn', '<cmd>enew<cr>',               desc = 'New file' },
   { '<leader>fp', ts.extensions.project.project, desc = 'Open projects' },
   { '<leader>fr', ts.builtin.oldfiles,           desc = 'Open recent file' },
+  { '<leader>fR', ts.builtin.resume,             desc = 'Resume last find' },
 })
 
 -- LSP bindings
