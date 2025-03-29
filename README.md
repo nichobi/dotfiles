@@ -1,3 +1,4 @@
+# ⚠️ This project has been migrated to [Codeberg](https://codeberg.org/nichobi/dotfiles)
 # nichobi's dotfiles
 ## Configuration files for my Arch Linux setup.
 This is my setup Wayland enviroment based around Sway as the window manager, Alacritty as a terminal, and neovim as an editor.
